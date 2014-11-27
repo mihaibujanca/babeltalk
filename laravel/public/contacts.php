@@ -13,8 +13,7 @@
 
 <h1> Contacts </h1>
 
-<p> Friends </p>
-<br>
+<h2> Friends </h2>
 
 <?php
   // code to load and output friends list
@@ -31,22 +30,21 @@
   
   $cookie_name = "id";
   $id = $_COOKIE[$cookie_name];
-  echo "your id = ";
-  echo $id;
+  // echo "your id = ". $id;
   echo "<hr>";
+
+  // ----------------------------------------------------------------------
+  // Get all the users who this user added and output them
   $query = "SELECT * FROM friends WHERE user1ID = '$id'";
   $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-  // $result = $mysqli->query($query);
-  
-
+   
   while($row = $result->fetch_array())
   {
     $rows[] = $row;
   }
-
+  
   foreach($rows as $row)
   {
-    
     $user2ID = $row['user2ID'];
     $query = "SELECT * FROM users WHERE id = '$user2ID'";
     $result = $mysqli->query($query);
@@ -56,28 +54,15 @@
     {
       echo "Name  : " . $row2['first_name'] . $row2['last_name'] . "<br>";
       echo "Email : " . $row2['email'] . "<br>";
+      echo "<hr>";
     
     }
-    //$user2ID = $row['user2ID'];
-    //$query = "SELECT * FROM users WHERE id = '$user2ID'";
-    //$result = $mysqli->query($query);
-    //$row2 = $result->fetch_assoc();    
-    // $rows[] = $row2;
   }
-  /*
-  echo "<ul>";
-  
-  foreach($rows as $row)
-  {
-    echo "<li>" . $row["email"] . "</li>";
-  }
-  echo "</ul>";
-  */
 
   $result->close();
 ?>
 
-
+<h2> Add a friend by email </h2>
 
 
 
