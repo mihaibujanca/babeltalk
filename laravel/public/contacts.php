@@ -31,11 +31,12 @@
   
   $cookie_name = "id";
   $id = $_COOKIE[$cookie_name];
-  echo "your id";
+  echo "your id = ";
   echo $id;
+  echo "<hr>";
   $query = "SELECT * FROM friends WHERE user1ID = '$id'";
-  // $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-  $result = $mysqli->query($query);
+  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+  // $result = $mysqli->query($query);
   
 
   while($row = $result->fetch_array())
@@ -45,20 +46,34 @@
 
   foreach($rows as $row)
   {
+    
     $user2ID = $row['user2ID'];
     $query = "SELECT * FROM users WHERE id = '$user2ID'";
     $result = $mysqli->query($query);
-    $row2 = $result->fetch_assoc();    
-    $rows[] = $row2;
+    $row2 = $result->fetch_assoc();
+    // friend id is  $user2ID;
+    if ($user2ID != $id)
+    {
+      echo "Name  : " . $row2['first_name'] . $row2['last_name'] . "<br>";
+      echo "Email : " . $row2['email'] . "<br>";
+    
+    }
+    //$user2ID = $row['user2ID'];
+    //$query = "SELECT * FROM users WHERE id = '$user2ID'";
+    //$result = $mysqli->query($query);
+    //$row2 = $result->fetch_assoc();    
+    // $rows[] = $row2;
   }
-  
+  /*
   echo "<ul>";
   
   foreach($rows as $row)
   {
-    echo "<li>" . $row['email'] . "</li>";
+    echo "<li>" . $row["email"] . "</li>";
   }
   echo "</ul>";
+  */
+
   $result->close();
 ?>
 
@@ -67,15 +82,5 @@
 
 
 
-
-
-<!-- Search for friends by email
-<p> Search by email </p>
-<form action="se.php" class="form-horizontal" method="post">
-<input id="email" name="email" type="text" class="form-control" placeholder="BabelTalk" class="input-medium" required="">
-                  </div>
-                </div>
-
--->
 
 </html>
