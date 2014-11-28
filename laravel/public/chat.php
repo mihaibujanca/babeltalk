@@ -90,7 +90,7 @@
     {
       die('Connection Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
     }
-
+   
     // test with a conversation between this user and 25
     
     // get id
@@ -100,13 +100,30 @@
     if (isset($_POST["partnerid"]))
     {
       $partnerid = $_POST["partnerid"];
+      setcookie("partnerid", $partnerid, time() + (86400 * 365), "/");
     } elseif (isset($_COOKIE["partnerid"])) 
     {
       $partnerid = $_COOKIE["partnerid"];
     } else 
     { $partnerid = "null"; }
 
+    $needtoscroll = False;
 
+    // send a message if required
+    if (isset($_POST["content"]) and !isset($COOKIE["wait"]))
+    {
+       // send message to databse
+       $senderID = $id;
+       $receiverID = $partnerid;
+       $time = time();
+       $content = $_POST["content"];
+       // sanitize input
+       $content = filter_var($content, FILTER_SANITIZE_STRING);
+       $insert_row = $mysqli->query("INSERT INTO exchanges (senderID, receiverID, time, content) 
+				    VALUES  ('$senderID', '$receiverID', '$time', '$content')");
+      setcookie("wait","delay", time() +1 , "/");
+      $needtoscroll = True;
+    }
 
     echo '<div class="container">';
 
@@ -124,6 +141,9 @@
     
     echo '<p style="text-align: right">' . $firstname . '</p>';
     echo '<p style="text-align: right">' . $partnerfirstname . '</p>';
+    
+
+    echo '<div class = "messageandinput">';
     echo '<div class="scrolly" id="messagebox">';
     
     $query = "SELECT * FROM exchanges WHERE (senderID = '$id' AND receiverID = '$partnerid') OR (senderID = '$partnerid' AND receiverID = '$id') ORDER BY id";
@@ -147,31 +167,46 @@
 	elseif ($row[2] == $id)
 	{
 	  $translatedreceived = $row[4];
-	  // code to translate message goes here !!!	  
+	  // code to translate message goes here !!!
+          $translatedreceived = filter_var($translatedreceived, FILTER_SANITIZE_STRING);	  
 	  echo "<p class='received'>" . $translatedreceived . "</p>"; 
 	}	
       }
+    }    
+      
+      
+    echo '</div>';
 
-    } 
-     $result->close();
+	echo '<form action="chat.php" method="post">';
+        echo '<input type="text" name="content" id="typemessage" class="typemessage"/>';
+        echo '<input type="hidden" name="senderID" value="' . $id . '"/>';
+        echo '<input type="hidden" name="receiverID" value="' . $partnerid . '"/>';
+	echo '</form>';
+     echo '</div>';
+     echo '</div>';   
+    $result->close();
    }
    else
    { 
-     echo '<div class="scrolly" id="messagebox">';
-   }
-    
-
-    // ends messagebox
-    echo '</div>';
-    
+     echo '<div class="scrolly" id="messagebox"> </div>';
+    }
    
     
-    
-    echo "<div class='scrollx'>";
-    echo "</div>";
+    // buttons for selecting chat
+    // echo "<div class='scrollx'>";
+    // echo "</div>";
    
    // ends container for scrollx and scroll y box
    echo '</div>';
+
+   if ($needtoscroll)
+   {
+     // scroll to bottom of chat
+     echo '<script> document.getElementById("messagebox").scrollTop =document.getElementById("messagebox").scrollHeight; </script>';
+   }
+
+   // make sure the users focus is on input
+  echo '<script> document.getElementById("typemessage").focus(); </script>';
   ?>
 
 
