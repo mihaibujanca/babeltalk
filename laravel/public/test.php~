@@ -5,9 +5,7 @@
 
   $json = json_decode($contents, true);
    
-  foreach($json['dat'] as $item) {
-  
-    echo $item; 
+  echo $json['dat']['text'][0];
 
   }
 
