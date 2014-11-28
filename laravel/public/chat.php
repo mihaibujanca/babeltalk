@@ -1,5 +1,6 @@
 <html lang="en">
 <head>
+    <meta http-equiv="refresh" content="5">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -113,7 +114,7 @@
     if (isset($_POST["content"]) and !isset($COOKIE["wait"]))
     {
        
-      if(!isset($_COOKIE["lastcontent"] or !isset($_COOKIE["lastreceiver"])
+      if((! isset($_COOKIE["lastcontent"])) or( ! isset($_COOKIE["lastreceiver"])))
       {
 	setcookie("lastcontent", 'null' , time() + (86400 * 365), "/");
 	setcookie("lastreceiver", 'null', time() + (86400 * 365), "/");
@@ -121,15 +122,15 @@
       
       
       
-      
-      
+      $content = $_POST["content"];
+      $receiverID = $partnerid;
+
       if ($_COOKIE["lastcontent"] != $content or $_COOKIE["lastreceiver"] != $receiverID)
        {
 	// send message to databse
 	$senderID = $id;
-	$receiverID = $partnerid;
 	$time = time();
-	$content = $_POST["content"];
+	
 	// sanitize input
 	$content = filter_var($content, FILTER_SANITIZE_STRING);
 	$insert_row = $mysqli->query("INSERT INTO exchanges (senderID, receiverID, time, content) 
@@ -161,7 +162,7 @@
     echo '<div class = "messageandinput">';
     echo '<div class="scrolly" id="messagebox">';
     
-    $query = "SELECT * FROM exchanges WHERE (senderID = '$id' AND receiverID = '$partnerid') OR (senderID = '$partnerid' AND receiverID = '$id') ORDER BY id";
+    $query = "SELECT * FROM exchanges WHERE (senderID = '$id' AND receiverID = '$partnerid') OR (senderID = '$partnerid' AND receiverID = '$id') ORDER BY id DESC";
     $result = mysqli_query($mysqli, $query) or die($mysqli_error());
     $num_row = mysqli_num_rows($result);
     if($num_row == 0)
@@ -217,11 +218,11 @@
    if ($needtoscroll)
    {
      // scroll to bottom of chat
-     echo '<script> document.getElementById("messagebox").scrollTop =document.getElementById("messagebox").scrollHeight; </script>';
+     // echo '<script> document.getElementById("messagebox").scrollTop =document.getElementById("messagebox").scrollHeight; </script>';
    }
 
-   // make sure the users focus is on input
-  echo '<script> document.getElementById("typemessage").focus(); </script>';
+    // make sure the users focus is on input
+    echo '<script> document.getElementById("typemessage").focus(); </script>';
   ?>
 
 

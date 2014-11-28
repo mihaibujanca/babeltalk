@@ -4,7 +4,7 @@ div.scrolly {
     width: 100%;
     height: 100%;
     overflow-y: scroll;
-    overflow-x: hi
+    overflow-x: hidden;
 }
 
 div.messageandinput{
