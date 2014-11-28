@@ -97,7 +97,8 @@
     $id= $_COOKIE["id"];
     $firstname = $_COOKIE["firstname"];
     // this will be got using post on a page refresh
-    $partnerid = 25;
+    $partnerid = $_POST["partnerid"];
+
     
     // get partner details
     $query = "SELECT * FROM users WHERE id = '$partnerid'";

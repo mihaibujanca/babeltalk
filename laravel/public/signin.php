@@ -76,7 +76,7 @@
 	  setcookie("id", $id, false,"/");
 	}
 	setcookie("firstname", $firstname, time()+60*60*24*365, "/");
-	setcookie("firstname", $lastname, time()+60*60*24*365, "/");
+	setcookie("lastname", $lastname, time()+60*60*24*365, "/");
 	header("Location: http://10.2.234.107/babeltalk/laravel/public/home.html");
 	 
 	  $cookie_name="id";
