@@ -97,9 +97,21 @@
     $id= $_COOKIE["id"];
     $firstname = $_COOKIE["firstname"];
     // this will be got using post on a page refresh
-    $partnerid = $_POST["partnerid"];
+    if (isset($_POST["partnerid"]))
+    {
+      $partnerid = $_POST["partnerid"];
+    } elseif (isset($_COOKIE["partnerid"])) 
+    {
+      $partnerid = $_COOKIE["partnerid"];
+    } else 
+    { $partnerid = "null"; }
 
-    
+
+
+    echo '<div class="container">';
+
+    if ($partnerid != "null")
+    {
     // get partner details
     $query = "SELECT * FROM users WHERE id = '$partnerid'";
     $result = mysqli_query($mysqli, $query) or die($mysqli_error());
@@ -109,7 +121,7 @@
     $partnerlanaguage = $row['language'];
     
     
-    echo '<div class="container">';
+    
     echo '<p style="text-align: right">' . $firstname . '</p>';
     echo '<p style="text-align: right">' . $partnerfirstname . '</p>';
     echo '<div class="scrolly" id="messagebox">';
@@ -129,7 +141,8 @@
 	// message originated from this user so display as is
 	if ($row[1] == $id)
 	{
-	  echo "<p class='sent'>" . $row[4] . "</p>"; 
+
+           echo "<p class='sent'>" . $row[4] . "</p>"; 
 	}
 	// message came from other user, should be translated first
 	elseif ($row[2] == $id)
@@ -141,18 +154,24 @@
       }
 
     }
+   } 
+     $result->close();
+   else
+   { 
+     echo '<div class="scrolly" id="messagebox">';
+   }
     
+
+
+    echo '</div>';
+    echo '</div>';
    
-    echo '</div>';
-    echo '</div>';
-    $result->close();
+    
     
 
 
 
-
-
-
+  
 
 
 
