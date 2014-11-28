@@ -1,13 +1,30 @@
+<html> 
+
+<head>
+
+</head>
+
+<body>
+
 <?php
 
+  $message = "this is a test message";
+  
+  $newstring = implode("+", preg_split("/[\s]+/", $message));
+
+  echo $newstring;
+
+  
+ 
   $contents = file_get_contents("http://itranslate4.eu/api/Translate?auth=df287e5e-6b1f-4319-90c7-9bc3ba3e45c4&src=de&trg=en&dat=Andreas+hat+seine+Aufgabe+erledigt.&dat=Er+kann+jetzt+nach+Hause+gehen.");
 
+  $json = json_decode($contents, true);   
 
-  $json = json_decode($contents, true);
-   
-  echo $json[2]['text'];
+  $rest = $json['dat'][0]['text'][0];
 
-  }
-
-
+  echo $rest;
 ?>
+
+</body>
+
+</html>
