@@ -178,7 +178,7 @@
     echo '</div>';
 
 	echo '<form action="chat.php" method="post">';
-        echo '<input type="text" name="content" id="typemessage" class="typemessage"/>';
+        echo '<input type="text" name="content" id="typemessage" class="typemessage" autocomplete="off"/>';
         echo '<input type="hidden" name="senderID" value="' . $id . '"/>';
         echo '<input type="hidden" name="receiverID" value="' . $partnerid . '"/>';
 	echo '</form>';
