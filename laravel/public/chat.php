@@ -160,6 +160,14 @@
     
 
     echo '<div class = "messageandinput">';
+
+    echo '<form action="chat.php" method="post">';
+    echo '<input type="text" name="content" id="typemessage" autocomplete="off" class="typemessage"/>';
+    echo '<input type="hidden" name="senderID" value="' . $id . '"/>';
+    echo '<input type="hidden" name="receiverID" value="' . $partnerid . '"/>';
+   echo '</form>';
+
+
     echo '<div class="scrolly" id="messagebox">';
     
     $query = "SELECT * FROM exchanges WHERE (senderID = '$id' AND receiverID = '$partnerid') OR (senderID = '$partnerid' AND receiverID = '$id') ORDER BY id DESC";
@@ -193,11 +201,7 @@
       
     echo '</div>';
 
-	echo '<form action="chat.php" method="post">';
-        echo '<input type="text" name="content" id="typemessage" class="typemessage"/>';
-        echo '<input type="hidden" name="senderID" value="' . $id . '"/>';
-        echo '<input type="hidden" name="receiverID" value="' . $partnerid . '"/>';
-	echo '</form>';
+	
      echo '</div>';
      echo '</div>';   
     $result->close();
