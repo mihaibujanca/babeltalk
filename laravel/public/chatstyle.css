@@ -1,7 +1,7 @@
 div.scrolly {
     margin: 2px;
     background-color: #FFFFFF;
-    width: 500px;
+    width: 400px;
     height: 200px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -9,7 +9,7 @@ div.scrolly {
 div.scrollx {
     margin: 2px;
     background-color: #00F000;
-    width: 500px;
+    width: 400px;
     height: 60px;
     overflow-y: hidden;
     overflow-x: scroll;
@@ -26,9 +26,11 @@ div.hidden {
 p.sent {
     text-align: right;
     margin-right: 10%;
+    margin-left: 40%;
 } 
 
 p.received {
     text-align: left;
     margin-left: 10%;
+    margin-right: 40%;
 } 
