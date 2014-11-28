@@ -93,9 +93,9 @@
 
     // test with a conversation between this user and 25
     
-    // get ids
-    $cookie_name = "id";
-    $id= $_COOKIE[$cookie_name];
+    // get id
+    $id= $_COOKIE["id"];
+    $firstname = $_COOKIE["firstname"];
     // this will be got using post on a page refresh
     $partnerid = 25;
     
@@ -105,8 +105,12 @@
     $row = $result->fetch_assoc();
     $partnerfirstname = $row['first_name'];
     $partnerlastname = $row['last_name'];
-    $partnerlanaguage = $row['langauge'];
+    $partnerlanaguage = $row['language'];
     
+    
+    echo '<div class="container">';
+    echo '<p style="text-align: right">' . $firstname . '</p>';
+    echo '<p style="text-align: right">' . $partnerfirstname . '</p>';
     echo '<div class="scrolly" id="messagebox">';
     
     $query = "SELECT * FROM exchanges WHERE (senderID = '$id' AND receiverID = '$partnerid') OR (senderID = '$partnerid' AND receiverID = '$id') ORDER BY id";
@@ -137,6 +141,8 @@
 
     }
     
+   
+    echo '</div>';
     echo '</div>';
     $result->close();
     
