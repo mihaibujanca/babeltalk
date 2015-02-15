@@ -1,0 +1,12 @@
+{
+  "name": "y5/babeltalk",
+  "description": "Chat translator platform",
+  "minimum-stability": "dev",
+  "license": "WTFPL",
+  "authors": [
+    {
+      "name": "Mihai Bujanca",
+      "email": "mihaibujanca@github.com"
+    }
+  ]
+}
