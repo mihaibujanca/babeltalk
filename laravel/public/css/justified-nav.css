@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    color: #000000;
+}
+html {
+    font-size: 10px;
+}
+html {
+    font-family: sans-serif;
+
+}
+
+element {
+}
+.masthead, .marketing, .footer {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    color: #333;
+}
