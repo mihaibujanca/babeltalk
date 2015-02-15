@@ -8,5 +8,8 @@
       "name": "Mihai Bujanca",
       "email": "mihaibujanca@github.com"
     }
-  ]
+  ],
+  "require": {
+    "laravel/installer": "~1.1"
+  }
 }
