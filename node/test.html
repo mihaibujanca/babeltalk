@@ -1,82 +1,82 @@
 <html>
 <head>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
-<script language="javascript">
-var g_token = '';
+  <script language="javascript">
+    var g_token = '';
 
-function onLoad() {
-  // Get an access token now.  Good for 10 minutes.
-  getToken();
-  // Get a new one every 9 minutes.
-  setInterval(getToken, 9 * 60 * 1000);
-}
-
-function getToken() {
-  var requestStr = "./token.php";
-
-  $.ajax({
-    url: requestStr,
-    type: "GET",
-    cache: true,
-    dataType: 'json',
-    success: function (data) {
-      g_token = data.access_token;
+    function onLoad() {
+      // Get an access token now.  Good for 10 minutes.
+      getToken();
+      // Get a new one every 9 minutes.
+      setInterval(getToken, 9 * 60 * 1000);
     }
-  });
-}
 
-function translate(text, from, to) {
-  var p = new Object;
-  p.text = text;
-  p.from = from;
-  p.to = to;
+    function getToken() {
+      var requestStr = "http://mtp/token.php";
 
-  // A major puzzle solved.  Who would have guessed you specify the jsonp callback in oncomplete?
-  p.oncomplete = 'ajaxTranslateCallback';
-  
- // Another major puzzle.  The authentication is supplied in the deprecated appId param.
-  p.appId = "Bearer " + g_token;
+      $.ajax({
+        url: requestStr,
+        type: "GET",
+        cache: true,
+        dataType: 'json',
+        success: function (data) {
+          g_token = data.access_token;
+        }
+      });
+    }
 
-  var requestStr = "http://api.microsofttranslator.com/V2/Ajax.svc/Translate";
+    function translate(text, from, to) {
+      var translateData = new Object;
+      translateData.text = text;
+      translateData.from = from;
+      translateData.to = to;
 
-  $.ajax({
-    url: requestStr,
-    type: "GET",
-    data: p,
-    dataType: 'jsonp',
-    cache: true
-  });
-}
+      // A major puzzle solved.  Who would have guessed you specify the jsonp callback in oncomplete?
+      translateData.oncomplete = 'ajaxTranslateCallback';
 
-function ajaxTranslateCallback(response) {
-  // Display translated text in the right textarea.
-  $("#target").text(response);
-}
+      // Another major puzzle.  The authentication is supplied in the deprecated appId param.
+      translateData.appId = "Bearer " + g_token;
 
-function translateSourceTarget() {
-  // Translate the text typed by the user into the left textarea.
-  var src = $("#source").val();
-  translate(src, "en", "fr");
-}
-</script>
-<style>
-#source, #target {
-  position:relative;
-  float:left;
-  width:400px;
-  height: 50px;
-  padding:10px;
-  margin: 10px;
-  border: 1px solid black;
-}
+      var requestStr = "http://api.microsofttranslator.com/V2/Ajax.svc/Translate";
 
-#translateButton {
-  float:left;
-  margin: 10px;
-  height:50px;
-}
-</style>
+      $.ajax({
+        url: requestStr,
+        type: "GET",
+        data: translateData,
+        dataType: 'jsonp',
+        cache: true
+      });
+    }
+
+    function ajaxTranslateCallback(response) {
+      // Display translated text in the right textarea.
+      $("#target").text(response);
+    }
+
+    function translateSourceTarget() {
+      // Translate the text typed by the user into the left textarea.
+      var src = $("#source").val();
+      translate(src, "en", "fr");
+    }
+  </script>
+  <style>
+    #source, #target {
+      position:relative;
+      float:left;
+      width:400px;
+      height: 50px;
+      padding:10px;
+      margin: 10px;
+      border: 1px solid black;
+    }
+
+    #translateButton {
+      float:left;
+      margin: 10px;
+      height:50px;
+    }
+  </style>
 </head>
 
 <body onload="onLoad();">
