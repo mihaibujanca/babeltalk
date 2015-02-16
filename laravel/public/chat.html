@@ -30,6 +30,8 @@
 
     <!-- justified nav -->
     <link rel="stylesheet" href="css/justified-nav.css"/>
+
+    <link rel="stylesheet" href="css/images.css"/>
 </head>
 <body>
     <div class="container navbar">
@@ -46,32 +48,41 @@
                         </button>
                         <a class="navbar-brand" href="#">Babel Talk</a>
                     </div>
-                    <div id="navbarcontent">
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav nav-pills navbar-justified">
-                                <div class="masthead">
-                                    <nav>
-                                        <ul class="nav nav-justified">
-                                            <li class="active"><a href="#">Home</a></li>
-                                            <li><a href="#">Projects</a></li>
-                                            <li><a href="#">Services</a></li>
-                                            <li><a href="#">Downloads</a></li>
-                                            <li><a href="#">About</a></li>
-                                            <li><a href="#">Contact</a></li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
-                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav nav-pills navbar-justified">
+                            <div class="masthead">
+                                <nav>
+                                    <ul class="nav nav-justified">
+                                        <li class="active"><a href="#"><span>Home</span></a></li>
+                                        <li><a href="#"><span class="text-success">Projects</span></a></li>
+                                        <li><a href="#"><span>Services</span></a></li>
+                                        <li><a href="#"><span class="text-danger">Downloads</span></a></li>
+                                        <li><a href="#"><span>About</span></a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
             </nav>
         </header>
     </div>
 
+    <div class="container">
+        <div class="row">
+            <h1>Your chat page <span class="glyphicon glyphicon-envelope"></span></h1>
+        </div>
+        <div class="row">
+            <div class="col-sm-10">
+                <p> Now speak!</p>
+                <img src="http://goo.gl/ixKHTh">
+            </div>
+        </div>
+    </div>
 
-    <p></p>
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
