@@ -32,7 +32,7 @@
   </head>
   <body>
     
-  <div class="container">
+  <!--<div class="container">
       <div class="fb-profile">
           <img align="left" class="fb-image-lg" src="http://lorempixel.com/850/280/nightlife/5/" alt="Profile image example"/>
           <img align="left" class="fb-image-profile thumbnail" src="http://lorempixel.com/180/180/people/9/" alt="Profile image example"/>
@@ -41,18 +41,18 @@
               <p>Girls just wanna go fun.</p>
           </div>
       </div>
-  </div> <!-- /container --> 
+  </div> --> <!-- /container --> 
 
   <div class="container">
     <div class="col-lg-12 col-md-8">
        <div class="main-box clearfix">
           <div class="tabs-wrapper tabs-no-header">
-             <ul class="nav nav-tabs">
+             <ul class="nav nav-tabs" id="myTab">
                 <li class="active"><a href="#tab-users" data-toggle="tab">Users</a></li>
                 <li class=""><a href="#tab-products" data-toggle="tab">Products</a></li>
                 <li class=""><a href="#tab-todo" data-toggle="tab">Todo</a></li>
              </ul>
-             <div class="tab-content tab-content-body clearfix">
+             <div class="tab-content tab-content-body clearfix mytabs">
                 <div class="tab-pane fade active in" id="tab-users">
                    <ul class="widget-users row">
                       <li class="col-md-6">
@@ -172,7 +172,7 @@
                    <br>
                    <a href="#" class="btn btn-success pull-right">View all users</a>
                 </div>
-                <div class="tab-pane fade" id="tab-products">
+                <div class="tab-pane fade mytabs" id="tab-products">
                    <ul class="widget-products">
                       <li>
                          <a href="#">
@@ -250,7 +250,7 @@
                    <br>
                    <a href="#" class="btn btn-success pull-right">View all users</a>
                 </div>
-                <div class="tab-pane fade" id="tab-todo">
+                <div class="tab-pane fade mytabs" id="tab-todo">
                    <ul class="widget-todo">
                       <li class="clearfix">
                          <div class="name">
@@ -370,9 +370,16 @@
        </div>
     </div>
   </div>
+
+  <script>
+    $(function () {
+      $('#myTab a:last').tab('show')
+  })
+  </script>
+
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
-  <script src="js/bootstrap.min.js"></script>
+  <script src="bootstrap.min.js"></script>
   </body>
 </html>
