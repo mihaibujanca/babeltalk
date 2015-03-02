@@ -106,15 +106,15 @@ Image credits: unsplash.com
     background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {
-    background-image: url(http://goo.gl/677ZTN);
+    background-image: url(http://trsmblog.ryerson.ca/wp-content/uploads/2014/11/communication.jpg);
 }
 .fade-carousel .slides .slide-2 {
-    background-image: url(http://goo.gl/VNbhIo);
+    background-image: url(https://eyeofthecylone.files.wordpress.com/2012/07/5.jpg);
 }
 .fade-carousel .slides .slide-3 {
-    background-image: url(http://goo.gl/677ZTN);
+    background-image: url(http://goo.gl/JDBCqg);
 }
-
+/*http://goo.gl/677ZTN*/
 /********************************/
 /*          Media Queries       */
 /********************************/
