@@ -43,9 +43,9 @@ Image credits: unsplash.com
     -ms-transform: translate3d(-50%,-50%,0);
     -o-transform: translate3d(-50%,-50%,0);
     transform: translate3d(-50%,-50%,0);
-    /*cursor: pointer;
+    /*cursor: pointer;*/
 }
-.hero:hover {
+/*.hero:hover {
     background: none;
 }*/
 .hero h1 {
