@@ -43,7 +43,11 @@ Image credits: unsplash.com
     -ms-transform: translate3d(-50%,-50%,0);
     -o-transform: translate3d(-50%,-50%,0);
     transform: translate3d(-50%,-50%,0);
+    /*cursor: pointer;
 }
+.hero:hover {
+    background: none;
+}*/
 .hero h1 {
     font-size: 3em;
     font-weight: bold;
@@ -106,15 +110,15 @@ Image credits: unsplash.com
     background-repeat: no-repeat;
 }
 .fade-carousel .slides .slide-1 {
-    background-image: url(http://trsmblog.ryerson.ca/wp-content/uploads/2014/11/communication.jpg);
+    background-image: url(http://goo.gl/78bcfv);
 }
 .fade-carousel .slides .slide-2 {
     background-image: url(https://eyeofthecylone.files.wordpress.com/2012/07/5.jpg);
 }
 .fade-carousel .slides .slide-3 {
-    background-image: url(http://goo.gl/JDBCqg);
+    background-image: url(http://www.luna360.com/img/language-list.jpg);
 }
-/*http://goo.gl/677ZTN*/
+/*http://goo.gl/677ZTN  http://trsmblog.ryerson.ca/wp-content/uploads/2014/11/communication.jpg http://goo.gl/JDBCqg http://goo.gl/cToiuy http://www.convocco.com/images/image4.jpg http://goo.gl/HkFKN1 http://goo.gl/5IPHpX*/
 /********************************/
 /*          Media Queries       */
 /********************************/
