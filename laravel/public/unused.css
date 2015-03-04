@@ -6,7 +6,7 @@
     float:left;
 }
 .main {
-  margin-left:120px;
+  margin-left:140px;
  }
 hr.vertical {
   width: 0px;
@@ -20,4 +20,13 @@ div.vertical-line{
 }
 #your_column {
   border-left: 1px solid black;
+}
+.btn.btn-cobra {
+    background:none;
+    border:none;
+    box-shadow:none;
+}
+
+.specialfont {
+    font-family: "courier",sans-serif;
 }
