@@ -32,6 +32,8 @@
 
     <!--Pulling Awesome Font -->
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/chatwidget.css"/>
 </head>
 <body>
     <div class="top">
@@ -78,7 +80,7 @@
         <p></p>
         <p></p>
         <!-- Single button -->
-        <div class="btn-group">
+        <div class="btn-group" role="group">
             <button class="btn btn-lg btn-cobra specialfont dropdown-toggle" data-toggle="dropdown" aria-expanded="false">>CONTACTS <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" role="menu">
@@ -93,8 +95,85 @@
     <div class="main " id="your_column">
         <div type="button" class="col-md-offset-4"><h4><code>This page is still under construction!!!</code></h4></div>
         <hr>
-        THANKS
-        <p>not again</p>
+        <div class="container specialfont">
+            <div class="row col-md-offset-4">
+                <h1>Your chat page <span class="glyphicon glyphicon-envelope"></span></h1>
+            </div>
+        </div>
+        <hr/>
+        <div class="row">
+            <div class="left clearfix"><span class="chat-img pull-right">
+                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+            </span>
+            </div>
+            <div class="chat-body clearfix">
+                <div class="header">
+                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                    dolor, quis ullamcorper ligula sodales.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="left clearfix"><span class="chat-img pull-right">
+                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+            </span>
+            </div>
+            <div class="chat-body clearfix">
+                <div class="header">
+                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                    dolor, quis ullamcorper ligula sodales.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="left clearfix"><span class="chat-img pull-right">
+                            <img src="http://placehold.it/50/FA6F57/fff&text=ME" alt="User Avatar" class="img-circle" />
+            </span>
+            </div>
+            <div class="chat-body clearfix">
+                <div class="header">
+                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                    dolor, quis ullamcorper ligula sodales.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="left clearfix"><span class="chat-img pull-right">
+                            <img src="http://placehold.it/50/55C1E7/fff&text=U" alt="User Avatar" class="img-circle" />
+            </span>
+            </div>
+            <div class="chat-body clearfix">
+                <div class="header">
+                    <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
+                </div>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
+                    dolor, quis ullamcorper ligula sodales.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="panel-footer">
+            <div class="input-group">
+                <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+            <span class="input-group-btn">
+                    <button class="btn btn-warning btn-sm" id="btn-chat">
+                                Send</button>
+            </span>
+            </div>
+        </div>
     </div>
 
     <script>
