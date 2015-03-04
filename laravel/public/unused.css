@@ -30,6 +30,12 @@ div.vertical-line{
 .specialfont {
     font-family: "courier",sans-serif;
 }
-#babel_image {
+/*#babel_image {
   background-image: url("babel_talk_logo.jpg");
+}
+body {
+  background-image: url("babel_talk_logo.jpg");  
+}*/
+.newtextalign {
+  text-align: center;
 }
