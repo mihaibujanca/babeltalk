@@ -144,14 +144,14 @@
                 </form>
             </div>
             <div class="tab-pane fade" id="signup">
-                <form class="form-horizontal">
+                <form class="form-horizontal" method="POST">
                 <fieldset>
                 <!-- Sign Up Form -->
                 <!-- Text input-->
                 <div class="control-group">
                   <label class="control-label" for="Email">Email:</label>
                   <div class="controls">
-                    <input id="Email" name="Email" class="form-control" type="text" placeholder="babeltalk@y5.com" class="input-large" required="">
+                    <input id="Email" name="email" class="form-control" type="text" placeholder="babeltalk@y5.com" class="input-large" required="">
                   </div>
                 </div>
                 
@@ -189,20 +189,15 @@
                   </div>
                 </div>
                 
-                <!-- Language DropDown -->
-                
-	      <div class="dropdown">
-		<label class="control-label" for="languagedropdown">Choose Language:</label>
-		<br>
-		<button class="btn btn-default dropdown-toggle" type="button" id="menu1" data-toggle="dropdown">Tutorials
-		<span class="caret"></span></button>
-		<ul class="dropdown-menu" role="menu" aria-labelledby="menu1">
-		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">English</a></li>
-		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Romanian</a></li>
-		  <li role="presentation"><a role="menuitem" tabindex="-1" href="#">French</a></li>
-		</ul>
-	      </div>               
-                
+                <!-- Language Select -->   
+                <div class="control-group">                       
+		  <label class="control-label" for="languageselect">Select Language:</label>
+		  <select class="form-control" id="languageselect" name="language">
+		    <option value="en">English</option>
+		    <option value="ro">Romanian</option>
+		    <option value="fr">French</option>
+		  </select>
+		</div>
                 
                 <!-- Multiple Radios (inline) -->
                 <br>
