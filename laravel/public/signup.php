@@ -14,7 +14,7 @@
   $mysqli = new mysqli($database_host, $database_user, $database_pass, $database_name);
 
   // check for error 
-  if(mysqli -> connect_error) 
+  if($mysqli -> connect_error) 
   {
     die('Connection Error ('.$mysqli -> connect.errno.') '.$mysqli -> connect_error);
   }
