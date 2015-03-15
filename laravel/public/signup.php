@@ -28,6 +28,13 @@
   $reenterpassword = $_POST["reenterpassword"];
   $language = $_POST["language"];
   
+  //use escape strings to avoid SQL injection
+  $firstname = $mysqli ->real_escape_string($firstname);
+  $lastname = $mysqli ->real_escape_string($lastname);
+  $email = $mysqli ->real_escape_string($email);
+  $password = $mysqli ->real_escape_string($reenterpassword);
+  $language = $mysqli ->real_escape_string($language);
+
   // check that email is valid
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
   {
@@ -59,10 +66,13 @@
   {
     echo "User already exists with the email. ";
   }
+  
+  if($num_row == 0)
+  {
+    $insert_row = $mysqli->query("INSERT INTO users (first_name, last_name, password, email, language) 
+                                 VALUES  ('$firstname', '$lastname', '$password', '$email', '$language')");
 
-   
-  echo $query; 
-  echo $num_row;
+  }
   
 
 
