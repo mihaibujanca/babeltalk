@@ -26,7 +26,7 @@
   $email = $_POST["email"];
   $password = $_POST["password"];
   $reenterpassword = $_POST["reenterpassword"];
-  $language = $_POST["languageselect"];
+  $language = $_POST["language"];
   
   echo $firstname; 
   echo $lastname;
