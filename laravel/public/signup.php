@@ -57,7 +57,7 @@
   // if a row is returned, the user must already exist 
   if($num_row == 1)
   {
-    echo 'User already exists with the email: ' + $email;
+    echo "User already exists with the email. ";
   }
 
    
