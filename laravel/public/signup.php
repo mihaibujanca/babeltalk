@@ -28,12 +28,22 @@
   $reenterpassword = $_POST["reenterpassword"];
   $language = $_POST["language"];
   
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+  {
+    $emailErr = "Invalid email format"; 
+    echo $emailErr;
+  }
+
   echo $firstname; 
   echo $lastname;
   echo $email; 
   echo $password; 
   echo $reenterpassword;
   echo $language;
+
+  
+
+  
 
 
 

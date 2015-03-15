@@ -16,7 +16,7 @@
   // check for error 
   if($mysqli -> connect_error) 
   {
-    die('Connection Error ('.$mysqli -> connect.errno.') '.$mysqli -> connect_error);
+    die('Connection Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
   }
 
   // store variables 
@@ -26,14 +26,24 @@
   $email = $_POST["email"];
   $password = $_POST["password"];
   $reenterpassword = $_POST["reenterpassword"];
-  $language = $_POST["languageselect"];
+  $language = $_POST["language"];
   
+  if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
+  {
+    $emailErr = "Invalid email format"; 
+    echo $emailErr
+  }
+
   echo $firstname; 
   echo $lastname;
   echo $email; 
   echo $password; 
   echo $reenterpassword;
   echo $language;
+
+  
+
+  
 
 
 
