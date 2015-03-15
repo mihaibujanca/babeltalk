@@ -11,12 +11,12 @@
   require_once('config.inc.php');
  
   // connect to database
-  $mysqli = new mysqli($database_host, $database_user, $database_pass, $database_name);
+  $mysqli = new mysqli($database_host, $database_user, $database_password, $database_name);
 
   // check for error 
   if($mysqli -> connect_error) 
   {
-    die('Connection Error ('.$mysqli -> connect.errno.') '.$mysqli -> connect_error);
+    die('Connection Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
   }
 
   // store variables 
