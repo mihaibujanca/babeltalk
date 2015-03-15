@@ -33,6 +33,7 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <link rel="stylesheet" href="unused.css"/>
 </head>
 <body>
     <div class="container navbar">
@@ -72,54 +73,14 @@
         </header>
     </div>
 
-    <a href="http://bootsnipp.com/mouse0270/snippets/4l0k2" class="btn btn-danger hide" id="back-to-bootsnipp">Back to Bootsnipp</a>
-
-    <script>
-        $(function () {
-            /* BOOTSNIPP FULLSCREEN FIX */
-            if (window.location == window.parent.location) {
-                $('#back-to-bootsnipp').removeClass('hide');
-            }
-
-
-            $('[data-toggle="tooltip"]').tooltip();
-
-            $('#fullscreen').on('click', function(event) {
-                event.preventDefault();
-                window.parent.location = "http://bootsnipp.com/iframe/4l0k2";
-            });
-            $('a[href="#cant-do-all-the-work-for-you"]').on('click', function(event) {
-                event.preventDefault();
-                $('#cant-do-all-the-work-for-you').modal('show');
-            })
-
-            $('[data-command="toggle-search"]').on('click', function(event) {
-                event.preventDefault();
-                $(this).toggleClass('hide-search');
-
-                if ($(this).hasClass('hide-search')) {
-                    $('.c-search').closest('.row').slideUp(100);
-                }else{
-                    $('.c-search').closest('.row').slideDown(100);
-                }
-            })
-
-            $('#contact-list').searchable({
-                searchField: '#contact-list-search',
-                selector: 'li',
-                childSelector: '.col-xs-12',
-                show: function( elem ) {
-                    elem.slideDown(100);
-                },
-                hide: function( elem ) {
-                    elem.slideUp( 100 );
-                }
-            })
-        });
-    </script>
     <div class="container">
         <div class="row">
-            <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+            <hr>
+            <div class="row specialfont newtextalign">
+                <p>ur contacts<span class="glyphicons glyphicons-group"></span></p>
+            </div>
+            <hr>
+            <div class="col-md-offset-1 col-sm-6 col-md-8 col-lg-10">
                 <div class="panel panel-default">
                     <div class="panel-heading c-list">
                         <span class="title">Contacts</span>
@@ -249,6 +210,49 @@
                     </ul>
                 </div>
             </div>
+            <script>
+                $(function () {
+                    /* BOOTSNIPP FULLSCREEN FIX */
+                    if (window.location == window.parent.location) {
+                        $('#back-to-bootsnipp').removeClass('hide');
+                    }
+
+
+                    $('[data-toggle="tooltip"]').tooltip();
+
+                    $('#fullscreen').on('click', function(event) {
+                        event.preventDefault();
+                        window.parent.location = "http://bootsnipp.com/iframe/4l0k2";
+                    });
+                    $('a[href="#cant-do-all-the-work-for-you"]').on('click', function(event) {
+                        event.preventDefault();
+                        $('#cant-do-all-the-work-for-you').modal('show');
+                    })
+
+                    $('[data-command="toggle-search"]').on('click', function(event) {
+                        event.preventDefault();
+                        $(this).toggleClass('hide-search');
+
+                        if ($(this).hasClass('hide-search')) {
+                            $('.c-search').closest('.row').slideUp(100);
+                        }else{
+                            $('.c-search').closest('.row').slideDown(100);
+                        }
+                    })
+
+                    $('#contact-list').searchable({
+                        searchField: '#contact-list-search',
+                        selector: 'li',
+                        childSelector: '.col-xs-12',
+                        show: function( elem ) {
+                            elem.slideDown(100);
+                        },
+                        hide: function( elem ) {
+                            elem.slideUp( 100 );
+                        }
+                    })
+                });
+            </script>
         </div>
 
         <div id="cant-do-all-the-work-for-you" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
@@ -274,6 +278,6 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="bootstrap.min.js"></script>
 </body>
 </html>

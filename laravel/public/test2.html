@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>test2</title>
+  </head>
+  <body>
+    <script>
+      $(window).load(function() {
+        // The slider being synced must be initialized first
+        $('#carousel').flexslider({
+          animation: "slide",
+          controlNav: false,
+          animationLoop: false,
+          slideshow: false,
+          itemWidth: 210,
+          itemMargin: 5,
+          asNavFor: '#slider'
+        });
+         
+        $('#slider').flexslider({
+          animation: "slide",
+          controlNav: false,
+          animationLoop: false,
+          slideshow: false,
+          sync: "#carousel"
+        });
+      });
+    </script>
+    
+    <!-- Place somewhere in the <body> of your page -->
+    <div id="slider" class="flexslider">
+      <ul class="slides">
+        <li>
+          <img src="ankara.jpg" />
+        </li>
+        <li>
+          <img src="ankara.jpg" />
+        </li>
+        <li>
+          <img src="ankara.jpg" />
+        </li>
+        <li>
+          <img src="ankara.jpg" />
+        </li>
+        <!-- items mirrored twice, total of 12 -->
+      </ul>
+    </div>
+    <div id="carousel" class="flexslider">
+      <ul class="slides">
+        <li>
+          <img src="ankara.jpg" />
+        </li>
+        <li>
+          <img src="ankara.jpg" />
+        </li>
+        <li>
+          <img src="ankara.jpg" />
+        </li>
+        <li>
+          <img src="ankara.jpg" />
+        </li>
+        <!-- items mirrored twice, total of 12 -->
+      </ul>
+    </div>
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+  </body>
+</html>
