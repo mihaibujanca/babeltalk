@@ -28,10 +28,16 @@
   $reenterpassword = $_POST["reenterpassword"];
   $language = $_POST["language"];
   
+  // check that email is valid
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
   {
     $emailErr = "Invalid email format"; 
     echo $emailErr;
+  }
+
+  // check passwords match
+  if (strcmp($password, $reenterpassword) !== 0) {
+    echo "Passwords do not match";
   }
 
   echo $firstname; 
