@@ -62,7 +62,6 @@
 
    
   echo $query; 
-  echo $result; 
   echo $num_row;
   
 
