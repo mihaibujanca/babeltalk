@@ -74,6 +74,32 @@
         </header>
     </div>
 
+    <!--<script>
+        jQuery(function ($) {
+            $('#carousel1').carousel({
+                interval: 2000
+            });
+
+            var clickEvent = false;
+
+            $('#carousel1').on('click', '.nav a', function () {
+                clickEvent = true;
+                $('.nav li').removeClass('active');
+                $(this).parent().addClass('active');
+            }).on('slid.bs.carousel', function (e) {
+                if (!clickEvent) {
+                    var count = $('.nav').children().length - 1;
+                    var current = $('.nav li.active');
+                    current.removeClass('active').next().addClass('active');
+                    var id = parseInt(current.data('slide-to'));
+                    if (count == id) {
+                        $('.nav li').first().addClass('active');
+                    }
+                }
+                clickEvent = false;
+            });
+        });
+    </script> -->
     <div class="container">
             <div id="carousel1" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -82,7 +108,7 @@
                         <div class="carousel-caption">
                             <h3>Our services</h3>
                             <p>
-                                With Babel Talk, you get real-time language translation with international communication.<span class="glyphicon glyphicon-router" aria-hidden="true"></span><span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                                With Babel Talk, you get real-time language translation with international communication.<span class="glyphicon glyphicon-flag"></span>
                             </p>
                         </div>
                     </div>
@@ -109,44 +135,55 @@
                 </div>
                 <ul class="nav nav-pills nav-justified">
                     <li data-target="#carousel1" data-slide-to="0" class="active">
-                        <a href="#">About<small>Lorem ipsum dolor sit</small></a>
+                        <a href="#">Our services<small>We offer ...</small></a>
                     </li>
                     <li data-target="#carousel1" data-slide-to="1">
-                        <a href="#">Projects<small>Lorem ipsum dolor sit</small></a>
+                        <a href="#">About<small>We small but mighty.</small></a>
                     </li>
                     <li data-target="#carousel1" data-slide-to="2">
-                        <a href="#">Portfolio<small>Lorem ipsum dolor sit</small></a>
+                        <a href="#">Neighbourhood<small>Your contacts</small></a>
                     </li>
                 </ul>
             </div>
     </div>
-
-    <script type="text/javascript">
-        jQuery(function ($) {
-            $('#carousel1').carousel({
-                interval: 2000
+    <script>
+        $(document).ready( function() {
+            $('.carousel1').carousel({
+                interval:   4000
             });
-
+            
             var clickEvent = false;
-
-            $('#carousel1').on('click', '.nav a', function () {
-                clickEvent = true;
-                $('.nav li').removeClass('active');
-                $(this).parent().addClass('active');
-            }).on('slid.bs.carousel', function (e) {
-                if (!clickEvent) {
-                    var count = $('.nav').children().length - 1;
+            $('.carousel1').on('click', '.nav a', function() {
+                    clickEvent = true;
+                    $('.nav li').removeClass('active');
+                    $(this).parent().addClass('active');        
+            }).on('slid.bs.carousel', function(e) {
+                if(!clickEvent) {
+                    var count = $('.nav').children().length -1;
                     var current = $('.nav li.active');
                     current.removeClass('active').next().addClass('active');
                     var id = parseInt(current.data('slide-to'));
-                    if (count == id) {
-                        $('.nav li').first().addClass('active');
+                    if(count == id) {
+                        $('.nav li').first().addClass('active');    
                     }
                 }
                 clickEvent = false;
             });
         });
     </script>
+
+    <br>
+    <div class="row green">
+        <p></p>
+    </div>
+
+    <div class="row white">
+        <p></p>
+    </div>
+
+    <div class="row green">
+        <p></p>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>

@@ -14,8 +14,32 @@ body {
     background-color: #b4d9a7;
 }
 .nav-pills > li[data-slide-to="1"].active a {
-    background-color: #4f77cb;
+    background-color: #006633;
 }
 .nav-pills > li[data-slide-to="2"].active a {
-    background-color: #d11e4f;
+    background-color: #b4d9a7;
+}
+.blue {
+  background-color: #a7c8db;
+  height: 400px;
+}
+.green {
+  background-color: #b4d9a7;
+  height:400px;
+}
+.white {
+  background-color: #ffffff;
+  height:400px;
+}
+.green.img {
+  height: 350px;
+  width: 250px;
+  padding: 11px;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  border: 1px solid #efefef;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10x;
 }
