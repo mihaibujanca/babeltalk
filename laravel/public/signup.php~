@@ -42,38 +42,41 @@
     echo $emailErr;
   }
 
-  // check passwords match
-  if (strcmp($password, $reenterpassword) !== 0) {
-    echo "Passwords do not match";
-  }
-
-  echo $firstname; 
-  echo $lastname;
-  echo $email; 
-  echo $password; 
-  echo $reenterpassword;
-  echo $language;
-
-  // check if the user is in the database
-  $query = "SELECT * FROM users WHERE email = '$email'";
-  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-  
-  // check number of rows of results for query
-  $num_row = mysqli_num_rows($result);
- 
-  // if a row is returned, the user must already exist 
-  if($num_row == 1)
+  else
   {
-    echo "User already exists with the email. ";
-  }
-  
-  else if($num_row == 0)
-  {
-    $insert_row = $mysqli->query("INSERT INTO users (first_name, last_name, password, email, language) 
-                                 VALUES  ('$firstname', '$lastname', '$password', '$email', '$language')");
+      // check passwords match
+      if (strcmp($password, $reenterpassword) !== 0) {
+	echo "Passwords do not match";
+      }
+
+      echo $firstname; 
+      echo $lastname;
+      echo $email; 
+      echo $password; 
+      echo $reenterpassword;
+      echo $language;
+
+      // check if the user is in the database
+      $query = "SELECT * FROM users WHERE email = '$email'";
+      $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+      
+      // check number of rows of results for query
+      $num_row = mysqli_num_rows($result);
+    
+      // if a row is returned, the user must already exist 
+      if($num_row == 1)
+      {
+	echo "User already exists with the email. ";
+      }
+      
+      else if($num_row == 0)
+      {
+	$insert_row = $mysqli->query("INSERT INTO users (first_name, last_name, password, email, language) 
+				    VALUES  ('$firstname', '$lastname', '$password', '$email', '$language')");
+
+      }
 
   }
-  
 
 
 
