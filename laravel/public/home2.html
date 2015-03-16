@@ -38,7 +38,7 @@
 <body>
   <?php
   $cookie_name="id";
-  if(!isset($_COOKIE[$cookie_name])) {
+  if(isset($_COOKIE[$cookie_name])) {
 	header("Location: http://10.2.234.76/babeltalk/laravel/public/Home1.html");
   }
   ?>
