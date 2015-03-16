@@ -54,7 +54,6 @@
  
      // concatinates with nothing to make string
      $dbpassword = $row['password'];
-     echo $dbpassword;
 
      if($dbpassword == $password)
      {
