@@ -58,7 +58,11 @@
 
      if($dbpassword == $password)
      {
-       echo "They are the same password";
+       header("Location: http://10.2.234.76/babeltalk/laravel/public/Home1.html");
+     }
+     else
+     {
+       echo "Incorrect password, please enter the correct password.;
      }
 
   }
