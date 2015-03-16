@@ -57,12 +57,15 @@
 
      if($dbpassword == $password)
      {
-        
-        $query = "SELECT id FROM users WHERE email = '$email'";
-	$result = mysqli_query($mysqli, $query) or die($mysqli_error());
-	$cookie_name = "id";
-	$result = $mysqli->real_escape_string($result);
-	$cookie_value = $result;
+     $query = "SELECT id FROM users WHERE email = '$email'";
+     $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+     $row = $result->fetch_assoc(); 
+     // concatinates with nothing to make string
+     $cookie_value = $row['id'];
+   
+     $cookie_name = "id";
+     $cookie_value = $mysqli->real_escape_string($cookie_value);
+
 	
 	
 	
@@ -74,12 +77,12 @@
 	  /* Cookie expires when browser closes */
 	  setcookie($cookie_name, $cookie_value, time()+60*60*24*365, "/");
 	}
-	// header("Location: http://10.2.234.76/babeltalk/laravel/public/Home1.html");
+	header("Location: http://10.2.234.76/babeltalk/laravel/public/Home1.html");
 	 
 	  $cookie_name="id";
 	  if(!isset($_COOKIE[$cookie_name])) {
 	    echo "success";
-	    // header("Location: http://10.2.234.76/babeltalk/laravel/public/Home1.html");
+	    
   }
 
      }
