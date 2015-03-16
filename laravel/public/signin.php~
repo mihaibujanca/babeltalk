@@ -54,7 +54,7 @@
  
      // concatinates with nothing to make string
      $dbpassword = $row['password'];
-     echo $dbpassword
+     echo $dbpassword;
 
   }
 ?>
