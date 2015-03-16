@@ -22,9 +22,6 @@
   $email = $_POST["email"];
   $password = $_POST["password"];
 
-  $email = $mysqli ->real_escape_string($email);
-  $password = $mysqli ->real_escape_string($reenterpassword);
-
   // check that email is valid
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
   {
@@ -56,13 +53,8 @@
      $row = $result->fetch_assoc();    
  
      // concatinates with nothing to make string
-     $dbpassword = $row['password'];
-
-     if($dbpassword == 
-
-    
-
-     echo $query;
+     $dbpassword = ' ',$row['password']
+     echo $dbpassword
 
   }
 ?>
