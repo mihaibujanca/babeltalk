@@ -29,7 +29,7 @@
   
   $num_row = mysqli_num_rows($result);
   
-  echo $num_row
+  echo $num_row;
   // check number of rows of results for query
    // if a row is returned, the user must already exist 
   if($num_row == 0)
@@ -45,8 +45,8 @@
      $query = "SELECT password FROM users WHERE email = '$email'";
      $result = mysqli_query($mysqli, $query) or die($mysqli_error());
      
-     echo $query
-     echo $result      
+     echo $query;
+     echo $result;   
      
   }
 ?>
