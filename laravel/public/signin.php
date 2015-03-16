@@ -58,8 +58,8 @@
      if($dbpassword == $password)
      {
         
-        $query = "SLECT id FROM 'users' WHERE email = $email";
-	$result = mysqli_query($mysqli,$query)or die(mysqli_error());
+        $query = "SLECT id FROM users WHERE email = $email";
+	$result = mysqli_query($mysqli, $query) or die($mysqli_error());
 	$cookie_name = "id";
 	$cookie_value = $result;
 
