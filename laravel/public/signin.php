@@ -62,7 +62,7 @@
      }
      else
      {
-       echo "Incorrect password, please enter the correct password.;
+       echo "Incorrect password, please enter the correct password.";
      }
 
   }
