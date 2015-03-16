@@ -58,7 +58,7 @@
 
      if($dbpassword == $password)
      {
-       echo "They are the same password"
+       echo "They are the same password";
      }
 
   }
