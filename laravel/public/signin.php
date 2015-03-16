@@ -71,13 +71,13 @@
 	  setcookie($cookie_name, $cookie_value, time()+60*60*24*365, "/");
 	}
 	// header("Location: http://10.2.234.76/babeltalk/laravel/public/Home1.html");
-	  <?php
+	 
 	  $cookie_name="id";
 	  if(!isset($_COOKIE[$cookie_name])) {
 	    echo "success";
 	    // header("Location: http://10.2.234.76/babeltalk/laravel/public/Home1.html");
   }
-  ?>
+
      }
      else
      {
