@@ -49,7 +49,6 @@
      echo $row['password'];
 
      echo $query;
-     echo $dbpassword;
-     
+
   }
 ?>

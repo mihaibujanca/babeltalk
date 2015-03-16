@@ -1,3 +1,8 @@
+<html> 
+<head>
+</head>
+<body>
+
 <?php
 
   // load configuration for database
@@ -45,10 +50,13 @@
      $query = "SELECT password FROM users WHERE email = '$email'";
      $result = mysqli_query($mysqli, $query) or die($mysqli_error());
 
-     $row = $result->fetch_assoc()     
-     echo $row['password'];
+     $row = $result->fetch_assoc();    
+ 
+     echo ' ',$row['password'];
 
      echo $query;
 
   }
 ?>
+</body>
+</html> 
