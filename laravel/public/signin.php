@@ -57,7 +57,20 @@
 
      if($dbpassword == $password)
      {
-       header("Location: http://10.2.234.76/babeltalk/laravel/public/Home1.html");
+        header("Location: http://10.2.234.76/babeltalk/laravel/public/Home1.html");
+        $query = "SLECT id FROM 'users' WHERE email = $email";
+	$result = mysqli_query($mysqli,$query)or die(mysqli_error());
+	$cookie_name = "id";
+	$cookie_value = $result;
+
+	if (isset($_POST['rememberme'])) {
+	  /* Set cookie to last 1 year */
+	  setcookie($cookie_name, $cookie_value, time()+60*60*24*365, "/");
+	} else {
+	  /* Cookie expires when browser closes */
+	  setcookie($cookie_name, $cookie_value, time()+60*60*24*365, "/");
+	}
+
      }
      else
      {
