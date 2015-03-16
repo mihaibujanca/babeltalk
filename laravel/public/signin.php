@@ -52,9 +52,9 @@
 
      $row = $result->fetch_assoc();    
  
-     echo ' ',$row['password'];
-
-     echo $query;
+     // concatinates with nothing to make string
+     $dbpassword = ' ',$row['password']
+     echo $dbpassword
 
   }
 ?>

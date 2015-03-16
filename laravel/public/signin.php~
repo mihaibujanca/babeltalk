@@ -1,3 +1,8 @@
+<html> 
+<head>
+</head>
+<body>
+
 <?php
 
   // load configuration for database
@@ -16,6 +21,9 @@
 
   $email = $_POST["email"];
   $password = $_POST["password"];
+
+  $email = $mysqli ->real_escape_string($email);
+  $password = $mysqli ->real_escape_string($reenterpassword);
 
   // check that email is valid
   if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
@@ -45,10 +53,18 @@
      $query = "SELECT password FROM users WHERE email = '$email'";
      $result = mysqli_query($mysqli, $query) or die($mysqli_error());
 
-     $row = $result->fetch_assoc()     
-     echo $row['password'];
+     $row = $result->fetch_assoc();    
+ 
+     // concatinates with nothing to make string
+     $dbpassword = $row['password'];
+
+     if($dbpassword == 
+
+    
 
      echo $query;
 
   }
 ?>
+</body>
+</html> 
