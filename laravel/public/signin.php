@@ -53,8 +53,8 @@
      $row = $result->fetch_assoc();    
  
      // concatinates with nothing to make string
-     $dbpassword = $row['password']
-     echo $dbpassword
+     $dbpassword = $row['password'];
+     echo $dbpassword;
 
   }
 ?>
