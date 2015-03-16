@@ -61,8 +61,12 @@
         $query = "SELECT id FROM users WHERE email = '$email'";
 	$result = mysqli_query($mysqli, $query) or die($mysqli_error());
 	$cookie_name = "id";
+	$result = $mysqli->real_escape_string($result);
 	$cookie_value = $result;
-
+	
+	
+	
+	
 	if (isset($_POST['rememberme'])) {
 	  /* Set cookie to last 1 year */
 	  setcookie($cookie_name, $cookie_value, time()+60*60*24*365, "/");
