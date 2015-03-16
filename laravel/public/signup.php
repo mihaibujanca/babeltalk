@@ -67,7 +67,7 @@
     echo "User already exists with the email. ";
   }
   
-  if($num_row == 0)
+  else if($num_row == 0)
   {
     $insert_row = $mysqli->query("INSERT INTO users (first_name, last_name, password, email, language) 
                                  VALUES  ('$firstname', '$lastname', '$password', '$email', '$language')");
