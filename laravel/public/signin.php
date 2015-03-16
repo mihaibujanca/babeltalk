@@ -44,13 +44,12 @@
   {
      $query = "SELECT password FROM users WHERE email = '$email'";
      $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-     $row = mysql_fetch_array($result); 
+     $row = $result->fetch_assoc()     
      $dbpassword = $row['password'];
 
 
      echo $query;
      echo $dbpassword;
-
      
   }
 ?>
