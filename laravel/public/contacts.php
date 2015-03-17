@@ -31,14 +31,16 @@
   $id = $_COOKIE[$cookie_name];
   echo "your id";
   echo $id;
-  $query = "SELECT user2ID FROM friends WHERE user1ID = '$id'";
+  $query = "SELECT * FROM friends WHERE user1ID = '$id'";
+  // $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+  // echo $result;
   
-  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-  
-  while ($list = mysqli_fetch_assoc($result)) {
-    echo 'Label 1: ' . $list['user1ID'] . '<br>';
+
+  while($row_data = mysql_fetch_array($query))
+  {
+    $friend_id = $row_data['user2ID'];
+    echo $friend_id;
   }
-  
 
 
 ?>
