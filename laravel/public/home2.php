@@ -7,9 +7,9 @@
 
 	    // set the expiration date to one hour ago
 	    setcookie($cookie_name, "", time() - 3600);
-?>
+  ?>
   
-
+ <?php echo
 
 <html lang="en">
 
@@ -68,7 +68,7 @@
                     <div class="slide-1"></div>
                     <div class="hero">
                         <hgroup>
-                            <h1>We are Babel Talk</h1>
+                            <h1>We arhtmle Babel Talk</h1>
                         </hgroup>
                         <!--<button class="btn btn-hero btn-lg" role="button"><a href="AboutUs.html">About Us</a></button>-->
                         <button class="btn btn-hero btn-lg specialfont" href="#signup" data-toggle="modal" data-target=".bs-modal-sm" role="button">Sign In|Register</button>
@@ -253,3 +253,5 @@
   <script src="bootstrap.min.js"></script>
 </body>
 </html>
+
+; ?>
