@@ -9,8 +9,7 @@
   exit();
   ?>
 
-
-
+<!DOCTYPE html>
 <html lang="en">
 
 
@@ -70,7 +69,16 @@
                     <div class="slide-1"></div>
                     <div class="hero">
                         <hgroup>
-                            <h1>We arhtmle Babel Talk</h1>
+                            <h1>We are Babel Talk 
+                            <?php
+			    $cookie_name="id";
+			    if(isset($_COOKIE[$cookie_name])) {
+			    echo "you are logged in"; }
+			    ?>
+			    
+			    
+			    
+			    </h1>
                         </hgroup>
                         <!--<button class="btn btn-hero btn-lg" role="button"><a href="AboutUs.html">About Us</a></button>-->
                         <button class="btn btn-hero btn-lg specialfont" href="#signup" data-toggle="modal" data-target=".bs-modal-sm" role="button">Sign In|Register</button>
