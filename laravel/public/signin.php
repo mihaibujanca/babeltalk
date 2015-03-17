@@ -76,7 +76,7 @@
 	  /* Cookie expires when browser closes */
 	  setcookie($cookie_name, $cookie_value, time()+60*60*24*365, "/");
 	}
-	header("Location: http://10.2.234.76/babeltalk/laravel/public/Home1.html");
+	header("Location: http://10.2.234.107/babeltalk/laravel/public/Home1.html");
 	 
 	  $cookie_name="id";
 	  if(!isset($_COOKIE[$cookie_name])) {
