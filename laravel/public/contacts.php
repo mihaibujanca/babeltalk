@@ -32,17 +32,21 @@
   echo "your id";
   echo $id;
   $query = "SELECT * FROM friends WHERE user1ID = '$id'";
-  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-
+  // $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+  $result = $mysqli->query($query);
   echo "now";
 
-  while($row_data = mysql_fetch_array($result))
+  while($row = $result->fetch_array())
   {
-    $friend_id = $row_data['user2ID'];
-    echo $friend_id;
+    $rows[] = $row;
   }
 
+  foreach($rows as $row)
+  {
+    echo $row['user1ID'];
+  }
 
+  $result->close();
 ?>
 
 
