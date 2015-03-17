@@ -1,6 +1,15 @@
 
-  <?php header( 'Location: http://10.2.234.107/babeltalk/laravel/public/Home1.html' ) ;
-  exit; ?>
+
+  <?php
+  $cookie_name="id";
+	  if(isset($_COOKIE[$cookie_name])) {
+	    header("Location: http://10.2.234.107/babeltalk/laravel/public/Home1.html");
+
+	    // set the expiration date to one hour ago
+	    setcookie($cookie_name, "", time() - 3600);
+?>
+  
+
 
 <html lang="en">
 
