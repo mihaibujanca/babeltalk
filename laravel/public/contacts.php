@@ -53,6 +53,7 @@
   }
   
   echo "<ul>";
+  
   foreach($rows as $row)
   {
     echo "<li>" . $row['email'] . "</li>";
