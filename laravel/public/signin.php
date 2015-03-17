@@ -34,7 +34,6 @@
   
   $num_row = mysqli_num_rows($result);
   
-  echo $num_row;
   // check number of rows of results for query
    // if a row is returned, the user must already exist 
   if($num_row == 0)
