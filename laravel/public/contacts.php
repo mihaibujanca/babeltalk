@@ -39,10 +39,7 @@
     echo 'Label 1: ' . $list['user1ID'] . '<br>';
   }
   
-  $row = $result->fetch_assoc(); 
-  // concatinates with nothing to make string
-  if 
-  echo '',$row['user2ID'];
+
 
 ?>
 
