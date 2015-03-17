@@ -34,8 +34,14 @@
   $query = "SELECT user2ID FROM friends WHERE user1ID = '$id'";
   
   $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+  
+  while ($list = mysqli_fetch_assoc($result)) {
+    echo 'Label 1: ' . $list['user1ID'] . '<br>';
+  }
+  
   $row = $result->fetch_assoc(); 
   // concatinates with nothing to make string
+  if 
   echo '',$row['user2ID'];
 
 ?>
