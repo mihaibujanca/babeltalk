@@ -40,12 +40,17 @@
 
   while($row = $result->fetch_array())
   {
-    $query = "SELECT * FROM users WHERE id = '$row['user2ID']'";
-    $row2 = $result->fetch_assoc();    
-    $email = $row2['email'];
     $rows[] = $row;
   }
 
+  foreach($rows as $row)
+  {
+    $query = "SELECT * FROM users WHERE id = '$row['user2ID']'";
+    $row2 = $result->fetch_assoc();    
+    $email = $row2['email'];
+    $rows[] = $email;
+  }
+  
   echo "<ul>";
   foreach($rows as $row)
   {
