@@ -4,7 +4,7 @@
 	    header("Location: http://10.2.234.107/babeltalk/laravel/public/Home1.html");
 
 	    // set the expiration date to one hour ago
-	    setcookie($cookie_name, "", time() - 3600);
+	    //setcookie($cookie_name, "", time() - 3600);
 	    }
   exit();
   ?>
@@ -72,10 +72,12 @@
                             <h1>We are Babel Talk 
                             <?php
 			    $cookie_name="id";
-			    if(isset($_COOKIE[$cookie_name])) {
-			    echo "you are logged in"; }
-			    ?>
-			    
+			    if(isset($_COOKIE[$cookie_name])) 
+			    {
+			    echo "you are logged in"; 
+			    }
+			    echo "blah";
+			    ?>		    
 			    
 			    
 			    </h1>
