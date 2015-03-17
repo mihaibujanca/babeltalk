@@ -136,7 +136,7 @@
                 <div class="control-group">
                   <label class="control-label" for="rememberme"></label>
                   <div class="controls">
-                    <label class="checkbox inline col-md-offset-1" for="rememberme-0">
+                    <label class="checkbox inline col-md-offset-2" for="rememberme-0">
                       <input type="checkbox" name="rememberme" id="rememberme-0" value="Remember me">
                       Remember me
                     </label>
@@ -187,7 +187,7 @@
                   <label class="control-label" for="password">Password:</label>
                   <div class="controls">
                     <input id="password" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
-                    <em>1-8 Characters</em>
+                    <!-- we are not enforcing this restriction <em>1-8 Characters</em> -->
                   </div>
                 </div>
                 
