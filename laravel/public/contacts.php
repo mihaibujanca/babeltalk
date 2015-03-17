@@ -33,7 +33,7 @@
   echo $id;
   $query = "SELECT * FROM friends WHERE user1ID = '$id'";
   $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-  echo $result;
+
   echo "now";
 
   while($row_data = mysql_fetch_array($result))
