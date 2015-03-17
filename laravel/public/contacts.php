@@ -47,6 +47,7 @@
   {
     $user2ID = $row['user2ID'];
     $query = "SELECT * FROM users WHERE id = '$user2ID'";
+    $result = $mysqli->query($query);
     $row2 = $result->fetch_assoc();    
     $email = $row2['email'];
     $rows[] = $email;
@@ -55,7 +56,7 @@
   echo "<ul>";
   foreach($rows as $row)
   {
-    echo "<li>" . $row['user2ID'] . "</li>";
+    echo "<li>" . $row['email'] . "</li>";
   }
   echo "</ul>";
   $result->close();
