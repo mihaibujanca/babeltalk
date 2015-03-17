@@ -9,7 +9,7 @@
 	    setcookie($cookie_name, "", time() - 3600);
   ?>
   
- <?php echo
+
 
 <html lang="en">
 
@@ -254,4 +254,3 @@
 </body>
 </html>
 
-; ?>
