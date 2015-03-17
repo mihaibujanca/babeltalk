@@ -49,8 +49,7 @@
     $query = "SELECT * FROM users WHERE id = '$user2ID'";
     $result = $mysqli->query($query);
     $row2 = $result->fetch_assoc();    
-    $email = $row2['email'];
-    $rows[] = $email;
+    $rows[] = $row2;
   }
   
   echo "<ul>";
