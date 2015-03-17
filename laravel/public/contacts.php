@@ -17,6 +17,8 @@
 <br>
 
 <?php
+  // code to load and output friends list
+  
   // load configuration for database
   require_once('config.inc.php'); 
   // connect to database
@@ -34,18 +36,22 @@
   $query = "SELECT * FROM friends WHERE user1ID = '$id'";
   // $result = mysqli_query($mysqli, $query) or die($mysqli_error());
   $result = $mysqli->query($query);
-  echo "now";
+  
 
   while($row = $result->fetch_array())
   {
+    $query = "SELECT * FROM users WHERE id = '$row['user2ID']'";
+    $row2 = $result->fetch_assoc();    
+    $email = $row2['email'];
     $rows[] = $row;
   }
 
+  echo "<ul>";
   foreach($rows as $row)
   {
-    echo $row['user2ID'];
+    echo "<li>" . $row['user2ID'] . "</li>";
   }
-
+  echo "</ul>";
   $result->close();
 ?>
 
