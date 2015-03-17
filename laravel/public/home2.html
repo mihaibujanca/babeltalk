@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+  <?php
+  /* load configuration for database
+  require_once('config.inc.php');
+  $cookie_name="id";
+	  if(isset($_COOKIE[$cookie_name])) {
+	    header("Location: http://10.2.234.107/babeltalk/laravel/public/Home1.html");
+	    
+  } */
+  header("Location: http://10.2.234.107/babeltalk/laravel/public/Home1.html");
+  ?>
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -36,16 +46,7 @@
     <link rel="stylesheet" href="css/signupmodal.css"/>
 </head>
 <body>
-  <?php
-  /* load configuration for database
-  require_once('config.inc.php');
-  $cookie_name="id";
-	  if(isset($_COOKIE[$cookie_name])) {
-	    header("Location: http://10.2.234.76/babeltalk/laravel/public/Home1.html");
-	    
-  } */
-  header("Location: http://10.2.234.76/babeltalk/laravel/public/Home1.html");
-  ?>
+
     <div id="wrap">
         <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
             <!-- Overlay -->
@@ -67,16 +68,17 @@
                             <h1>We are Babel Talk</h1>
                         </hgroup>
                         <!--<button class="btn btn-hero btn-lg" role="button"><a href="AboutUs.html">About Us</a></button>-->
-                        <button class="container btn btn-cobra btn-lg col-md-2 col-md-offset-5 specialfont" href="#signup" data-toggle="modal" data-target=".bs-modal-sm" role="button">Sign In|Register</button>
+                        <button class="btn btn-hero btn-lg specialfont" href="#signup" data-toggle="modal" data-target=".bs-modal-sm" role="button">Sign In|Register</button>
                     </div>
                 </div>
                 <div class="item slides">
                     <div class="slide-2"></div>
                     <div class="hero">
                         <hgroup>
-                            <h1>We are smart</h1>
-                            <h3>...</h3>
+                            <h1>Shrinking the world</h1>
+                            <p>Bringing people together</p>
                         </hgroup>
+                        <button class="btn btn-hero btn-lg specialfont" href="#signup" data-toggle="modal" data-target=".bs-modal-sm" role="button">Sign In|Register</button>
                         <button class="btn btn-hero btn-lg specialfont" role="button" >See all features</button>
                     </div>
                 </div>
@@ -84,9 +86,10 @@
                     <div class="slide-3"></div>
                     <div class="hero">
                         <hgroup>
-                            <h1>We are amazing</h1>
-                            <h3>...</h3>
+                            <h1>We are simple</h1>
+                            <p>But we're still here for you</p>
                         </hgroup>
+                        <button class="btn btn-hero btn-lg specialfont" href="#signup" data-toggle="modal" data-target=".bs-modal-sm" role="button">Sign In|Register</button>
                         <button class="btn btn-hero btn-lg specialfont" role="button" href="Home1.html">About Us</button>
                     </div>
                 </div>
