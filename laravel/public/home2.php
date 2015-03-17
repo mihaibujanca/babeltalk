@@ -1,7 +1,7 @@
 
 
 
-
+<!DOCTYPE html>
 <html lang="en">
 
   <?php
@@ -143,7 +143,6 @@
                   <label class="control-label" for="rememberme"> Remember me:</label>
                   <div class="controls">
                       <input type="checkbox" name="rememberme" id="rememberme-0" value="Remember me">
-                    </label>
                   </div>
                 </div>
 
