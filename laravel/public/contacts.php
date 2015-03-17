@@ -29,6 +29,8 @@
   
   $cookie_name = "id";
   $id = $_COOKIE[$cookie_name];
+  echo "your id";
+  echo $id;
   $query = "SELECT user2ID FROM friends WHERE user1ID = '$id'";
   
   $result = mysqli_query($mysqli, $query) or die($mysqli_error());
