@@ -1,5 +1,9 @@
 
 
+
+
+<html lang="en">
+
   <?php
   $cookie_name="id";
 	  if(isset($_COOKIE[$cookie_name])) {
@@ -9,10 +13,6 @@
 	    setcookie($cookie_name, "", time() - 3600);
   ?>
   
-
-
-<html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
