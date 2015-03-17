@@ -45,7 +45,8 @@
 
   foreach($rows as $row)
   {
-    $query = "SELECT * FROM users WHERE id = '$row['user2ID']'";
+    $user2ID = $row['user2ID'];
+    $query = "SELECT * FROM users WHERE id = '$user2ID'";
     $row2 = $result->fetch_assoc();    
     $email = $row2['email'];
     $rows[] = $email;
