@@ -43,7 +43,7 @@
 
   foreach($rows as $row)
   {
-    echo $row['user1ID'];
+    echo $row['user2ID'];
   }
 
   $result->close();
