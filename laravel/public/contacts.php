@@ -150,9 +150,8 @@
 	  $row = $result -> fetch_assoc();
 	  
 	  printFlag($row['language']);	  
-	  echo "<br>";
-	  echo "<h3> " . $row['first_name'] . $row['last_name'] . "</h3> <br>";
-	  echo $row['email'] . "<br>";
+	  echo "<h3> " . $row['first_name'] . $row['last_name'] . "</h3> ";
+	  echo "<p>" . $row['email'] . "</p> <br>";
 	    
 	  }  
 	}
@@ -193,9 +192,8 @@
 	      if ($user2ID != $id)
 	      {
 		printFlag($row2['language']);	  
-		echo "<br>";
-		echo "<h3> " . $row2['first_name'] . $row2['last_name'] . "</h3> <br>";
-		echo $row2['email'] . "<br>";
+		echo "<h3> " . $row2['first_name'] . $row2['last_name'] . "</h3>";
+		echo "<p>" . $row2['email'] . "</p> <br>";
 		echo "<hr>";
 
 	      }
