@@ -22,7 +22,9 @@
   // store variables 
 
   $firstname = $_POST["firstname"];
+  $firstname = ucfirst(strtolower($firstname));
   $lastname = $_POST["lastname"];
+  $lastname = ucfirst(strtolower($lastname));
   $email = $_POST["email"];
   $password = $_POST["password"];
   $reenterpassword = $_POST["reenterpassword"];
