@@ -1,15 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
   <?php
-  /* load configuration for database
-  require_once('config.inc.php');
   $cookie_name="id";
 	  if(isset($_COOKIE[$cookie_name])) {
 	    header("Location: http://10.2.234.107/babeltalk/laravel/public/Home1.html");
-	    
-  } */
-  header("Location: http://10.2.234.107/babeltalk/laravel/public/Home1.html");
+
+	    // set the expiration date to one hour ago
+	    //setcookie($cookie_name, "", time() - 3600);
+	    }
+
   ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+  
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -250,3 +254,4 @@
   <script src="bootstrap.min.js"></script>
 </body>
 </html>
+
