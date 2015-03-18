@@ -59,23 +59,23 @@
      $query = "SELECT id FROM users WHERE email = '$email'";
      $result = mysqli_query($mysqli, $query) or die($mysqli_error());
      $row = $result->fetch_assoc(); 
-     // concatinates with nothing to make string
-     $cookie_value = $row['id'];
    
-     $cookie_name = "id";
-     $cookie_value = $mysqli->real_escape_string($cookie_value);
 
+     $id = $mysqli->real_escape_string($row['id']);
+     $firstname = $mysqli->real_escape_string($row['firstname']);
+     $lastname = $mysqli->real_escape_string($row['lastname']);
+     $language = $mysqli->real_escape_string($row['language']);
 	
-	
-	
-	
+	// set id as cookie
 	if (isset($_POST['rememberme'])) {
 	  /* Set cookie to last 1 year */
-	  setcookie($cookie_name, $cookie_value, time()+60*60*24*365, "/");
+	  setcookie("id", $id, time()+60*60*24*365, "/");
 	} else {
 	  /* Cookie expires when browser closes */
-	  setcookie($cookie_name, $cookie_value, time()+60*60*24*365, "/");
+	  setcookie("id", $id, false,"/");
 	}
+	setcookie("firstname", $firstname, time()+60*60*24*365, "/");
+	setcookie("firstname", $lastname, time()+60*60*24*365, "/");
 	header("Location: http://10.2.234.107/babeltalk/laravel/public/home.html");
 	 
 	  $cookie_name="id";
@@ -87,7 +87,7 @@
      }
      else
      {
-       echo "Incorrect password, please enter the correct password.";
+       header("Location: http://10.2.234.107/babeltalk/laravel/public/index.html");
      }
 
   }
