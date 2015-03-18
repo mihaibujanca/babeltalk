@@ -175,7 +175,8 @@
 	if(isset($_POST['add']))
 	{
 	  echo "adding a friend";
-	  $query = "INSERT INTO friends (user1ID, user2ID) VALUES ($id , $_POST['add'])";
+	  $idtoadd = $_POST['add'];
+	  $query = "INSERT INTO friends (user1ID, user2ID) VALUES ('$id' ,'$idtoadd')";
 	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
 	
 	} // is set add
