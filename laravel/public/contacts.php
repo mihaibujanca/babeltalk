@@ -51,61 +51,69 @@
 <body>
     <!-- Wrap all page content here -->
     <div id="wrap">
-        <div class="container navbar">
-            <header>
-                <nav class="navbar-default navbar-fixed-top">
-                    <div class="container-fluid">
-                        <!-- Brand and toggle get grouped for better mobile display -->
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-                            <a class="navbar-brand" href="Home1.html">Babel Talk</a>
-                        </div>
+	<div class="container navbar">
+	    <header>
+		<nav class="navbar-default navbar-fixed-top">
+		    <div class="container-fluid">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+			    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			    </button>
+			    <a class="navbar-brand" href="Home1.html">Babel Talk</a>
+			</div>
 
-                        <!-- Collect the nav links, forms, and other content for toggling -->
-                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                          <ul class="nav nav-pills navbar-right">
-                                <li role="presentation" class="active" style="text-align: center;"> Chat <a href="chat.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-comment" aria-hidden="true"></span></a></li>
-                                <li role="presentation" class="active" style="text-align: center;"> Friends <a href="contacts.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-                                <li role="presentation" class="active" style="text-align: center;"> Home <a href="Home1.html"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
-                                <li role="presentation" class="active" style="text-align: center;"> Quit <a href="signout.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
-                          </ul>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+			  <ul class="nav nav-pills navbar-right">
+				<li role="presentation" class="active" style="text-align: center;"> Chat <a href="chat.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-comment" aria-hidden="true"></span></a></li>
+				<li role="presentation" class="active" style="text-align: center;"> Friends <a href="contacts.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+				<li role="presentation" class="active" style="text-align: center;"> Home <a href="Home1.html"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+				<li role="presentation" class="active" style="text-align: center;"> Quit <a href="signout.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+			  </ul>
 			  
 
-                            <!-- <ul class="nav navbar-nav navbar-right">                               
-                                <li><a href="contacts.php">Contacts</a></li>
-                                <li><a href="signout.php">Sign Out</a></li> -->
-                            </ul>
-                        </div><!-- /.navbar-collapse -->
-                    </div><!-- /.container-fluid -->
-                </nav>
-            </header>
-        </div>
+			    <!-- <ul class="nav navbar-nav navbar-right">                               
+				<li><a href="contacts.php">Contacts</a></li>
+				<li><a href="signout.php">Sign Out</a></li> -->
+			    </ul>
+			</div><!-- /.navbar-collapse -->
+		    </div><!-- /.container-fluid -->
+		</nav>
+	    </header>
+	</div>
 
-        <!-- Begin page content -->
-        <div class="container">
-                <div class="page-header">
-                <h1>Friends</h1>
-        </div>
-        
-        <div class="container">
-      <h2>Add a friend by email</h2>
-      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
-      <div id="demo" class="collapse in">
-       <form name="form1" method="post" action="contacts.php">
+	<!-- Begin page content -->
+	<div class="container">
+	  <div class="page-header">
+	    <h1>Friends</h1>
+	  </div>
+	</div>
+	
+      <div class="container">
+	<div class="panel panel-default">
+	  <div class="panel-heading">
+	    <h4 class="panel-title">
+	      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Collapsible Group 1</a>
+	    </h4>
+	  </div>
+	  <div id="collapse1" class="panel-collapse collapse">
+	    <div class="panel-body">
+	      <form name="form1" method="post" action="contacts.php">
 		<input name="search" type="text" /> 
 		<input type="submit" name="submit" value="search" /> 
-	</form>
-        
+	      </form>            
+	    </div>
+	  </div>
+	</div>        
       </div>
     </div>
 	
 
-
+	
 	
 	
 	
@@ -190,7 +198,7 @@
 	    echo "<button type='submit' name='add' value='".$row['id']."'>" . "+ add " . $row['first_name'] . "</button>"; ; 
 	    echo "</form>";
 	  }
-	 }
+	}
 	}
 	} // strlen > 5
 	} // is set search
@@ -274,7 +282,7 @@
       }
       ?>
 
-        </div>
+	</div>
     </div>
 
 
