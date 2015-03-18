@@ -164,7 +164,7 @@
 	    echo "<form name='addfriend' method='post' action='contacts.php'>";
 	    // echo "<input type='hidden' name='add' value=". $toaddID ."/>"; 
 	    echo "<input type='hidden' name='add' value='24'/>"; 
-	    echo "<button type='submit' name='add' value='".$row['id']."'>" . $toaddID . "</button>"; ; 
+	    echo "<button type='submit' name='add' value='".$row['id']."'>" . "+ add " . $row['first_name'] . "</button>"; ; 
 	    echo "</form>";
 	  }
 	}
@@ -178,6 +178,8 @@
 	  echo "adding a friend";
 	  $idtoadd = $_POST['add'];
 	  $query = "INSERT INTO friends (user1ID, user2ID) VALUES ('$id' ,'$idtoadd')";
+	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+	  $query = "INSERT INTO friends (user1ID, user2ID) VALUES ('$idtoadd' ,'$id')";
 	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
 	
 	} // is set add
