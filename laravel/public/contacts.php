@@ -154,11 +154,11 @@
 	  printFlag($row['language']);	  
 	  
 	  if ($row['id'] == $id){	  
-	    echo "<h3> " . $row['first_name'] . " " . $row['last_name'] . " (you) " . "</h3> "
+	    echo "<h3> " . $row['first_name'] . " " . $row['last_name'] . " (you) " . "</h3> ";
 	    echo "<p>" . $row['email'] . "</p> <br>";
 	  }  
 	  else {
-	    echo "<h3> " . $row['first_name'] . " " . $row['last_name']  . "</h3> "
+	    echo "<h3> " . $row['first_name'] . " " . $row['last_name']  . "</h3> ";
 	    echo "<p>" . $row['email'] . "</p> <br>";
 	    echo "Add user function goes here <br>";
 	  }
