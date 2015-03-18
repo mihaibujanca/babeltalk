@@ -151,8 +151,8 @@
 	  
 	  printFlag($row['language']);	  
 	  echo "<br>";
-	  echo "Name  : " . $row['first_name'] .' '. $row['last_name'] . "<br>";
-	  echo "Email : " . $row['email'] . "<br>";
+	  echo "<h3> " . $row['first_name'] . $row['last_name'] . "</h3> <br>";
+	  echo $row['email'] . "<br>";
 	    
 	  }  
 	}
