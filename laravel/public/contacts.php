@@ -133,6 +133,8 @@
 	    return ;
 	  }
 	  
+	  $cookie_name = "id";
+	  $id= $_COOKIE[$cookie_name];
 	  
 	  // code to search for new friends
 	if(isset($_POST['search']))
@@ -150,12 +152,19 @@
 	  $row = $result -> fetch_assoc();
 	  
 	  printFlag($row['language']);	  
-	  echo "<h3> " . $row['first_name'] . " " . $row['last_name'] . "</h3> ";
-	  echo "<p>" . $row['email'] . "</p> <br>";
-	    
+	  
+	  if ($row['id'] == $id){	  
+	    echo "<h3> " . $row['first_name'] . " " . $row['last_name'] . " (you) " . "</h3> "
+	    echo "<p>" . $row['email'] . "</p> <br>";
 	  }  
+	  else {
+	    echo "<h3> " . $row['first_name'] . " " . $row['last_name']  . "</h3> "
+	    echo "<p>" . $row['email'] . "</p> <br>";
+	    echo "Add user function goes here <br>";
+	  }
 	}
-	}
+	} // strlen > 5
+	} // is set search
 	  
 	  
 	  
@@ -192,7 +201,7 @@
 	      if ($user2ID != $id)
 	      {
 		printFlag($row2['language']);	  
-		echo "<b> " . $row2['first_name'] . " " . $row2['last_name'] . "</b>";
+		echo "<b> " . $row2['first_name'] . " " . $row2['last_name'] . "</b>"
 		echo "<p>" . $row2['email'] . "</p> ";
 		echo "<hr>";
 
