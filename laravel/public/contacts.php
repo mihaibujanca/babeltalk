@@ -106,7 +106,7 @@
 	</form>
 
       <?php
-      if (isset($_POST['id']))
+      if (isset($_COOKIE['id']))
       {
 	  // code to load and output friends list
 	  
