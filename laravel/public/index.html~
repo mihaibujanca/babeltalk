@@ -200,7 +200,7 @@
                 <div class="control-group">
                   <label class="control-label" for="reenterpassword">Re-Enter Password:</label>
                   <div class="controls">
-                    <input id="newreenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" class="input-large" required="" onblur="checkPasswords()" onkeyup="checkPasswords()">
+                    <input id="newreenterpassword" class="form-control" name="reenterpassword" onblur="checkPasswords()" type="password" placeholder="********" class="input-large" required=""  >
                   </div>
                 </div>
                 
