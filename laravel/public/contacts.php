@@ -88,26 +88,9 @@
         <!-- Begin page content -->
         <div class="container">
             <div class="page-header">
-                <h1>Welcome to BABEL TALK</h1>
-                <h3>"Ur real-time messaging language-translation website" <span class="glyphicon glyphicon-globe"></span></h3>
+                <h1>Friends</h1>
             </div>
-            <p class="lead">Lorem ipsum dolor sit amet, ex quo munere utroque, lobortis efficiendi eum an. Est ex scaevola luptatum vituperatoribus, nam corrumpit adipiscing reprimique ad. At ius noluisse detraxit. Ei alia delicatissimi mediocritatem nam, graeci nemore vocent mel ei. In pro zril mollis albucius. Et dictas cetero philosophia usu. Primis diceret eum ne, at ius quas aliquip fabulas, eu quo alia quando inciderint. <code>colafa</code> liped sue dopeum <code>deo man bren</code> preum sati frendi <code>presti mon ami</code>.</p>
-            <p>Back to <a href="../sticky-footer">wherever tf u came 4rm</a></p>
-        </div>
-    </div>
-
-    <div class="container col-md-offset-5">
-        <img src="http://goo.gl/VNbhIo" alt="what we stand for">
-    </div>
-    <!--<img src="http://goo.gl/522Gfc" alt="what we stand for">-->
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="bootstrap.min.js"></script>
-
-
-<?php
+            <?php
   if (isset($_POST['id']))
   {
       // code to load and output friends list
@@ -202,6 +185,17 @@
     }
   } // if logged in
 ?>
+
+        </div>
+    </div>
+
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="bootstrap.min.js"></script>
+
 
 
 </body>
