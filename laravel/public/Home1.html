@@ -72,32 +72,10 @@
         <!-- Begin page content -->
         <div class="container">
             <div class="page-header">
-             <h1> Welcome
-             <?php 
-                $cookie_name="id";
-		if(isset($_COOKIE[$cookie_name])) {
-		  // load configuration for database
-		  require_once('config.inc.php'); 
-		  // connect to database
-		  $mysqli = new mysqli($database_host, $database_user, $database_password, $database_name);
-		  // check for error 
-		  if($mysqli -> connect_error) 
-		  {
-		    die('Connection Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
-		  }
-		  $id= $_COOKIE[$cookie_name];
-		  $query = "SELECT * FROM users WHERE id = '$id'";
-		  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-		  $row = $result -> fetch_assoc();
-		  $name = $row['firstname']
-		  echo $name;  
-		}
-	     ?>
-                 .</h1>
-                <h3>"Ur real-time messaging language-translation website" <span class="glyphicon glyphicon-globe"></span></h3>
+             <h1> BABELTALK </h1>
+                <h3>"The home of real-time language-translation messaging" <span class="glyphicon glyphicon-globe"></span></h3>
             </div>
-            <p class="lead">Lorem ipsum dolor sit amet, ex quo munere utroque, lobortis efficiendi eum an. Est ex scaevola luptatum vituperatoribus, nam corrumpit adipiscing reprimique ad. At ius noluisse detraxit. Ei alia delicatissimi mediocritatem nam, graeci nemore vocent mel ei. In pro zril mollis albucius. Et dictas cetero philosophia usu. Primis diceret eum ne, at ius quas aliquip fabulas, eu quo alia quando inciderint. <code>colafa</code> liped sue dopeum <code>deo man bren</code> preum sati frendi <code>presti mon ami</code>.</p>
-            <p>Back to <a href="../sticky-footer">wherever tf u came 4rm</a></p>
+            
         </div>
     </div>
 
