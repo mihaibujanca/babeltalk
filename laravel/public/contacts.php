@@ -90,33 +90,14 @@
 	<div class="container">
 	  <div class="page-header">
 	    <h1>Friends</h1>
-	  </div>
-	</div>
-	
-      <div class="container">
-	<div class="panel panel-default">
-	  <div class="panel-heading">
-	    <h4 class="panel-title">
-	      <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Add new friend by email</a>
-	    </h4>
-	  </div>
-	  <div id="collapse1" class="panel-collapse collapse">
-	    <div class="panel-body">
-	      <form name="form1" method="post" action="contacts.php">
+	    <p> Search for new friends by email </p>
+	    <form name="form1" method="post" action="contacts.php">
 		<input name="search" type="text" /> 
 		<input type="submit" name="submit" value="search" /> 
-	      </form>            
-	    </div>
+	      </form>    
 	  </div>
-	</div>        
-      
-   
 	
-
-	
-	
-	
-	
+	 
 
       <?php
       if (isset($_COOKIE['id']))
