@@ -160,11 +160,10 @@
 	  else {
 	    echo "<h3> " . $row['first_name'] . " " . $row['last_name']  . "</h3> ";
 	    echo "<p>" . $row['email'] . "</p> <br>";
-	    echo "Add user function goes here <br>";
 	    $toaddID = $row['id'];
 	    echo "<form name='addfriend' method='post' action='contacts.php'>";
 	    echo "<input type='hidden' name='add' value=". $toaddID ."/>"; 
-	    echo "<input type='submit' name='add friend' value='add".$row['first_name']."' />"; 
+	    echo "<input type='submit' name='add friend' value='+ add ".$row['first_name']."' />"; 
 	    echo "</form>";
 	  }
 	}
