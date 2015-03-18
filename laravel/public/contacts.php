@@ -142,7 +142,7 @@
 	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
 	  $num_row = mysqli_num_rows($result);
 	  if($num_row == 0)
-	{ echo "No results found"; }
+	  { echo "<p> No results found </p>"; }
 	  else
 	  { 
 	  $row = $result -> fetch_assoc();
