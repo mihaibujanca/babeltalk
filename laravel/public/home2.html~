@@ -1,6 +1,6 @@
   <?php
   $cookie_name="id";
-	  if(isset($_COOKIE[$cookie_name])) {
+	  if(isset($_COOKIE['id'])) {
 	    header("Location: http://10.2.234.107/babeltalk/laravel/public/Home1.html");
 
 	    // set the expiration date to one hour ago
