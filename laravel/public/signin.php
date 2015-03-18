@@ -62,8 +62,8 @@
    
 
      $id = $mysqli->real_escape_string($row['id']);
-     $firstname = $mysqli->real_escape_string($row['firstname']);
-     $lastname = $mysqli->real_escape_string($row['lastname']);
+     $firstname = $mysqli->real_escape_string($row['first_name']);
+     $lastname = $mysqli->real_escape_string($row['last_name']);
      $language = $mysqli->real_escape_string($row['language']);
 	
 	// set id as cookie
