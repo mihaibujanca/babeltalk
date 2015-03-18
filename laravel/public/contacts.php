@@ -192,8 +192,8 @@
 	      if ($user2ID != $id)
 	      {
 		printFlag($row2['language']);	  
-		echo "<em> " . $row2['first_name'] . " " . $row2['last_name'] . "</em>";
-		echo "<p>" . $row2['email'] . "</p> <br>";
+		echo "<b> " . $row2['first_name'] . " " . $row2['last_name'] . "</b>";
+		echo "<p>" . $row2['email'] . "</p> ";
 		echo "<hr>";
 
 	      }
