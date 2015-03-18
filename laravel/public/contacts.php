@@ -135,14 +135,14 @@
 	// code to search for new friends
 	if(isset($_POST['search']))
 	{
-	if (strlen (($_POST['search'])) > 5)
+	if (strlen (($_POST['search'])) > 1)
 	{
 	  $search = $_POST['search'];
 	  $query = "SELECT * FROM users WHERE email = '$search'";
 	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
 	  $num_row = mysqli_num_rows($result);
 	  if($num_row == 0)
-	  { echo "<p> No results found </p>"; }
+	  { echo "<p> No results found for ".$search." </p>"; }
 	  else
 	  { 
 	  $row = $result -> fetch_assoc();
