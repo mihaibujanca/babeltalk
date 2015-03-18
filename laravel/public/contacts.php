@@ -108,7 +108,7 @@
       <?php
       if (isset($_COOKIE['id']))
       {
-	  // code to load and output friends list
+	  
 	  
 	  // load configuration for database
 	  require_once('config.inc.php'); 
@@ -120,10 +120,37 @@
 	    die('Connection Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
 	  }
 	  
+	  
+	  // code to search for new friends
+	if(isset($_POST['search']))
+	{
+	if (strlen (($_POST['search'])) > 5)
+	{
+	  $search = $_POST['search'];
+	  $query = "SELECT * FROM users WHERE email = '$search'";
+	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+	  $num_row = mysqli_num_rows($result);
+	  if($num_row == 0)
+	{ echo "No results found"; }
+	  else
+	  { 
+	  $row = $result -> fetch_assoc();
+
+	  echo "Name  : " . $row['first_name'] . $row['last_name'] . "<br>";
+	  echo "Email : " . $row['email'] . "<br>";
+	    
+	  }  
+	}
+	}
+	  
+	  
+	  
+	  
+	  
+	  // code to load and output friends list	  
+	  
 	  $cookie_name = "id";
-
 	  $id= $_COOKIE[$cookie_name];
-
 	  echo "<hr>";
 
 	  
@@ -164,27 +191,7 @@
 	  }
 	  $result->close();
 
-	// code to search for new friends
-	if(isset($_POST['search']))
-	{
-	if (strlen (($_POST['search'])) > 5)
-	{
-	  $search = $_POST['search'];
-	  $query = "SELECT * FROM users WHERE email = '$search'";
-	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-	  $num_row = mysqli_num_rows($result);
-	  if($num_row == 0)
-	{ echo "No results found"; }
-	  else
-	  { 
-	  $row = $result -> fetch_assoc();
-
-	  echo "Name  : " . $row['first_name'] . $row['last_name'] . "<br>";
-	  echo "Email : " . $row['email'] . "<br>";
-	    
-	  }  
-	}
-	}
+	
       }
       ?>
 
