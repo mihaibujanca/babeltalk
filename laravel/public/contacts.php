@@ -122,13 +122,13 @@
 	  function printFlag($nation)
 	  {
 	    if($nation == 'fr') {
-	      echo "<img src='images/France.png' alt='en' style='width:50px;height:30px'>";
+	      echo "<img src='images/France.png' alt='en' style='width:30px;height:30px'>";
 	    }
 	    if($nation == 'en') {
-	      echo "<img src='images/England.png' alt='en' style='width:50px;height:30px'>";
+	      echo "<img src='images/England.png' alt='en' style='width:30px;height:30px'>";
 	    }
 	    if($nation == 'ro') {
-	      echo "<img src='images/Romania.png' alt='en' style='width:50px;height:30px'>";
+	      echo "<img src='images/Romania.png' alt='en' style='width:30px;height:30px'>";
 	    }
 	    return ;
 	  }
