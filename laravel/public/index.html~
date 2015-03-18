@@ -200,7 +200,7 @@
                 <div class="control-group">
                   <label class="control-label" for="reenterpassword">Re-Enter Password:</label>
                   <div class="controls">
-                    <input id="newreenterpassword" class="form-control" name="reenterpassword" onblur="checkPasswords()" type="password" placeholder="********" class="input-large" required=""  >
+                    <input id="newreenterpassword" class="form-control" name="reenterpassword" onblur="checkPasswords()" onfocus="checkPasswords()" onkeyup="checkPasswords()" type="password" placeholder="********" class="input-large" required=""  >
                   </div>
                 </div>
                 
@@ -259,24 +259,22 @@
     function checkPasswords()
     { 
 
-      var pass1 = document.getElementByID('newpassword');
-      var pass2 = document.getElementByID('newreenterpassword');
-
+      var pass1 = document.getElementById("newpassword");
+      var pass2 = document.getElementById("newreenterpassword");
+      var button = document.getElementById("confirmsignup");
+ 
       var goodColor = "#66cc66";
       var badColor = "#ff6666";
-
-      alert(pass1.value);
-      alert(pass2.value);
 
       if(pass1.value == pass2.value)
       {
         pass2.style.backgroundColor = goodColor;
-        alert("passwords match");
+
       }
       else
       {
         pass2.style.backgroundColor = badColor;
-        alert("passwords do not match");
+        startButton.disabled = 'true';
       }
       
     }
