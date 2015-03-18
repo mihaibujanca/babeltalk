@@ -255,7 +255,7 @@
 
   <!-- javascript to check passwords -->
 
-  <script type="text/javascript" src="scriptName.js">
+  <script type="text/javascript">
     function checkPasswords()
     { 
       var pass1 = document.getElementByID('newpassword');
