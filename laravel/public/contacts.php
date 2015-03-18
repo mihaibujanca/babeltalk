@@ -134,7 +134,7 @@
 	  { 
 	  $row = $result -> fetch_assoc();
 	  
-	  if($row['first_name'] == "en"){
+	  if($row['language'] == "en"){
 	    echo "<img src='images/England.png' alt='en' style='width:30px;height:50px'>";
 	  }
 	  
