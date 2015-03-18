@@ -231,8 +231,8 @@
 	      if ($user2ID != $id)
 	      {	
 		echo "<span style='display: inline-block;'>";  
-		echo "<form name='chat' method='post' action='contacts.php' style='display: inline-block; padding: 10px;'>"; 
-		echo "<button type='submit' name='chat' value='".$row2['id']."' style=padding:10px;> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>"; ; 
+		echo "<form name='chat' method='post' action='contacts.php' style='display: inline-block; margin-right: 10px;'>"; 
+		echo "<button type='submit' name='chat' value='".$row2['id']."' style=margin-right:10px;> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>"; ; 
 		echo "</form>";
 		printFlag($row2['language']);
 		echo "<b> " . $row2['first_name'] . " " . $row2['last_name'] . "</b> ";
