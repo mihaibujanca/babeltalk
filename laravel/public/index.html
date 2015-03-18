@@ -191,7 +191,7 @@
                 <div class="control-group">
                   <label class="control-label" for="password">Password:</label>
                   <div class="controls">
-                    <input id="password" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
+                    <input id="newpassword" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
                     <!-- we are not enforcing this restriction <em>1-8 Characters</em> -->
                   </div>
                 </div>
@@ -200,7 +200,7 @@
                 <div class="control-group">
                   <label class="control-label" for="reenterpassword">Re-Enter Password:</label>
                   <div class="controls">
-                    <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" class="input-large" required="">
+                    <input id="newreenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" class="input-large" required="" onblur="checkPasswords()">
                   </div>
                 </div>
                 
@@ -252,6 +252,31 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="bootstrap.min.js"></script>
+
+  <!-- javascript to check passwords -->
+  <script>
+    function checkPasswords()
+    { 
+      var pass1 = document.getElementByID('newpassword');
+      var pass2 = document.getElementByID('newreenterpassword');
+
+      var goodColor = "#66cc66";
+      var badColor = "#ff6666";
+
+      if(pass1.value == pass2.value)
+      {
+        pass2.style.backgroundColor = goodColor;
+      }
+      else
+      {
+        pass2.style.backgroundColor = badColor;
+      }
+      
+      if(document.getElementById("newpassword") != document.getElementByID("newreenterpassword"))
+        alert("Please make the passwords the same");
+    }
+  </script>
+
 </body>
 </html>
 
