@@ -175,7 +175,7 @@
 	    echo "<p>" . $row['email'] . "</p> <br>";
 	    echo "<form name='addfriend' method='post' action='contacts.php'>";
 	    // echo "<input type='hidden' name='add' value=". $toaddID ."/>"; 
-	    echo "<input type='hidden' name='add' value='24'/>"; 
+	    // echo "<input type='hidden' name='add' value='24'/>"; 
 	    echo "<button type='submit' name='add' value='".$row['id']."'>" . "+ add " . $row['first_name'] . "</button>"; ; 
 	    echo "</form>";
 	  }
