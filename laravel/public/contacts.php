@@ -230,7 +230,7 @@
 	      // friend id is  $user2ID;
 	      if ($user2ID != $id)
 	      {	
-		echo "<span style='display: inline; margin: 10%'>";  
+		echo "<span style='display: inline; padding-right: 10px;'>";  
 		echo "<form name='chat' method='post' action='contacts.php' style='display: inline;'>"; 
 		echo "<button type='submit' name='chat' value='".$row2['id']."'> <image style='width:15px;height:15px' src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>"; ; 
 		echo "</form>";
