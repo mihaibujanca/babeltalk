@@ -97,7 +97,7 @@
 	    <input type="submit" name="submit" value="search" /> 
 	  </form> 
 	
-	 
+	
 
       <?php
       if (isset($_COOKIE['id']))
@@ -200,18 +200,6 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 	  
 	  
 	  // code to load and output friends list	  
@@ -223,7 +211,7 @@
 	  
 	    // ----------------------------------------------------------------------
 	    // Get all the users who this user added and output them
-	    $query = "SELECT * FROM friends WHERE user1ID = '$id'";
+	    $query = "SELECT * FROM friends WHERE user1ID = '$id' ORDER BY firstname";
 	    $result = mysqli_query($mysqli, $query) or die($mysqli_error());
 	    
 	    $num_row = mysqli_num_rows($result);
