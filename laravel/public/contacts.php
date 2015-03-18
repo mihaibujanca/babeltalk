@@ -87,15 +87,11 @@
 
         <!-- Begin page content -->
         <div class="container">
-            <div class="page-header">
+                <div class="page-header">
                 <h1>Friends</h1>
-            </div>
-     
-      
-
-	<h2> Add a friend by email </h2>
-
-
+        </div>
+        
+	<p> Add a new friend by email : </p>
 
 
 	<form name="form1" method="post" action="contacts.php">
@@ -104,6 +100,10 @@
 
 
 	</form>
+	
+	<div class="page-header">
+                <h3>Current Friends</h3>
+        </div>
 
       <?php
       if (isset($_COOKIE['id']))
@@ -164,7 +164,7 @@
 	  }
 	  $result->close();
 
-
+	// code to search for new friends
 	if(isset($_POST['search']))
 	{
 	if (strlen (($_POST['search'])) > 5)
