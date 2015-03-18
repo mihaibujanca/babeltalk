@@ -192,7 +192,6 @@
 	// code to add a friend
 	if(isset($_POST['add']))
 	{
-	  echo "adding a friend";
 	  $idtoadd = $_POST['add'];
 	  $query = "INSERT INTO friends (user1ID, user2ID) VALUES ('$id' ,'$idtoadd')";
 	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
