@@ -147,25 +147,32 @@
 	  { 
 	  $row = $result -> fetch_assoc();
 	  
-	  printFlag($row['language']);	  
+	  
+	  	  
 	  
 	  $toaddID = $row['id'];
 	  
 	  // if searched for self
 	  if ($toaddID == $id){	  
+	    echo "<span style='display: inline-block;'>";
+	    printFlag($row['language']);
 	    echo "<h3> " . $row['first_name'] . " " . $row['last_name'] . " (you) " . "</h3> ";
+	    echo "</span>";
 	    echo "<p>" . $row['email'] . "</p> <br>";
+	    
 	  }  
 	  else {
 	    // if searched for friend 
 	    
-	    ;
 	    $query = "SELECT * FROM friends WHERE user1ID = '$id' AND user2ID = $toaddID";
 	    $result = $mysqli->query($query);
 	    $num_row = mysqli_num_rows($result);
 	    if ($num_row > 0){
+	      echo "<span style='display: inline-block;'>";
 	      echo "<h3> " . $row['first_name'] . " " . $row['last_name'] . " (friends) " . "</h3> ";
+	      echo "</span>";
 	      echo "<p>" . $row['email'] . "</p> <br>";
+	      
 	    }
 	    else{
 	    
