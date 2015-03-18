@@ -63,17 +63,21 @@
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
-                            <a class="navbar-brand" href="#">Babel Talk</a>
+                            <a class="navbar-brand" href="Home1.html">Babel Talk</a>
                         </div>
 
                         <!-- Collect the nav links, forms, and other content for toggling -->
                         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                            <ul class="nav nav-pills navbar-left">
-                                <li role="presentation" class="active"><a href="#"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
-                            </ul>
-                            <ul class="nav navbar-nav navbar-right">
+                          <ul class="nav nav-pills navbar-right">
+                                <li role="presentation" class="active" style="text-align: center;"> Quit <a href="signout.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
+                                <li role="presentation" class="active" style="text-align: center;"> Friends <a href="contacts.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
+                                <li role="presentation" class="active" style="text-align: center;"> Home <a href="home2.html"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+                            </ul> 
+			  
+
+                            <!-- <ul class="nav navbar-nav navbar-right">                               
                                 <li><a href="contacts.php">Contacts</a></li>
-                                <li><a href="signout.php">Sign Out</a></li>
+                                <li><a href="signout.php">Sign Out</a></li> -->
                             </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
