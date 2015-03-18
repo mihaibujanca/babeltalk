@@ -168,9 +168,8 @@
 	    $result = $mysqli->query($query);
 	    $num_row = mysqli_num_rows($result);
 	    if ($num_row > 0){
-	      echo "<span style='display: inline-block;'>";
-	      echo "<h3> " . $row['first_name'] . " " . $row['last_name'] . " (friends) " . "</h3> ";
-	      echo "</span>";
+	      
+	      echo "<h3> "; printFlag($row['language']); echo $row['first_name'] . " " . $row['last_name'] . " (friends) " . "</h3> ";
 	      echo "<p>" . $row['email'] . "</p> <br>";
 	      
 	    }
