@@ -39,6 +39,7 @@
   if($num_row == 0)
   {
     echo "User does not exist ";
+    header("Location: http://10.2.234.107/babeltalk/laravel/public/index.html");
   }
 
   // if a row is returned, the user must already exist
@@ -56,14 +57,14 @@
 
      if($dbpassword == $password)
      {
-     $query = "SELECT id FROM users WHERE email = '$email'";
+     $query = "SELECT * FROM users WHERE email = '$email'";
      $result = mysqli_query($mysqli, $query) or die($mysqli_error());
      $row = $result->fetch_assoc(); 
    
 
      $id = $mysqli->real_escape_string($row['id']);
-     $firstname = $mysqli->real_escape_string($row['firstname']);
-     $lastname = $mysqli->real_escape_string($row['lastname']);
+     $firstname = $mysqli->real_escape_string($row['first_name']);
+     $lastname = $mysqli->real_escape_string($row['last_name']);
      $language = $mysqli->real_escape_string($row['language']);
 	
 	// set id as cookie
@@ -87,7 +88,7 @@
      }
      else
      {
-       header("Location: http://10.2.234.107/babeltalk/laravel/public/home.html");
+       header("Location: http://10.2.234.107/babeltalk/laravel/public/index.html");
      }
 
   }

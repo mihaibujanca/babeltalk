@@ -39,6 +39,7 @@
   if($num_row == 0)
   {
     echo "User does not exist ";
+    header("Location: http://10.2.234.107/babeltalk/laravel/public/index.html");
   }
 
   // if a row is returned, the user must already exist
