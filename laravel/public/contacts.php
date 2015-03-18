@@ -154,10 +154,8 @@
 	  
 	  // if searched for self
 	  if ($toaddID == $id){	  
-	    echo "<span style='display: inline-block;'>";
-	    printFlag($row['language']);
-	    echo "<h3> " . $row['first_name'] . " " . $row['last_name'] . " (you) " . "</h3> ";
-	    echo "</span>";
+	    
+	    echo "<h3> "; printFlag($row['language']); echo " ". $row['first_name'] . " " . $row['last_name'] . " (you) " . "</h3> ";
 	    echo "<p>" . $row['email'] . "</p> <br>";
 	    
 	  }  
@@ -169,7 +167,7 @@
 	    $num_row = mysqli_num_rows($result);
 	    if ($num_row > 0){
 	      
-	      echo "<h3> "; printFlag($row['language']); echo $row['first_name'] . " " . $row['last_name'] . " (friends) " . "</h3> ";
+	      echo "<h3> "; printFlag($row['language']); echo " " .$row['first_name'] . " " . $row['last_name'] . " (friends) " . "</h3> ";
 	      echo "<p>" . $row['email'] . "</p> <br>";
 	      
 	    }
@@ -177,7 +175,8 @@
 	    
 	    
 	  // new person
-	    echo "<h3> " . $row['first_name'] . " " . $row['last_name']  . "</h3> ";
+	    echo "<h3> "; printFlag($row['language']); echo " ". $row['first_name'] . " " . $row['last_name']  . "</h3> ";
+
 	    echo "<p>" . $row['email'] . "</p> <br>";
 	    echo "<form name='addfriend' method='post' action='contacts.php'>"; 
 	    echo "<button type='submit' name='add' value='".$row['id']."'>" . "+ add " . $row['first_name'] . "</button>"; ; 
