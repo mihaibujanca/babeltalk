@@ -1,0 +1,256 @@
+  <?php
+	  if(isset($_COOKIE['id'])) {
+	    header("Location: http://10.2.234.107/babeltalk/laravel/public/Home1.html");
+
+	    // set the expiration date to one hour ago
+	    //setcookie($cookie_name, "", time() - 3600);
+	    }
+
+  ?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+
+  
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Babel talk| home2</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- link to navbar css -->
+    <link href="css/navbar.css" rel="stylesheet">
+
+    <!--Pulling Awesome Font -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/home2pic.css"/>
+
+    <link rel="stylesheet" href="css/signupmodal.css"/>
+</head>
+<body>
+
+    <div id="wrap">
+        <div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="bs-carousel">
+            <!-- Overlay -->
+            <div class="overlay"></div>
+
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#bs-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#bs-carousel" data-slide-to="1"></li>
+                <li data-target="#bs-carousel" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner">
+                <div class="item slides active">
+                    <div class="slide-1"></div>
+                    <div class="hero">
+                        <hgroup>
+                            <h1>We are Babel Talk</h1>
+                        </hgroup>
+                        <!--<button class="btn btn-hero btn-lg" role="button"><a href="AboutUs.html">About Us</a></button>-->
+                        <button class="btn btn-hero btn-lg specialfont" href="#signup" data-toggle="modal" data-target=".bs-modal-sm" role="button">Sign In|Register</button>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="slide-2"></div>
+                    <div class="hero">
+                        <hgroup>
+                            <h1>Shrinking the world</h1>
+                            <p>Bringing people together</p>
+                        </hgroup>
+                        <button class="btn btn-hero btn-lg specialfont" href="#signup" data-toggle="modal" data-target=".bs-modal-sm" role="button">Sign In|Register</button>
+                        <button class="btn btn-hero btn-lg specialfont" role="button" >See all features</button>
+                    </div>
+                </div>
+                <div class="item slides">
+                    <div class="slide-3"></div>
+                    <div class="hero">
+                        <hgroup>
+                            <h1>We are simple</h1>
+                            <p>But we're still here for you</p>
+                        </hgroup>
+                        <button class="btn btn-hero btn-lg specialfont" href="#signup" data-toggle="modal" data-target=".bs-modal-sm" role="button">Sign In|Register</button>
+                        <button class="btn btn-hero btn-lg specialfont" role="button" href="Home1.html">About Us</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <br>
+            <div class="bs-example bs-example-tabs">
+                <ul id="myTab" class="nav nav-tabs">
+                  <li class="active"><a href="#signin" data-toggle="tab"><span class="glyphicon glyphicon-log-in"></span>Sign In</a></li>
+                  <li class=""><a href="#signup" data-toggle="tab"><span class="glyphicon glyphicon-user"></span>Register</a></li>
+                  <li class=""><a href="#why" data-toggle="tab">Why?</a></li>
+                </ul>
+            </div>
+          <div class="modal-body">
+            <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in" id="why">
+            <p>We need this information so that you can receive access to the site and its content. Rest assured your information will not be sold, traded, or given to anyone.</p>
+            <p></p><br> Please contact <a href="mailto:babeltalk@yahoo.com"> The BabelTalk Team </a> for any other inquiries.</p>
+            </div>
+            <div class="tab-pane fade active in" id="signin">
+                <form action="signin.php" class="form-horizontal" method="post">
+                <fieldset>
+                <!-- Sign In Form -->
+                <!-- Text input-->
+                <div class="control-group">
+                  <label class="control-label" for="userid">Email:</label>
+                  <div class="controls">
+                    <input id="email" name="email" type="text" class="form-control" placeholder="BabelTalk" class="input-medium" required="">
+                  </div>
+                </div>
+
+                <!-- Password input-->
+                <div class="control-group">
+                  <label class="control-label" for="passwordinput">Password:</label>
+                  <div class="controls">
+                    <input id="password" name="password" class="form-control" type="password" placeholder="********" class="input-medium" required="">
+                  </div>
+                </div>
+
+                <!-- Multiple Checkboxes (inline) -->
+                <div class="control-group">
+                  <label class="control-label" for="rememberme"> Remember me:</label>
+                  <div class="controls">
+                      <input type="checkbox" name="rememberme" id="rememberme-0" value="Remember me">
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Button -->
+                <div class="control-group">
+                  <label class="control-label" for="signin"></label>
+                  <div class="controls">
+                    <button id="signin" name="signin" class="btn btn-success">Sign In</button>
+                  </div>
+                </div>
+                </fieldset>
+                </form>
+            </div>
+            <div class="tab-pane fade" id="signup">
+                <form action="signup.php" class="form-horizontal" method="post">
+                <fieldset>
+                <!-- Sign Up Form -->
+                <!-- Text input-->
+                <div class="control-group">
+                  <label class="control-label" for="Email">Email:</label>
+                  <div class="controls">
+                    <input id="Email" name="email" class="form-control" type="text" placeholder="babeltalk@y5.com" class="input-large" required="">
+                  </div>
+                </div>
+                
+                <!-- First Name Input-->
+                <div class="control-group">
+                  <label class="control-label" for="userid">First Name:</label>
+                  <div class="controls">
+                    <input id="firstname" name="firstname" class="form-control" type="text" placeholder="First Name" class="input-large" required="">
+                  </div>
+                </div>
+		
+		<!-- Last Name Input-->
+                <div class="control-group">
+                  <label class="control-label" for="userid">Last Name:</label>
+                  <div class="controls">
+                    <input id="lastname" name="lastname" class="form-control" type="text" placeholder="Last Name" class="input-large" required="">
+                  </div>
+                </div>
+
+  
+                <!-- Password input-->
+                <div class="control-group">
+                  <label class="control-label" for="password">Password:</label>
+                  <div class="controls">
+                    <input id="password" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
+                    <!-- we are not enforcing this restriction <em>1-8 Characters</em> -->
+                  </div>
+                </div>
+                
+                <!-- Renter Password input-->
+                <div class="control-group">
+                  <label class="control-label" for="reenterpassword">Re-Enter Password:</label>
+                  <div class="controls">
+                    <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="********" class="input-large" required="">
+                  </div>
+                </div>
+                
+                <!-- Language Select -->   
+                <div class="control-group">                       
+		  <label class="control-label" for="languageselect">Select Language:</label>
+		  <select class="form-control" id="languageselect" name="language">
+		    <option value="en">English</option>
+		    <option value="ro">Romanian</option>
+		    <option value="fr">French</option>
+		  </select>
+		</div>
+                
+                <!-- Multiple Radios (inline)
+                <br>
+                <div class="control-group">
+                  <label class="control-label" for="humancheck">Humanity Check:</label>
+                  <div class="controls">
+                    <label class="radio inline col-md-offset-1" for="humancheck-0">
+                      <input type="radio" name="humancheck" id="humancheck-0" value="robot" checked="checked">I'm a Robot</label>
+                    <label class="radio inline col-md-offset-1" for="humancheck-1">
+                      <input type="radio" name="humancheck" id="humancheck-1" value="human">I'm Human</label>
+                  </div>
+                </div>
+                -->
+                
+                <!-- Button -->
+                <div class="control-group">
+                  <label class="control-label" for="confirmsignup"></label>
+                  <div class="controls">
+                    <button id="confirmsignup" name="confirmsignup" class="btn btn-success">Sign Up</button>
+                  </div>
+                </div>
+                </fieldset>
+                </form>
+          </div>
+        </div>
+          </div>
+          <div class="modal-footer">
+          <center>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </center>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="bootstrap.min.js"></script>
+</body>
+</html>
+
