@@ -119,6 +119,21 @@
 	  }
 	  
 	  
+	  function printFlag($nation)
+	  {
+	    if($nation == 'fr') {
+	      echo "<img src='images/France.png' alt='en' style='width:30px;height:50px'>";
+	    }
+	    if($nation == 'en') {
+	      echo "<img src='images/England.png' alt='en' style='width:30px;height:50px'>";
+	    }
+	    if($nation == 'ro') {
+	      echo "<img src='images/Romania.png' alt='en' style='width:30px;height:50px'>";
+	    }
+	    return ;
+	  }
+	  
+	  
 	  // code to search for new friends
 	if(isset($_POST['search']))
 	{
@@ -134,10 +149,8 @@
 	  { 
 	  $row = $result -> fetch_assoc();
 	  
-	  if($row['language'] == "en"){
-	    echo "<img src='images/England.png' alt='en' style='width:30px;height:50px'>";
-	  }
-	  echo "<img src='images/France.png' alt='en' style='width:30px;height:50px'> yo";
+	  printFlag($row['language']);	  
+	  echo "<br>";
 	  echo "Name  : " . $row['first_name'] .' '. $row['last_name'] . "<br>";
 	  echo "Email : " . $row['email'] . "<br>";
 	    
@@ -179,6 +192,8 @@
 	      // friend id is  $user2ID;
 	      if ($user2ID != $id)
 	      {
+		printFlag($row2['language']);	  
+		echo "<br>";
 		echo "Name  : " . $row2['first_name'] . $row2['last_name'] . "<br>";
 		echo "Email : " . $row2['email'] . "<br>";
 		echo "<hr>";
