@@ -149,7 +149,7 @@
 	  
 	  $cookie_name = "id";
 	  $id= $_COOKIE[$cookie_name];
-	  echo "<div class="page-header"> <h3>Current Friends</h3> </div>";
+	  echo "<div class='page-header'> <h3>Current Friends</h3> </div>";
 
 	  
 	    // ----------------------------------------------------------------------
