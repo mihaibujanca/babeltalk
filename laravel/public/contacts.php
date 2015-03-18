@@ -105,7 +105,7 @@
 
 	</form>
 
-<?php
+      <?php
       if (isset($_POST['id']))
       {
 	  // code to load and output friends list
@@ -185,8 +185,8 @@
 	  }  
 	}
 	}
-
-?>
+      }
+      ?>
 
         </div>
     </div>
