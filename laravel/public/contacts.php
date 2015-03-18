@@ -153,20 +153,37 @@
 	  
 	  printFlag($row['language']);	  
 	  
-	  if ($row['id'] == $id){	  
+	  $toaddID = $row['id'];
+	  
+	  // if searched for self
+	  if ($toaddID == $id){	  
 	    echo "<h3> " . $row['first_name'] . " " . $row['last_name'] . " (you) " . "</h3> ";
 	    echo "<p>" . $row['email'] . "</p> <br>";
 	  }  
 	  else {
+	    // if searched for friend 
+	    
+	    $user2ID = $row['user2ID'];
+	    $query = "SELECT * FROM friends WHERE user1ID = '$id' AND user2ID = $toaddID";
+	    $result = $mysqli->query($query);
+	    $num_row = mysqli_num_rows($result);
+	    if ($num_row > 0){
+	      echo "<h3> " . $row['first_name'] . " " . $row['last_name'] . " (friends) " . "</h3> ";
+	      echo "<p>" . $row['email'] . "</p> <br>";
+	    }
+	    else{
+	    
+	    
+	  // new person
 	    echo "<h3> " . $row['first_name'] . " " . $row['last_name']  . "</h3> ";
 	    echo "<p>" . $row['email'] . "</p> <br>";
-	    $toaddID = $row['id'];
 	    echo "<form name='addfriend' method='post' action='contacts.php'>";
 	    // echo "<input type='hidden' name='add' value=". $toaddID ."/>"; 
 	    echo "<input type='hidden' name='add' value='24'/>"; 
 	    echo "<button type='submit' name='add' value='".$row['id']."'>" . "+ add " . $row['first_name'] . "</button>"; ; 
 	    echo "</form>";
 	  }
+	 }
 	}
 	} // strlen > 5
 	} // is set search
