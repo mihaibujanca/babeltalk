@@ -233,7 +233,7 @@
 		printFlag($row2['language']);	
 		echo "<span style='display: inline;'>";  
 		echo "<b> " . $row2['first_name'] . " " . $row2['last_name'] . "</b> ";
-		echo "<form name='chat' method='post' action='contacts.php'>"; 
+		echo "<form name='chat' method='post' action='contacts.php' style='display: inline;'>"; 
 		echo "<button type='submit' name='chat' value='".$row2['id']."'> chat </button>"; ; 
 		echo "</form>";
 		echo "</span>";
