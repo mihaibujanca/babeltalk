@@ -173,9 +173,7 @@
 	  // new person
 	    echo "<h3> " . $row['first_name'] . " " . $row['last_name']  . "</h3> ";
 	    echo "<p>" . $row['email'] . "</p> <br>";
-	    echo "<form name='addfriend' method='post' action='contacts.php'>";
-	    // echo "<input type='hidden' name='add' value=". $toaddID ."/>"; 
-	    // echo "<input type='hidden' name='add' value='24'/>"; 
+	    echo "<form name='addfriend' method='post' action='contacts.php'>"; 
 	    echo "<button type='submit' name='add' value='".$row['id']."'>" . "+ add " . $row['first_name'] . "</button>"; ; 
 	    echo "</form>";
 	  }
@@ -233,7 +231,10 @@
 	      if ($user2ID != $id)
 	      {
 		printFlag($row2['language']);	  
-		echo "<b> " . $row2['first_name'] . " " . $row2['last_name'] . "</b>";
+		echo "<b> " . $row2['first_name'] . " " . $row2['last_name'] . "</b> ";
+		echo "<form name='chat' method='post' action='contacts.php'>"; 
+		echo "<button type='submit' name='chat' value='".$row2['id']."'> chat </button>"; ; 
+		echo "</form>";
 		echo "<p>" . $row2['email'] . "</p> ";
 		echo "<hr>";
 
