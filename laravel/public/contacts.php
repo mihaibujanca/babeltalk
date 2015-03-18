@@ -137,7 +137,7 @@
 	  if($row['language'] == "en"){
 	    echo "<img src='images/England.png' alt='en' style='width:30px;height:50px'>";
 	  }
-	  echo "<img src='images/France.png' alt='en' style='width:30px;height:50px'>";
+	  echo "<img src='images/France.png' alt='en' style='width:30px;height:50px'> yo";
 	  echo "Name  : " . $row['first_name'] .' '. $row['last_name'] . "<br>";
 	  echo "Email : " . $row['email'] . "<br>";
 	    
