@@ -74,7 +74,7 @@
             <div class="page-header">
              <h1> Welcome
              <?php
-	      if(!isset($_COOKIE['firstname'])) {
+	      if(isset($_COOKIE['firstname'])) {
 	      echo $_COOKIE['firstname']; ?>
 	      </h1>
                 <h3>"The home of real-time language-translation messaging" <span class="glyphicon glyphicon-globe"></span></h3>
