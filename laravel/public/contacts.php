@@ -163,7 +163,7 @@
 	  else {
 	    // if searched for friend 
 	    
-	    $user2ID = $row['user2ID'];
+	    ;
 	    $query = "SELECT * FROM friends WHERE user1ID = '$id' AND user2ID = $toaddID";
 	    $result = $mysqli->query($query);
 	    $num_row = mysqli_num_rows($result);
