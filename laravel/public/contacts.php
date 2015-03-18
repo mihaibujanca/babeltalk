@@ -175,6 +175,8 @@
 	if(isset($_POST['add']))
 	{
 	  echo "adding a friend";
+	  INSERT INTO friends (user1ID, user2ID)
+	  VALUES ($id , $_POST['add']);
 	
 	} // is set add
 
