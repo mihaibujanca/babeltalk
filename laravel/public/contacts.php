@@ -89,13 +89,13 @@
 	<!-- Begin page content -->
 	<div class="container">
 	  <div class="page-header">
-	    <h1>Friends</h1>
-	    <p> Search for new friends by email </p>
-	    <form name="form1" method="post" action="contacts.php">
-		<input name="search" type="text" /> 
-		<input type="submit" name="submit" value="search" /> 
-	      </form>    
+	    <h1>Friends</h1>   
 	  </div>
+	  <p> Search for new friends by email </p>
+	  <form name="form1" method="post" action="contacts.php">
+	    <input name="search" type="text" /> 
+	    <input type="submit" name="submit" value="search" /> 
+	  </form> 
 	
 	 
 
