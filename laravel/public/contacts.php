@@ -136,7 +136,7 @@
 	  $cookie_name = "id";
 	  $id= $_COOKIE[$cookie_name];
 	  
-	  // code to search for new friends
+	// code to search for new friends
 	if(isset($_POST['search']))
 	{
 	if (strlen (($_POST['search'])) > 5)
@@ -163,7 +163,7 @@
 	    $toaddID = $row['id'];
 	    echo "<form name='addfriend' method='post' action='contacts.php'>";
 	    echo "<input type='hidden' name='add' value=". $toaddID ."/>"; 
-	    echo "<input type='submit' name='add friend' value='+ add ".$row['first_name']."' />"; 
+	    echo "<input type='submit' name='add' value='+ add ".$row['first_name']."' />"; 
 	    echo "</form>";
 	  }
 	}
@@ -171,7 +171,29 @@
 	} // is set search
 	  
 	  
-	  
+	// code to add a friend
+	if(isset($_POST['add']))
+	{
+	  echo "adding a friend";
+	
+	} // is set add
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 	  
 	  
 	  // code to load and output friends list	  
