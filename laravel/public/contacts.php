@@ -164,7 +164,7 @@
 	    echo "<form name='addfriend' method='post' action='contacts.php'>";
 	    // echo "<input type='hidden' name='add' value=". $toaddID ."/>"; 
 	    echo "<input type='hidden' name='add' value='24'/>"; 
-	    echo "<input type='submit' name='add' value='+ add ".$row['first_name']."' />"; 
+	    echo "<button type='submit' name='add' value='".$row['id']."'>" . $toaddID . "</button>"; ; 
 	    echo "</form>";
 	  }
 	}
