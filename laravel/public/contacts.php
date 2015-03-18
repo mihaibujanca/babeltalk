@@ -71,7 +71,7 @@
                           <ul class="nav nav-pills navbar-right">
                                 <li role="presentation" class="active" style="text-align: center;"> Quit <a href="signout.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
                                 <li role="presentation" class="active" style="text-align: center;"> Friends <a href="contacts.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
-                                <li role="presentation" class="active" style="text-align: center;"> Home <a href="home2.html"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+                                <li role="presentation" class="active" style="text-align: center;"> Home <a href="Home1.html"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
                             </ul> 
 			  
 
@@ -105,8 +105,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="bootstrap.min.js"></script>
-</body>
-</html>
+
 
 <?php
   if (isset($_POST['id']))
@@ -205,5 +204,5 @@
 ?>
 
 
-
+</body>
 </html>
