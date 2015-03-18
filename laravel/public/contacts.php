@@ -230,11 +230,13 @@
 	      // friend id is  $user2ID;
 	      if ($user2ID != $id)
 	      {
-		printFlag($row2['language']);	  
+		printFlag($row2['language']);	
+		echo "<span style='display: inline;'>";  
 		echo "<b> " . $row2['first_name'] . " " . $row2['last_name'] . "</b> ";
 		echo "<form name='chat' method='post' action='contacts.php'>"; 
 		echo "<button type='submit' name='chat' value='".$row2['id']."'> chat </button>"; ; 
 		echo "</form>";
+		echo "</span>";
 		echo "<p>" . $row2['email'] . "</p> ";
 		echo "<hr>";
 
