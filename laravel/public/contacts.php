@@ -133,8 +133,12 @@
 	  else
 	  { 
 	  $row = $result -> fetch_assoc();
-
-	  echo "Name  : " . $row['first_name'] . $row['last_name'] . "<br>";
+	  
+	  if($row['first_name'] == "en"){
+	    echo "<img src='images/England.png' alt='en' style='width:30px;height:50px'>";
+	  }
+	  
+	  echo "Name  : " . $row['first_name'] .' '. $row['last_name'] . "<br>";
 	  echo "Email : " . $row['email'] . "<br>";
 	    
 	  }  
