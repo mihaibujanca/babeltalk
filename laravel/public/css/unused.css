@@ -30,10 +30,11 @@ div.vertical-line{
 .specialfont {
     font-family: "courier",sans-serif;
 }
-/*#babel_image {
-  background-image: url("babel_talk_logo.jpg");
+#babel_image {
+  background: url("http://www.loftypaints.com/attachments/Image/about-us.jpg?template=generic");/*
+  background-color: ;*/
 }
-body {
+/*body {
   background-image: url("babel_talk_logo.jpg");  
 }*/
 .newtextalign {
