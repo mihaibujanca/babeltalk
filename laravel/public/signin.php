@@ -56,7 +56,7 @@
 
      if($dbpassword == $password)
      {
-     $query = "SELECT id FROM users WHERE email = '$email'";
+     $query = "SELECT * FROM users WHERE email = '$email'";
      $result = mysqli_query($mysqli, $query) or die($mysqli_error());
      $row = $result->fetch_assoc(); 
    
