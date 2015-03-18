@@ -126,7 +126,7 @@
 	  }  
 	}
 	}
-      } // if logged in
+
 ?>
 
         </div>
