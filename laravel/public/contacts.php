@@ -232,12 +232,13 @@
 	      {
 		printFlag($row2['language']);	
 		echo "<span style='display: inline;'>";  
-		echo "<b> " . $row2['first_name'] . " " . $row2['last_name'] . "</b> ";
 		echo "<form name='chat' method='post' action='contacts.php' style='display: inline;'>"; 
-		echo "<button type='submit' name='chat' value='".$row2['id']."'> chat </button>"; ; 
+		echo "<button type='submit' name='chat' value='".$row2['id']."'> <image src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>"; ; 
+		
 		echo "</form>";
+		echo "<b> " . $row2['first_name'] . " " . $row2['last_name'] . "</b> ";
 		echo "</span>";
-		echo "<p>" . $row2['email'] . "</p> ";
+		echo "<p> <small>" . $row2['email'] . "</small> </p> ";
 		echo "<hr>";
 
 	      }
