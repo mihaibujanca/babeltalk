@@ -254,6 +254,7 @@
   <script src="bootstrap.min.js"></script>
 
   <!-- javascript to check passwords -->
+
   <script type="text/javascript" src="scriptName.js">
     function checkPasswords()
     { 
