@@ -211,7 +211,7 @@
 	  
 	    // ----------------------------------------------------------------------
 	    // Get all the users who this user added and output them
-	    $query = "SELECT * FROM friends WHERE user1ID = '$id' ORDER BY firstname";
+	    $query = "SELECT * FROM friends WHERE user1ID = '$id'";
 	    $result = mysqli_query($mysqli, $query) or die($mysqli_error());
 	    
 	    $num_row = mysqli_num_rows($result);
