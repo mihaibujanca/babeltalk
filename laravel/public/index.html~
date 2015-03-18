@@ -260,23 +260,22 @@
     { 
       var pass1 = document.getElementById("newpassword");
       var pass2 = document.getElementById("newreenterpassword");
-      var button = document.getElementById("confirmsignup");
-      var button = $('#button')[0];
       var goodColor = "#66cc66";
       var badColor = "#ff6666";
 
-      if(pass1.value == pass2.value)
+      if(pass2.value != "")
       {
-        pass2.style.backgroundColor = goodColor;
-        button.disabled = 'false';
-
+        if(pass1.value == pass2.value)
+        {
+          pass2.style.backgroundColor = goodColor;
+          $("#confirmsignup").removeAttr("disabled");
+        }
+        else
+        {
+          pass2.style.backgroundColor = badColor;
+          $("#confirmsignup").attr("disabled", "disabled");
+        }
       }
-      else
-      {
-        pass2.style.backgroundColor = badColor;
-       $("newreenterpassword").;
-      }
-      
     }
   </script>
 

@@ -191,7 +191,7 @@
                 <div class="control-group">
                   <label class="control-label" for="password">Password:</label>
                   <div class="controls">
-                    <input id="newpassword" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
+                    <input id="newpassword" name="password" class="form-control" type="password" onkeyup="checkPasswords()" placeholder="********" class="input-large" required="">
                     <!-- we are not enforcing this restriction <em>1-8 Characters</em> -->
                   </div>
                 </div>
@@ -263,17 +263,19 @@
       var goodColor = "#66cc66";
       var badColor = "#ff6666";
 
-      if(pass1.value == pass2.value)
+      if(pass2.value != "")
       {
-        pass2.style.backgroundColor = goodColor;
-        $("#confirmsignup").removeAttr("disabled");
+        if(pass1.value == pass2.value)
+        {
+          pass2.style.backgroundColor = goodColor;
+          $("#confirmsignup").removeAttr("disabled");
+        }
+        else
+        {
+          pass2.style.backgroundColor = badColor;
+          $("#confirmsignup").attr("disabled", "disabled");
+        }
       }
-      else
-      {
-        pass2.style.backgroundColor = badColor;
-        $("#confirmsignup").attr("disabled", "disabled");
-      }
-      
     }
   </script>
 
