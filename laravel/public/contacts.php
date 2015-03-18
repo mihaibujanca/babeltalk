@@ -229,16 +229,17 @@
 	      $row2 = $result->fetch_assoc();
 	      // friend id is  $user2ID;
 	      if ($user2ID != $id)
-	      {
-		printFlag($row2['language']);	
+	      {	
 		echo "<span style='display: inline;'>";  
 		echo "<form name='chat' method='post' action='contacts.php' style='display: inline;'>"; 
-		echo "<button type='submit' name='chat' value='".$row2['id']."'> <image src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>"; ; 
-		
+		echo "<button type='submit' name='chat' value='".$row2['id']."'> <image style='width:30px;height:30px' src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>"; ; 
 		echo "</form>";
 		echo "<b> " . $row2['first_name'] . " " . $row2['last_name'] . "</b> ";
 		echo "</span>";
+		echo "<span style='display: inline;'>";
+		printFlag($row2['language']);
 		echo "<p> <small>" . $row2['email'] . "</small> </p> ";
+		echo "</span>";
 		echo "<hr>";
 
 	      }
