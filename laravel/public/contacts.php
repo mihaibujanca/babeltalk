@@ -239,7 +239,7 @@
 		echo "<br>";
 		echo "<span style='display: inline;'>";
 		printFlag($row2['language']);
-		echo $row2['email']";
+		echo $row2['email'];
 		echo "</span>";
 		echo "<hr>";
 
