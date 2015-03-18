@@ -268,10 +268,12 @@
       if(pass1.value == pass2.value)
       {
         pass2.style.backgroundColor = goodColor;
+        alert("passwords match");
       }
       else
       {
         pass2.style.backgroundColor = badColor;
+        alert("passwords do not match");
       }
       
     }
