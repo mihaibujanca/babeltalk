@@ -92,15 +92,21 @@
                 <h1>Friends</h1>
         </div>
         
-	<p> Add a new friend by email : </p>
-
-
-	<form name="form1" method="post" action="contacts.php">
+        <div class="container">
+      <h2>Add a friend by email</h2>
+      <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Simple collapsible</button>
+      <div id="demo" class="collapse in">
+       <form name="form1" method="post" action="contacts.php">
 		<input name="search" type="text" /> 
 		<input type="submit" name="submit" value="search" /> 
-
-
 	</form>
+        
+      </div>
+    </div>
+	
+
+
+	
 	
 	
 
@@ -260,7 +266,7 @@
 	  else
 	  {
 	    echo "You have no friends yet :( <br>";
-	    echo "Add some friends below <br>";
+	    echo "Search for friends to get going! <br>";
 	  }
 	  $result->close();
 
