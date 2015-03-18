@@ -200,7 +200,7 @@
                 <div class="control-group">
                   <label class="control-label" for="reenterpassword">Re-Enter Password:</label>
                   <div class="controls">
-                    <input id="newreenterpassword" class="form-control" name="reenterpassword" onblur="checkPasswords()" onfocus="checkPasswords()" onkeyup="checkPasswords()" type="password" placeholder="********" class="input-large" required=""  >
+                    <input id="newreenterpassword" class="form-control" name="reenterpassword" onkeyup="checkPasswords()" type="password" placeholder="********" class="input-large" required=""  >
                   </div>
                 </div>
                 
@@ -269,12 +269,13 @@
       if(pass1.value == pass2.value)
       {
         pass2.style.backgroundColor = goodColor;
+        button.disabled = 'false';
 
       }
       else
       {
         pass2.style.backgroundColor = badColor;
-        startButton.disabled = 'true';
+        button.disabled = 'true';
       }
       
     }
