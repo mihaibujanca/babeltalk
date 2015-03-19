@@ -26,9 +26,10 @@
     }
     else
     {
+      echo "<p> You have messages </p>";
       while ($row = mysqli_fetch_row($result))
       {
-	echo $row['content'] . "<br>"; 
+	echo $row[0] . "<br>"; 
       }
     }
     
