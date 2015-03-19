@@ -8,9 +8,9 @@
 
 
   <form action="test.php" method="post">
-  Enter a message:  <input type="text" name="message"><br>
-  Enter the language to send in (en, ro, fr) <input type="text" name="senderlang"><br>
-  Enter the language to recieve in (en, ro, fr) <input type="text" name="recieverlang"><br>
+  Enter a message:  <input type="text" name="message" placeholder="Hello world!"><br>
+  Enter the language to send in (en, ro, fr) <input type="text" name="senderlang" placeholder="en"><br>
+  Enter the language to recieve in (en, ro, fr) <input type="text" name="recieverlang" placeholder="fr"><br>
   <input type="submit">
   </form>
 
