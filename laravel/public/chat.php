@@ -50,7 +50,7 @@
       }
     }
     
-    $echo "</div>";
+    $echo ("</div>");
     
     $result->close();
   ?>
