@@ -72,7 +72,7 @@
 				<li role="presentation" class="active" style="text-align: center;"> Chat <a href="chat.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-comment" aria-hidden="true"></span></a></li>
 				<li role="presentation" class="active" style="text-align: center;"> Profile <a href="profile.html"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
 				<li role="presentation" class="active" style="text-align: center;"> Friends <a href="contacts.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-tasks" aria-hidden="true"></span></a></li>
-				<li role="presentation" class="active" style="text-align: center;"> Home <a href="Home1.html"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+				<li role="presentation" class="active" style="text-align: center;"> Home <a href="home.html"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
 				<li role="presentation" class="active" style="text-align: center;"> Quit <a href="signout.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
 			  </ul>
 			  
@@ -203,7 +203,7 @@
 	if(isset($_POST['delete']))
    {
      //delete "friend" relationship from both users. 
-     $idtodelete = $_POST['idtodelete'];
+     $idtodelete = $_POST['delete'];
      alert($idtodelete);
 	  $query = "DELETE * FROM friends WHERE user1ID = '$id' AND user2ID = $idtodelete";
 	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
