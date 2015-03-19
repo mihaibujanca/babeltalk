@@ -252,12 +252,12 @@
 		echo "<span style='display: inline-block;'>"; 
  
 		echo "<form name='chat' method='post' action='chat.php' style='display: inline-block; margin-right: 10px;'>"; 
-		echo "<button type='submit' name='partnerid' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>"; ; 
+		echo "<button type='submit' name='partnerid' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>";  
 		echo "</form>";
       
 
       echo "<form name='delete' method='post' action='contacts.php' style='display: inline-block; margin-right: 25px;'>"; 
-		echo "<button type='submit' name='idtodelete' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/page_text_delete.gif> </button>";  
+		echo "<button type='submit' name='idtodelete' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/page_text_delete.gif'> </button>";  
 		echo "</form>";
       
  
