@@ -191,7 +191,7 @@
                 <div class="control-group">
                   <label class="control-label" for="password">Password:</label>
                   <div class="controls">
-                    <input id="newpassword" name="password" class="form-control" type="password" placeholder="********" class="input-large" required="">
+                    <input id="newpassword" name="password" class="form-control" type="password" onkeyup="checkPasswords()" placeholder="********" class="input-large" required="">
                     <!-- we are not enforcing this restriction <em>1-8 Characters</em> -->
                   </div>
                 </div>
