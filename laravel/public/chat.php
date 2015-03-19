@@ -141,8 +141,7 @@
 	// message originated from this user so display as is
 	if ($row[1] == $id)
 	{
-
-           echo "<p class='sent'>" . $row[4] . "</p>"; 
+          echo "<p class='sent'>" . $row[4] . "</p>"; 
 	}
 	// message came from other user, should be translated first
 	elseif ($row[2] == $id)
@@ -153,43 +152,32 @@
 	}	
       }
 
-    }
-   } 
+    } 
      $result->close();
+   }
    else
    { 
      echo '<div class="scrolly" id="messagebox">';
    }
     
 
-
+    // ends messagebox
     echo '</div>';
-    echo '</div>';
+    
    
     
     
-
-
-
-  
-
-
-
-
-
-
-
-
-    
     echo "<div class='scrollx'>";
     echo "</div>";
-
+   
+   // ends container for scrollx and scroll y box
+   echo '</div>';
   ?>
 
 
 
 
-      </div>
+      
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
