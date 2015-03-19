@@ -154,7 +154,7 @@
 	if(isset($_POST['delete']))
    {
      //delete "friend" relationship from both users. 
-     $idtodelete = $_POST['delete'];
+     $idtodelete = $_POST['idtodelete'];
 	  $query = "DELETE * FROM friends WHERE user1ID = '$id' AND user2ID = $idtodelete";
 	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
 	  $query = "DELETE * FROM friends WHERE user1ID = '$idtodelete' AND user2ID = $id";
