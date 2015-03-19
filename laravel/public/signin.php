@@ -77,7 +77,7 @@
 	}
 	setcookie("firstname", $firstname, time()+60*60*24*365, "/");
 	setcookie("lastname", $lastname, time()+60*60*24*365, "/");
-	header("Location:https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/Home1.html");
+	header("Location:https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/home.html");
 	 
 	  $cookie_name="id";
 	  if(!isset($_COOKIE[$cookie_name])) {
