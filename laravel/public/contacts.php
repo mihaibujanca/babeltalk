@@ -146,23 +146,7 @@
 	  { echo "<p> No results found for ".$search." </p>"; }
 	  else
 	  { 
-	  $row = $result -> fetch_assoc();
-	  
-
-
-	// Code to delete a friend.  
-	if(isset($_POST['delete']))
-   {
-     //delete "friend" relationship from both users. 
-     $idtodelete = $_POST['idtodelete'];
-     alert($idtodelete);
-	  $query = "DELETE * FROM friends WHERE user1ID = '$id' AND user2ID = $idtodelete";
-	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-	  $query = "DELETE * FROM friends WHERE user1ID = '$idtodelete' AND user2ID = $id";
-	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-
-     
-   }  	  
+	  $row = $result -> fetch_assoc();	  
 	  
 
 
@@ -214,6 +198,19 @@
 	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
 	
 	} // is set add
+
+  	// Code to delete a friend.  
+	if(isset($_POST['delete']))
+   {
+     //delete "friend" relationship from both users. 
+     $idtodelete = $_POST['idtodelete'];
+     alert($idtodelete);
+	  $query = "DELETE * FROM friends WHERE user1ID = '$id' AND user2ID = $idtodelete";
+	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+	  $query = "DELETE * FROM friends WHERE user1ID = '$idtodelete' AND user2ID = $id";
+	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+     
+   }
 
 
 
