@@ -1,0 +1,24 @@
+div.scrolly {
+    margin: 2px;
+    background-color: #FFFFFF;
+    width: 500px;
+    height: 200px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+div.scrollx {
+    margin: 2px;
+    background-color: #00F000;
+    width: 500px;
+    height: 60px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    white-space:nowrap;
+   
+}
+div.hidden {
+    background-color: #00FF00;
+    width: 100px;
+    height: 500px;
+    overflow: hidden;
+}
