@@ -5,6 +5,6 @@
 
   $array = json_decode($json, true);
    
-
+  echo $array['text'];
 
 ?>
