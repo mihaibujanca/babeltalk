@@ -257,7 +257,7 @@
       
 
       echo "<form name='delete' method='post' action='contacts.php' style='display: inline-block; margin-right: 25px;'>"; 
-		echo "<button type='submit' name='idtodelete' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>"; ; 
+		echo "<button type='submit' name='idtodelete' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:100px;' src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>"; ; 
 		echo "</form>";
       echo "<form name='deletefriend' method='post' action='contacts.php'>";
  
