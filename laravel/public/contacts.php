@@ -148,9 +148,22 @@
 	  { 
 	  $row = $result -> fetch_assoc();
 	  
+
+
+	// Code to delete a friend.  
+	if(isset($_POST['delete']))
+   {
+     //delete "friend" relationship from both users. 
+     $idtodelete = $_POST['delete'];
+	  $query = "DELETE * FROM friends WHERE user1ID = '$id' AND user2ID = $idtodelete";
+	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+	  $query = "DELETE * FROM friends WHERE user1ID = '$idtodelete' AND user2ID = $id";
+	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+     
+   }  	  
 	  
-	  	  
-	  
+
+
 	  $toaddID = $row['id'];
 	  
 	  // if searched for self
@@ -236,11 +249,20 @@
 	      // friend id is  $user2ID;
 	      if ($user2ID != $id)
 	      {	
-		echo "<span style='display: inline-block;'>";  
+		echo "<span style='display: inline-block;'>"; 
+ 
 		echo "<form name='chat' method='post' action='chat.php' style='display: inline-block; margin-right: 10px;'>"; 
 		echo "<button type='submit' name='partnerid' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>"; ; 
-      echo "<button type='submit' name='partnerid' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/page_cross.gif/> </button>"; ;
 		echo "</form>";
+      
+
+      echo "<form name='delete' method='post' action='contacts.php' style='display: inline-block; margin-right: 25px;'>"; 
+		echo "<button type='submit' name='idtodelete' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>"; ; 
+		echo "</form>";
+      echo "<form name='deletefriend' method='post' action='contacts.php'>";
+ 
+
+      
 		printFlag($row2['language']);
 		echo "<b> " . $row2['first_name'] . " " . $row2['last_name'] . "</b> ";
 		echo "</span>";
