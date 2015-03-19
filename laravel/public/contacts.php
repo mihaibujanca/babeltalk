@@ -153,9 +153,9 @@
 	// Code to delete a friend.  
 	if(isset($_POST['delete']))
    {
-     alert $idtodelete;
      //delete "friend" relationship from both users. 
      $idtodelete = $_POST['idtodelete'];
+     alert $idtodelete;
 	  $query = "DELETE * FROM friends WHERE user1ID = '$id' AND user2ID = $idtodelete";
 	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
 	  $query = "DELETE * FROM friends WHERE user1ID = '$idtodelete' AND user2ID = $id";
