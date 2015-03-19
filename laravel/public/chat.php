@@ -113,7 +113,7 @@
     if (isset($_POST["content"]) and !isset($COOKIE["wait"]))
     {
        
-      if(!isset($_POST["lastcontent"] or !isset($_POST["lastreceiver"])
+      if(!isset($_COOKIE["lastcontent"] or !isset($_COOKIE["lastreceiver"])
       {
 	setcookie("lastcontent", 'null' , time() + (86400 * 365), "/");
 	setcookie("lastreceiver", 'null', time() + (86400 * 365), "/");
