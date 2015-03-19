@@ -91,7 +91,8 @@
 
         <div class="container">
             <div class="jumbroton">
-                <img alt="Bootstrap template" src="http://placehold.it/1200x400/009966/ffffff&text=Welcome <?php $name=getcookie("firstname"); echo $name; ?> ">
+                <?php echo '<img alt="Bootstrap template" src="http://placehold.it/1200x400/009966/ffffff&text=Welcome' . getcookie("firstname") . '">'; 
+                <!-- <img alt="Bootstrap template" src="http://placehold.it/1200x400/009966/ffffff&text=Welcome<?php $name=getcookie("firstname"); echo $name; ?>"> -->
             </div>
         </div>
 
