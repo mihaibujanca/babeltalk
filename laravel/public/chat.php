@@ -34,14 +34,18 @@
       echo "<p> You have messages </p>";
       while ($row = mysqli_fetch_row($result))
       {
-	// message originated from this user
+	// message originated from this user so display as is
 	if ($row[1] == $id)
 	{
-	  echo $row[4] . "<br>"; 
+	  echo "<p>" $row[4] . "</p>"; 
 	}
+	// message came from other user, should be translated first
 	elseif ($row[2] == $id)
 	{
-	  echo "<b>" . $row[4] . "</b>" . "<br>"; 
+	  $translatedreceived = $row[4];
+	  // code to translate message goes here !!!
+	  
+	  echo "<p> <b>" . $translatedreceived . "</b> </p>"; 
 	}
       }
     }
