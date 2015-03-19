@@ -36,7 +36,7 @@
 	}
 	elseif ($row[2] == $id)
 	{
-	  echo "<b>" . $row[4] . "<b>" . "<br>"; 
+	  echo "<b>" . $row[4] . "</b>" . "<br>"; 
 	}
       }
     }
