@@ -93,10 +93,12 @@
 
     // test with a conversation between user 24 and 25
     // play as user 24
-    $id = 24;
+    $cookie_name = "id";
+    $id= $_COOKIE[$cookie_name];
+
     $partnerid = 25;
     
-    echo '<div class="scrolly">';
+    echo '<div class="scrolly" id="messagebox">';
     
     $query = "SELECT * FROM exchanges WHERE (senderID = '$id' AND receiverID = '$partnerid') OR (senderID = '$partnerid' AND receiverID = '$id') ORDER BY id";
     $result = mysqli_query($mysqli, $query) or die($mysqli_error());
@@ -107,7 +109,7 @@
     }
     else
     {
-      echo "<p> You have messages </p>";
+      // echo "<p> You have messages </p>";
       while ($row = mysqli_fetch_row($result))
       {
 	// message originated from this user so display as is
@@ -119,11 +121,11 @@
 	elseif ($row[2] == $id)
 	{
 	  $translatedreceived = $row[4];
-	  // code to translate message goes here !!!
-	  
+	  // code to translate message goes here !!!	  
 	  echo "<p class='received'>" . $translatedreceived . "</p>"; 
-	}
+	}	
       }
+
     }
     
     echo '</div>';
