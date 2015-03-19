@@ -258,7 +258,7 @@
 		echo "</form>";
       
       echo "<form name='delete' method='post' action='contacts.php'>"; 
-	    echo "<button type='submit' name='delete' value='".$row2['id']."'>" . "delete " . $row['first_name'] . "</button>"; ; 
+	    echo "<button type='submit' name='delete' value='".$row2['id']."'>" . "delete </button>"; ; 
 	    echo "</form>";
 
       //echo "<form name='delete' method='post' action='contacts.php' style='display: inline-block; margin-right: 25px;'>"; 
