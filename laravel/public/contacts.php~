@@ -72,7 +72,7 @@
 				<li role="presentation" class="active" style="text-align: center;"> Chat <a href="chat.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-comment" aria-hidden="true"></span></a></li>
 				<li role="presentation" class="active" style="text-align: center;"> Profile <a href="profile.html"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-user" aria-hidden="true"></span></a></li>
 				<li role="presentation" class="active" style="text-align: center;"> Friends <a href="contacts.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-tasks" aria-hidden="true"></span></a></li>
-				<li role="presentation" class="active" style="text-align: center;"> Home <a href="Home1.html"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
+				<li role="presentation" class="active" style="text-align: center;"> Home <a href="home.html"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
 				<li role="presentation" class="active" style="text-align: center;"> Quit <a href="signout.php"><span style="min-width: 4em; text-align: center;" class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a></li>
 			  </ul>
 			  
@@ -146,23 +146,7 @@
 	  { echo "<p> No results found for ".$search." </p>"; }
 	  else
 	  { 
-	  $row = $result -> fetch_assoc();
-	  
-
-
-	// Code to delete a friend.  
-	if(isset($_POST['delete']))
-   {
-     alert $idtodelete;
-     //delete "friend" relationship from both users. 
-     $idtodelete = $_POST['idtodelete'];
-	  $query = "DELETE * FROM friends WHERE user1ID = '$id' AND user2ID = $idtodelete";
-	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-	  $query = "DELETE * FROM friends WHERE user1ID = '$idtodelete' AND user2ID = $id";
-	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-
-     
-   }  	  
+	  $row = $result -> fetch_assoc();	  
 	  
 
 
@@ -215,6 +199,17 @@
 	
 	} // is set add
 
+  	// Code to delete a friend.  
+	if(isset($_POST['delete']))
+   {
+     //delete "friend" relationship from both users. 
+     $idtodelete = $_POST['delete'];
+	  $query = "DELETE * FROM friends WHERE user1ID = '$id' AND user2ID = $idtodelete";
+	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+	  $query = "DELETE * FROM friends WHERE user1ID = '$idtodelete' AND user2ID = $id";
+	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());     
+   }
+
 
 
 
@@ -257,10 +252,13 @@
 		echo "<button type='submit' name='partnerid' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>";  
 		echo "</form>";
       
+      echo "<form name='delete' method='post' action='contacts.php'>"; 
+	    echo "<button type='submit' name='delete' value='".$row2['id']."'>" . "delete </button>"; ; 
+	    echo "</form>";
 
-      echo "<form name='delete' method='post' action='contacts.php' style='display: inline-block; margin-right: 25px;'>"; 
-		echo "<button type='submit' name='idtodelete' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/page_text_delete.gif'> </button>";  
-		echo "</form>";
+      //echo "<form name='delete' method='post' action='contacts.php' style='display: inline-block; margin-right: 25px;'>"; 
+		//echo "<button type='submit' name='delete' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/page_text_delete.gif'> </button>";  
+		//echo "</form>";
       
  
 
