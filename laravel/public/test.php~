@@ -7,7 +7,7 @@
    
   foreach($json['dat'] as $item) {
   
-    echo $item 
+    echo $item; 
 
   }
 
