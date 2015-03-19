@@ -22,3 +22,11 @@ div.hidden {
     height: 500px;
     overflow: hidden;
 }
+
+p.sent {
+    text-align: right;
+} 
+
+p.received {
+    text-align: left;
+} 
