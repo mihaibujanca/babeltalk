@@ -30,8 +30,8 @@
 
   $translation = $json['dat'][0]['text'][0];
   
-  echo "<br>"
-  echo "<br>"
+  echo "<br>";
+  echo "<br>";
  
   echo "The translated text is: " + $translation;
 ?>

@@ -22,7 +22,7 @@
 
   $newstring = implode("+", preg_split("/[\s]+/", $message));
 
-  $contents = file_get_contents("http://itranslate4.eu/api/Translate?auth=df287e5e-6b1f-4319-90c7-9bc3ba3e45c4&src=" + $senderlang + "&trg=" + $recieverlang + "&dat=" + $newstring + ".&dat=Er+kann+jetzt+nach     +Hause+gehen.");
+  $contents = file_get_contents("http://itranslate4.eu/api/Translate?auth=df287e5e-6b1f-4319-90c7-9bc3ba3e45c4&src=" + $senderlang + "&trg=" + $recieverlang + "&dat=" + $newstring + ".&dat=Er+kann+jetzt+nach+Hause+gehen.");
 
   $json = json_decode($contents, true);
   
