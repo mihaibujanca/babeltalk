@@ -112,16 +112,20 @@
     // send a message if required
     if (isset($_POST["content"]) and !isset($COOKIE["wait"]))
     {
-       // send message to databse
-       $senderID = $id;
-       $receiverID = $partnerid;
-       $time = time();
-       $content = $_POST["content"];
-       // sanitize input
-       $content = filter_var($content, FILTER_SANITIZE_STRING);
-       $insert_row = $mysqli->query("INSERT INTO exchanges (senderID, receiverID, time, content) 
+       if ($_COOKIE["lastcontent"] != $content or $_COOKIE["lastreceiver"] != $receiverID)
+       {
+	// send message to databse
+	$senderID = $id;
+	$receiverID = $partnerid;
+	$time = time();
+	$content = $_POST["content"];
+	// sanitize input
+	$content = filter_var($content, FILTER_SANITIZE_STRING);
+	$insert_row = $mysqli->query("INSERT INTO exchanges (senderID, receiverID, time, content) 
 				    VALUES  ('$senderID', '$receiverID', '$time', '$content')");
-      setcookie("wait","delay", time() +1 , "/");
+	setcookie("lastcontent", $content , time() + (86400 * 365), "/");
+	setcookie("lastreceiver", $partnerid, time() + (86400 * 365), "/");
+        } // check not refresehed
       $needtoscroll = True;
     }
 
