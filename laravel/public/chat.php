@@ -91,12 +91,21 @@
       die('Connection Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
     }
 
-    // test with a conversation between user 24 and 25
-    // play as user 24
+    // test with a conversation between this user and 25
+    
+    // get ids
     $cookie_name = "id";
     $id= $_COOKIE[$cookie_name];
-
+    // this will be got using post on a page refresh
     $partnerid = 25;
+    
+    // get partner details
+    $query = "SELECT * FROM users WHERE id = '$partnerid'";
+    $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+    $row = $result->fetch_assoc();
+    $partnerfirstname = row['first_name'];
+    $partnerlastname = row['last_name'];
+    $partnerlanaguage = row['langauge'];
     
     echo '<div class="scrolly" id="messagebox">';
     
