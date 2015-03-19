@@ -37,7 +37,7 @@
 	// message originated from this user so display as is
 	if ($row[1] == $id)
 	{
-	  echo "<p>" . $row[4] . "</p>"; 
+	  echo "<p class='sent'>" . $row[4] . "</p>"; 
 	}
 	// message came from other user, should be translated first
 	elseif ($row[2] == $id)
@@ -45,14 +45,32 @@
 	  $translatedreceived = $row[4];
 	  // code to translate message goes here !!!
 	  
-	  echo "<p> <b>" . $translatedreceived . "</b> </p>"; 
+	  echo "<p class='received'>" . $translatedreceived . "</p>"; 
 	}
       }
     }
     
     echo '</div>';
-    
     $result->close();
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    echo "<div class='scrollx'>";
+    echo "</div>";
+
   ?>
   </body>
 </html> 
