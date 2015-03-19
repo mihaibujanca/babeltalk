@@ -39,7 +39,7 @@
   if($num_row == 0)
   {
     echo "User does not exist ";
-    header("Location: http://10.2.234.107/babeltalk/laravel/public/index.html");
+    header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/index.html");
   }
 
   // if a row is returned, the user must already exist
@@ -77,7 +77,7 @@
 	}
 	setcookie("firstname", $firstname, time()+60*60*24*365, "/");
 	setcookie("lastname", $lastname, time()+60*60*24*365, "/");
-	header("Location: http://10.2.234.107/babeltalk/laravel/public/home.html");
+	header("Location:https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/Home1.html");
 	 
 	  $cookie_name="id";
 	  if(!isset($_COOKIE[$cookie_name])) {
