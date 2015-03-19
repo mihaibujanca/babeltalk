@@ -28,7 +28,7 @@
     {
       while ($row = mysqli_fetch_row($result))
       {
-	echo $row[5] . "<br>"; 
+	echo $row['content'] . "<br>"; 
       }
     }
     
