@@ -29,7 +29,15 @@
       echo "<p> You have messages </p>";
       while ($row = mysqli_fetch_row($result))
       {
-	echo $row[0] . "<br>"; 
+	// message originated from this user
+	if ($row[1] == $id)
+	{
+	  echo $row[4] . "<br>"; 
+	}
+	elseif ($row[2] == $id)
+	{
+	  echo "<b>" . $row[4] . "<b>" . "<br>"; 
+	}
       }
     }
     
