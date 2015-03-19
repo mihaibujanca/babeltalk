@@ -103,9 +103,9 @@
     $query = "SELECT * FROM users WHERE id = '$partnerid'";
     $result = mysqli_query($mysqli, $query) or die($mysqli_error());
     $row = $result->fetch_assoc();
-    $partnerfirstname = row['first_name'];
-    $partnerlastname = row['last_name'];
-    $partnerlanaguage = row['langauge'];
+    $partnerfirstname = $row['first_name'];
+    $partnerlastname = $row['last_name'];
+    $partnerlanaguage = $row['langauge'];
     
     echo '<div class="scrolly" id="messagebox">';
     
