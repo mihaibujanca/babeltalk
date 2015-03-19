@@ -1,5 +1,8 @@
 <html>
-<head> </head>
+<head>
+<title> BabelTalk - Chat </title>
+<link rel="stylesheet" type="text/css" href="chatstyle.css">
+</head>
   <body>
   <?php
     // load configuration for database
@@ -16,6 +19,8 @@
     // play as user 24
     $id = 24;
     $partnerid = 25;
+    
+    $echo "<div class='scrolly'>";
     
     $query = "SELECT * FROM exchanges WHERE (senderID = '$id' AND receiverID = '$partnerid') OR (senderID = '$partnerid' AND receiverID = '$id') ORDER BY id";
     $result = mysqli_query($mysqli, $query) or die($mysqli_error());
@@ -40,6 +45,8 @@
 	}
       }
     }
+    
+    $echo "</div>";
     
     $result->close();
   ?>
