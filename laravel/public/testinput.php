@@ -183,8 +183,11 @@
     if (retrievedcookie!="") {       
 	document.getElementById("input").value=retrievedcookie;
     } 
-  
-  document.cookie("scrollcookie")=document.getElementById("scrollarea").scrollHeight;';
+  ';
+  }
+  else
+  {
+   echo 'document.cookie("scrollcookie")=document.getElementById("scrollarea").scrollHeight;';
 
   }  
   
