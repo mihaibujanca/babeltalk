@@ -131,7 +131,7 @@
       
       echo '</div>';
     
-      echo '<form action="chat.php" method="post">';
+      echo '<form action="testinput.php" method="post">';
       echo '<input type="text" id="input" name="content" autocomplete="off" style ="width: 150px;height: 20px;"/>';
       echo '</form>';
       
