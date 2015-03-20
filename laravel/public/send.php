@@ -26,7 +26,11 @@
   
   
   //Translate the message
+  if ($language != $partnerlanguage)
+  {
   $translatedcontent = translate($language, $partnerlanguage, $content);
+  }
+  else $translatedcontent = $content;
   
   
   
