@@ -19,7 +19,7 @@
   $partnerfirstname= $_COOKIE["partnerfirstname"];
   $partnerlastname = $_COOKIE["partnerlastname"];
   $partnerlanguage = $_COOKIE["partnerlanguage"];
-  echo($partnerlanguage);
+
   $time = time();
   setcookie("noclear", "whocares", time()+1);
   
@@ -70,6 +70,6 @@
      
    }
       
-   //header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/testinput.php");
+   header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/testinput.php");
   
 ?>
