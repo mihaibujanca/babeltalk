@@ -2,12 +2,13 @@
 <html>
     <head>
         <style>
-        div {
-            border: 1px solid black;
-            width: 200px;
-            height: 700px;
-            overflow: scroll;
-        }
+            div 
+            {
+                border: 1px solid black;
+                width: 200px;
+                height: 700px;
+                overflow: scroll;
+            }
         </style>
     </head>
     
@@ -30,6 +31,7 @@
 
         function myFunction() 
         {
+          window.alert("this is being run");
           var $scrollpos = $("div").scrollTop();
           var $inputcookie = "inputcookie=";
           $inputcookie += $scrollpos;
