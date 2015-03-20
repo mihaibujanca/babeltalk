@@ -64,8 +64,10 @@
      $json = json_decode($contents, true);
      echo $contents;
      $translation = $json['dat'][0]['text'][0];
-     
+     echo "<br>";
+     echo $translation;
      return $translation;
+     
      
    }
       
