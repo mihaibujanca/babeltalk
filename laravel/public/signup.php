@@ -69,6 +69,7 @@
       if($num_row == 1)
       {
 	echo "User already exists with the email. ";
+	
       }
       
       else if($num_row == 0)
@@ -80,7 +81,8 @@
 
   }
 
-
+  header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/index.html");
+     
 
   
 
