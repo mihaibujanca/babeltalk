@@ -176,7 +176,7 @@
   
  <?php 
  
- if (!isset($_COOKIE['noclear'])
+ if (!isset($_COOKIE['noclear']))
  {
  echo '    //function restoreInput() {
     var retrievedcookie=getCookie("inputcookie");
