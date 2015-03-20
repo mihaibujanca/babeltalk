@@ -21,7 +21,7 @@
   $partnerlanguage = $_COOKIE["partnerlanguage"];
   $time = time();
   
-  $insert_row = $mysqli->query("INSERT INTO exchanges (senderID, receiverID, time, content) 
+  $insert_row = $mysqli->query("INSERT INTO exchanges (senderID, receiverID, time, sender_content, receiver_content) 
 				    VALUES  ('$id', '$partnerID', '$time', '$content', '$content')");
       
   header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/testinput.php");
