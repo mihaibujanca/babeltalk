@@ -35,13 +35,11 @@
         {
           var $scrollpos = $("div").scrollTop();
           window.alert($scrollpos);
-          window.alert("hero");
-
           var $inputcookie = "inputcookie=";
           $inputcookie += $scrollpos;
           document.cookie = $inputcookie;
           var $retrievedcookie = getCookie("inputcookie");
-          document.getElementById("demo").innerHTML = $scrollpos;
+          document.getElementById("demo").innerHTML = 2;
             
         }
             
