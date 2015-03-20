@@ -185,7 +185,7 @@
     } 
   
 
-   document.getElementById("scrollarea").scrollTop =document.getElementById("scrollarea").scrollHeight;';
+   document.getElementById("scrollarea").scrollTop =0;';
  }
  
  ?> 
