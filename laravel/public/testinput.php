@@ -142,7 +142,7 @@
 
 
 
-<script> document.getElementById("scrollarea").scrollTop =document.getElementById("scrollarea").scrollHeight; </script>
+<script> document.getElementById("scrollarea").scrollTop = 100; </script>
 
 
 
