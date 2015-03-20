@@ -4,9 +4,15 @@
 
 <p>This example uses the HTML DOM to assign an "onkeyup" event to an input element.</p>
 
-<p>Press a key inside the text field and release it to set the text to uppercase.</p>
+<div id="scrollarea" class="scrollable" style ="width: 150px;height: 150px;overflow-y: scroll;overflow-x: hidden;">
+    if i see one more page of lorum ipsum
+    then im going to learn lating just so that
+    i can reasonably destroy every single
+    piece of lorum ipsum whilst shouuting it out in a fashion
+    that will make me happy
+</div>
 
-Enter your name: <input type="text" id="input">
+<input type="text" id="input" style ="width: 150px;height: 20px;">
 
 <p id="editme2"> </p>
 
@@ -29,7 +35,7 @@ Enter your name: <input type="text" id="input">
     } // getCookie
     
   function refresh(){
-    storeInput();
+    storeScroll();
     location.reload();
   } // refresh
   
@@ -38,13 +44,32 @@ Enter your name: <input type="text" id="input">
     var retrievedcookie=getCookie("inputcookie");
     if (retrievedcookie!="") {       
 	document.getElementById("input").value=retrievedcookie;
-	document.getElementById("editme2").value="restore";
     } // if not empty cookie
   //} // restoreInput
+    
+    //function restoreScroll() {
+    var retrievedcookie=getCookie("scrollcookie");
+    if (retrievedcookie!="") {       
+	document.getElementById("scrollarea").scrollTop =retrievedcookie;
+    } // if not empty cookie
+  //} // restoreInput
+    
     
     document.getElementById("input").onkeyup = function() {storeInput()};
     document.getElementById("input").onkeydown = function() {storeInput()};
     
+    
+  function storeScroll() {
+      // get scroll position as var
+      var $input = document.getElementById("scrollarea").scrollTop;   
+      // start a cookie named inputcookie
+      var $scrollcookie = "scrollcookie=";      
+      // add actual input value to inputcookie
+      $scrollcookie += $input;          
+      // plant the cookie 
+      document.cookie=$scrollcookie;      
+  } // storeInput
+  
   function storeInput() {
       // get input element as var
       var $input = document.getElementById("input").value;    
