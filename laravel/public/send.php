@@ -57,10 +57,9 @@
      echo $url;
      // Get the contents of the URL
      $contents = url_get_contents($url);
-
+     echo $contents;
      // Decode the returned JSON object and get the text
      $json = json_decode($contents, true);
-     echo $contents;
      $translation = $json['dat'][0]['text'][0];
      echo "<br>";
      echo $translation;
