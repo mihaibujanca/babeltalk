@@ -28,6 +28,8 @@
   //Translate the message
   $translatedcontent = translate($language, $partnerlanguage, $content);
   
+  echo $translatedcontent;
+  
   
   $insert_row = $mysqli->query("INSERT INTO exchanges (senderID, receiverID, time, sender_content, receiver_content) 
 				    VALUES  ('$id', '$partnerID', '$time', '$content', '$translatedcontent')");
@@ -45,7 +47,7 @@
   }       
   
   
-   function translate($senderland, $revieverlang, $message)
+   function translate($senderlang, $recieverlang, $message)
    {
      // Add the plus signs inside the message so it can be send via api request
      $newstring = implode("+", preg_split("/[\s]+/", $message));
