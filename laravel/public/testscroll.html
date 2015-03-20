@@ -18,7 +18,7 @@
 
         <p> Current scroll position is: <span id="demo">0</span> pixels.</p>
         
-        <div onscroll="myFunction()">Lorem ipsum dolor sit amet, qui veri imperdiet at, ex dico eius dicunt cum. Tantas repudiandae mediocritatem qui no, agam graece nam ex. Ex soluta gloriatur voluptaria sit, tale utinam in ius. At audire ornatus democritum usu.
+        <div id = "scroll" onscroll="myFunction()">Lorem ipsum dolor sit amet, qui veri imperdiet at, ex dico eius dicunt cum. Tantas repudiandae mediocritatem qui no, agam graece nam ex. Ex soluta gloriatur voluptaria sit, tale utinam in ius. At audire ornatus democritum usu.
         
         Timeam senserit mei in, essent nostrum at quo. Repudiare splendide an vix, ne tation semper expetendis vim. Agam omittam usu no, per et bonorum sadipscing. Sea ei molestie pertinacia, ex his paulo fuisset. Duo et nominati assentior. Nostrum eligendi sed ei, pri salutatus adolescens cu.
         
@@ -34,7 +34,7 @@
         function myFunction() 
         {
             
-          $scrollpos = document.getElementById("div").scrollTop();
+          $scrollpos = document.getElementById("scroll").scrollTop();
           window.alert("check");
           window.alert($scrollpos);
           var $inputcookie = "inputcookie=";
