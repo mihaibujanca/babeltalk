@@ -76,9 +76,10 @@
 	  
 
 
-<div id="scrollarea" class="scrollable" style ="width: 400px;height: 400px;overflow-y: scroll;overflow-x: hidden;">
+
     
     <?php
+      echo '<div id="scrollarea" class="scrollable" style ="width: 400px;height: 400px;overflow-y: scroll;overflow-x: hidden;">'
       // load configuration for database
       require_once('config.inc.php'); 
       // connect to database
@@ -88,6 +89,9 @@
       $id= $_COOKIE["id"];
       $firstname= $_COOKIE["firstname"];
       $lastname= $_COOKIE["lastname"];
+      if (isset$_COOKIE("language")){
+	setcookie("language","en");
+      } // if language cookie
       $language = $_COOKIE["language"];
       
       $partnerID= $_COOKIE["partnerID"];
@@ -124,10 +128,15 @@
       } // there are messages
       
       $result->close();
+      
+      echo '</div>';
+      echo '<input type="text" id="input" style ="width: 150px;height: 20px;">'
+      
+      
     ?> 
-</div> <!-- display messages -->
+ <!-- display messages -->
 
-<input type="text" id="input" style ="width: 150px;height: 20px;">
+
 
 
 
