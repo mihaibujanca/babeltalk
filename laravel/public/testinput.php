@@ -187,7 +187,7 @@
   }
   else
   {
-   echo 'document.cookie("scrollcookie")=100000000000000000;';
+   echo 'document.cookie("scrollcookie")=10000;';
   }  
   
  
