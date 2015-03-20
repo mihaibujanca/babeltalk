@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body onload="fixInput()">
+<body>
 
 <p>This example uses the HTML DOM to assign an "onkeyup" event to an input element.</p>
 
@@ -12,53 +12,53 @@ Enter your name: <input type="text" id="input">
 
 <script>
     // refresh the page every 3 seconds
-    setInterval(function () { location.reload()}, 3000);
+    setInterval(function () {refresh()}, 3000);
     
     // give focus to the input
     document.getElementById("input").focus();
     
     function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-      for(var i=0; i<ca.length; i++) {
-	  var c = ca[i];
-	  while (c.charAt(0)==' ') c = c.substring(1);
-	  if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
-      }
-    return "";
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+	for(var i=0; i<ca.length; i++) {
+	    var c = ca[i];
+	    while (c.charAt(0)==' ') c = c.substring(1);
+	    if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+	}
+      return "";
     } // getCookie
     
-
-  function fixInput() {
-    var username=getCookie("inputcookie");
-    if (username!="") {       
-        document.getElementById("input").value=username;
+  function refresh(){
+    storeInput();
+    location.reload();
+  } // refresh
+  
+  
+  //function restoreInput() {
+    var retrievedcookie=getCookie("inputcookie");
+    if (retrievedcookie!="") {       
+	document.getElementById("input").value=retrievedcookie;
+	document.getElementById("editme2").value="restore";
     } // if not empty cookie
-    }
+  //} // restoreInput
     
     document.getElementById("input").onkeyup = function() {storeInput()};
-
     document.getElementById("input").onkeydown = function() {storeInput()};
-    function storeInput() {
-    // get input element as var
-    var $input = document.getElementById("input").value;
     
-    // start a cookie named inputcookie
-    var $inputcookie = "inputcookie=";
+  function storeInput() {
+      // get input element as var
+      var $input = document.getElementById("input").value;    
+      // start a cookie named inputcookie
+      var $inputcookie = "inputcookie=";      
+      // add actual input value to inputcookie
+      $inputcookie += $input;          
+      // plant the cookie 
+      document.cookie=$inputcookie;      
+  } // storeInput  
+  
+
     
-    // add actual input value to inputcookie
-    $inputcookie += $input;    
     
-    // plant the cookie 
-    document.cookie=$inputcookie;
-    
-    // retrieve the cookie
-    $retrievedcookie = getCookie("inputcookie");
-    
-    // change editme2 to be cookie value
-    document.getElementById("input").innerHTML = $retrievedcookie;    
-    
-}
 </script>
 
 </body>
