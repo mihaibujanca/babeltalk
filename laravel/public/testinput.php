@@ -79,7 +79,7 @@
 
     
     <?php
-      echo '<div id="scrollarea" class="scrollable" style ="width: 400px;height: 400px;overflow-y: scroll;overflow-x: hidden;">'
+      echo '<div id="scrollarea" class="scrollable" style ="width: 400px;height: 400px;overflow-y: scroll;overflow-x: hidden;">';
       // load configuration for database
       require_once('config.inc.php'); 
       // connect to database
@@ -130,7 +130,7 @@
       $result->close();
       
       echo '</div>';
-      echo '<input type="text" id="input" style ="width: 150px;height: 20px;">'
+      echo '<input type="text" id="input" style ="width: 150px;height: 20px;">';
       
       
     ?> 
