@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body onload="fixinput()">
+<body onload="fixInput()">
 
 <p>This example uses the HTML DOM to assign an "onkeyup" event to an input element.</p>
 
@@ -22,16 +22,15 @@ Enter your name: <input type="text" id="fname">
     return "";
     } // getCookie
     
-    
-    function fixinput{
-    /* var inputcookie=getCookie("inputcookie");
-    if (inputcookie!=""){
-      // retrieve the cookie
-      $retrievedcookie = getCookie("inputcookie");    
-      // change fname to be cookie value
-      document.getElementById("fname").value = $retrievedcookie; */
-      window.alert($retrievedcookie);
-    } // fixinput
+
+function fixInput() {
+    var username=getCookie("inputcookie");
+    if (username!="") {
+       
+        document.getElementById("fname").value=username;
+    }
+    }
+
     
     document.getElementById("fname").onkeyup = function() {myFunction()};
 
