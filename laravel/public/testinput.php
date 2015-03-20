@@ -130,8 +130,10 @@
       $result->close();
       
       echo '</div>';
-      echo '<input type="text" id="input" style ="width: 150px;height: 20px;">';
-      
+    
+      echo '<form action="chat.php" method="post">';
+      echo '<input type="text" id="input" name="content" autocomplete="off" style ="width: 150px;height: 20px;"/>';
+      echo '</form>';
       
     ?> 
  <!-- display messages -->
