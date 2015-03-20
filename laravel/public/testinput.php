@@ -137,7 +137,7 @@
       
       if (isset($_POST["input"]))
       {
-      echo $_POST["content"]; 
+      echo '<hr>'; 
       }
       
     ?> 
