@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example uses the HTML DOM to assign an "onkeyup" event to an input element.</p>
+
+<div id="scrollarea" class="scrollable" style ="width: 150px;height: 150px;overflow-y: scroll;overflow-x: hidden;">
+    scroll scroll scroll and more text
+    ewufwiu ewfiuwhe fewiuh wfweoiuh fewoiuh 
+    weiufh weiufewh foiwuehf oiewuh ewoiufh we
+</div>
+
+<input type="text" id="input" style ="width: 150px;height: 20px;">
+
+<p id="editme2"> </p>
+
+<script>
+    // refresh the page every 3 seconds
+    setInterval(function () {refresh()}, 3000);
+    
+    // give focus to the input
+    document.getElementById("input").focus();
+    
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+	for(var i=0; i<ca.length; i++) {
+	    var c = ca[i];
+	    while (c.charAt(0)==' ') c = c.substring(1);
+	    if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+	}
+      return "";
+    } // getCookie
+    
+  function refresh(){
+    storeScroll();
+    location.reload();
+  } // refresh
+  
+  
+  //function restoreInput() {
+    var retrievedcookie=getCookie("inputcookie");
+    if (retrievedcookie!="") {       
+	document.getElementById("input").value=retrievedcookie;
+    } // if not empty cookie
+  //} // restoreInput
+    
+    //function restoreScroll() {
+    var retrievedcookie=getCookie("scrollcookie");
+    if (retrievedcookie!="") {       
+	document.getElementById("scrollarea").scrollTop =retrievedcookie;
+    } // if not empty cookie
+  //} // restoreInput
+    
+    
+    document.getElementById("input").onkeyup = function() {storeInput()};
+    document.getElementById("input").onkeydown = function() {storeInput()};
+    
+    
+  function storeScroll() {
+      // get scroll position as var
+      var $input = document.getElementById("scrollarea").scrollTop;   
+      // start a cookie named inputcookie
+      var $scrollcookie = "scrollcookie=";      
+      // add actual input value to inputcookie
+      $scrollcookie += $input;          
+      // plant the cookie 
+      document.cookie=$scrollcookie;      
+  } // storeInput
+  
+  function storeInput() {
+      // get input element as var
+      var $input = document.getElementById("input").value;    
+      // start a cookie named inputcookie
+      var $inputcookie = "inputcookie=";      
+      // add actual input value to inputcookie
+      $inputcookie += $input;          
+      // plant the cookie 
+      document.cookie=$inputcookie;      
+  } // storeInput  
+  
+
+    
+    
+</script>
+
+</body>
+</html>
