@@ -10,13 +10,7 @@
       // load configuration for database
       require_once('config.inc.php'); 
       // connect to database
-      $mysqli = new mysqli($database_host, $database_user, $database_password, $database_name);
-      // check for error 
-      if($mysqli -> connect_error) 
-      {
-	die('Connection Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
-      }
-      
+      $mysqli = new mysqli($database_host, $database_user, $database_password, $database_name);   
       
       // pickup cookies
       $id= $_COOKIE["id"];
