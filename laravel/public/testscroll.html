@@ -38,7 +38,7 @@
           var $inputcookie = "inputcookie=";
           $inputcookie += $scrollpos;
           document.cookie = $inputcookie;
-          $retrievedcookie = getCookie("inputcookie");
+          var $retrievedcookie = getCookie("inputcookie");
           document.getElementById("demo").innerHTML = $scrollpos;
             
         }
