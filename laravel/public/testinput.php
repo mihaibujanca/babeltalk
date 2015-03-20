@@ -71,7 +71,7 @@
 	<!-- Begin page content -->
 	<div class="container">
 	  <div class="page-header">
-	    <h1>Chat</h1>   
+	    <h2>Chat</h2>   
 	  </div>
 	  
 
@@ -79,7 +79,7 @@
 
     
     <?php
-      echo '<div id="scrollarea" class="scrollable" style ="width: 100%;height: 400px;overflow-y: scroll;overflow-x: hidden;">';
+      echo '<div id="scrollarea" class="scrollable" style ="width: 90%;height: 400px;overflow-y: scroll;overflow-x: hidden;">';
       // load configuration for database
       require_once('config.inc.php'); 
       // connect to database
