@@ -111,7 +111,7 @@
 	  // message originated from this user so display sender_content
 	  if ($row[1] == $id)
 	  {
-	    echo "<p style='text-align: left;'>" . $row[4] . "</p>"; 
+	    echo "<p style='text-align: left; margin-left:5%; margin-right:40%'>" . $row[4] . "</p>"; 
 	  }
 	  // message came from other user so display receiver_content
 	  elseif ($row[2] == $id)
