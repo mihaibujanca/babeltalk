@@ -14,8 +14,8 @@
   $row = $result -> fetch_assoc();	  
 	  
   
-  setcookie("partnerfirstname",$row["firstname"]);
-  setcookie("partnerlastname", $row["lastname"]);  
+  setcookie("partnerfirstname",$row["first_name"]);
+  setcookie("partnerlastname", $row["last_name"]);  
   setcookie("partnerlanguage", $row["language"]);
   
   header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/testinput.php");
