@@ -184,9 +184,10 @@
 	document.getElementById("input").value=retrievedcookie;
     } 
   
+  document.cookie("scrollcookie")=document.getElementById("scrollarea").scrollHeight;';
 
-   document.cookie("scrollcookie")=document.getElementById("scrollarea").scrollTop;';
- }
+  }  
+  
  
  ?> 
   
