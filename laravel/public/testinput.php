@@ -71,16 +71,12 @@
 	<!-- Begin page content -->
 	<div class="container">
 	  <div class="page-header">
-	    <h1>Friends</h1>   
+	    <h1>Chat</h1>   
 	  </div>
-	  <p> Search for new friends by email </p>
-	  <form name="form1" method="post" action="contacts.php">
-	    <input name="search" type="text" /> 
-	    <input type="submit" name="submit" value="search" /> 
-	  </form> 
-<p>This example uses the HTML DOM to assign an "onkeyup" event to an input element.</p>
+	  
 
-<div id="scrollarea" class="scrollable" style ="width: 150px;height: 150px;overflow-y: scroll;overflow-x: hidden;">
+
+<div id="scrollarea" class="scrollable" style ="width: 400px;height: 400px;overflow-y: scroll;overflow-x: hidden;">
     
     <?php
       // load configuration for database
