@@ -178,14 +178,14 @@
  
  if (!isset($_COOKIE['noclear']))
  {
- echo '    //function restoreInput() {
+ echo '    
     var retrievedcookie=getCookie("inputcookie");
     if (retrievedcookie!="") {       
 	document.getElementById("input").value=retrievedcookie;
-    } // if not empty cookie
-  //} // restoreInput' ;
+    } 
+  
 
-   echo 'document.getElementById("scrollarea").scrollTop =document.getElementById("scrollarea").scrollHeight';
+   document.getElementById("scrollarea").scrollTop =document.getElementById("scrollarea").scrollHeight;';
  }
  
  ?> 
