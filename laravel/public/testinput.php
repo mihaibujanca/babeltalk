@@ -183,7 +183,7 @@
     if (retrievedcookie!="") {       
 	document.getElementById("input").value=retrievedcookie;
     } // if not empty cookie
-  //} // restoreInput' 
+  //} // restoreInput' ;
       
  }
  
