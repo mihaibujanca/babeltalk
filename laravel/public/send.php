@@ -61,7 +61,7 @@
     
      // Decode the returned JSON object and get the text
      $json = json_decode($contents, true);
-     echo $json;
+     echo $contents;
      $translation = $json['dat'][0]['text'][0];
      
      return $translation;
