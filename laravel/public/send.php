@@ -43,8 +43,9 @@
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       $output = curl_exec($ch);
       curl_close($ch);
+      echo "output is " . $output;
       return $output;
-  }       
+   }       
   
   
    function translate($senderlang, $recieverlang, $message)
