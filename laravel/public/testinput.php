@@ -187,7 +187,7 @@
   }
   else
   {
-   echo 'document.cookie("scrollcookie")=document.getElementById("scrollarea").scrollHeight;';
+   echo 'document.cookie("scrollcookie")=100000000000000000;';
   }  
   
  
