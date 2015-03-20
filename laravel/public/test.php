@@ -23,6 +23,8 @@
   $newstring = implode("+", preg_split("/[\s]+/", $message));
   $url = "http://itranslate4.eu/api/Translate?auth=785f242-eab1-461d-8a72-a1867112458a&src=" . $senderlang . "&trg=" . $recieverlang . "&dat=" . $newstring . ".";
   $contents = url_get_contents($url);
+  echo $contents;
+  echo $url;
 
   $json = json_decode($contents, true);
   
