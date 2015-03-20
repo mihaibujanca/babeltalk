@@ -55,6 +55,7 @@
      $url = "http://itranslate4.eu/api/Translate?auth=785f2f42-eab1-461d-8a72-a1867112458a&src=" . $senderlang . "&trg=" . $recieverlang . "&dat=" . $newstring;
      // Get the contents of the URL
      $contents = url_get_contents($url);
+     echo $url; 
      // Decode the returned JSON object and get the text
      $json = json_decode($contents, true);
      $translation = $json['dat'][0]['text'][0];
@@ -64,6 +65,6 @@
      
    }
       
-   header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/testinput.php");
+   //header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/testinput.php");
   
 ?>
