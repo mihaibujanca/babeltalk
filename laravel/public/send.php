@@ -62,6 +62,9 @@
      $translation = $json['dat'][0]['text'][0];
      
      return $translation;
+     
+   }
       
   header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/testinput.php");
+  
 ?>
