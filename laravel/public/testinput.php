@@ -150,7 +150,7 @@
 
 <script>
     // refresh the page every 3 seconds
-    setInterval(function () {refresh()}, 3000);
+    setInterval(function () {storeScroll(),location.reload(),restoreScroll(),restoreInput()}, 3000);
     
     // give focus to the input
     document.getElementById("input").focus();
@@ -169,22 +169,24 @@
   function refresh(){
     storeScroll();
     location.reload();
+    restoreScroll();
+    restoreInput();
   } // refresh
   
   
-  //function restoreInput() {
+  function restoreInput() {
     var retrievedcookie=getCookie("inputcookie");
     if (retrievedcookie!="") {       
 	document.getElementById("input").value=retrievedcookie;
     } // if not empty cookie
-  //} // restoreInput
+  } // restoreInput
     
-    //function restoreScroll() {
+  function restoreScroll() {
     var retrievedcookie=getCookie("scrollcookie");
     if (retrievedcookie!="") {       
 	document.getElementById("scrollarea").scrollTop =retrievedcookie;
     } // if not empty cookie
-  //} // restoreInput
+  } // restoreInput
     
     
     document.getElementById("input").onkeyup = function() {storeInput()};
