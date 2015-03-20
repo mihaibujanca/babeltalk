@@ -18,5 +18,5 @@
   setcookie("partnerlastname", $row["lastname"]);  
   setcookie("partnerlanguage", $row["language"]);
   
-  header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/testinput.html");
+  header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/testinput.php");
 ?>
