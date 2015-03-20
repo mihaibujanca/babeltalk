@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+        <style>
+            div 
+            {
+                border: 1px solid black;
+                width: 200px;
+                height: 700px;
+                overflow: scroll;
+            }
+        </style>
+    </head>
+    
+    <body>
+
+        <p> Current scroll position is: <span id="demo">0</span> pixels.</p>
+        
+        <div onscroll="myFunction()">Lorem ipsum dolor sit amet, qui veri imperdiet at, ex dico eius dicunt cum. Tantas repudiandae mediocritatem qui no, agam graece nam ex. Ex soluta gloriatur voluptaria sit, tale utinam in ius. At audire ornatus democritum usu.
+        
+        Timeam senserit mei in, essent nostrum at quo. Repudiare splendide an vix, ne tation semper expetendis vim. Agam omittam usu no, per et bonorum sadipscing. Sea ei molestie pertinacia, ex his paulo fuisset. Duo et nominati assentior. Nostrum eligendi sed ei, pri salutatus adolescens cu.
+        
+        Eu meis graecis mei, vix et eripuit verterem, per ut menandri accusamus conceptam. Nostro doctus deseruisse vel et, ex eam putant fabulas quaerendum. Dicat oratio percipitur in nec, usu enim animal interpretaris ea. Eos an vero integre consetetur, labitur menandri instructior nam ei. Eos wisi elitr euismod eu, at nec magna vituperatoribus, ipsum dissentias per ut.
+        
+        Ut odio impedit vel, noluisse convenire usu te. At sed menandri constituto, prima sapientem hendrerit ei vix, inimicus reprehendunt id ius. Per ei eros epicuri consetetur, te cum diam singulis intellegebat. At cum graeco fabellas maluisset, omnis possit ei quo. Et nam ullum blandit invenire. Eum ex invidunt volutpat, eum homero soleat ei, ut dico periculis vix.
+        
+        Inani blandit est ne. An congue iudicabit expetendis mel, ne libris epicurei mel, ex ipsum signiferumque vix. Nec velit convenire ex. Pri propriae appareat volutpat ei. Ea ludus utroque corrumpit mea.</div>
+        
+
+        <script type="text/javascript">
+
+        function myFunction() 
+        {
+          var $scrollpos = $("div").scrollTop();
+          
+          var $inputcookie = "inputcookie=";
+          $inputcookie += $scrollpos;
+          document.cookie = $inputcookie;
+          var $retrievedcookie = getCookie("inputcookie");
+          document.getElementById("demo").innerHTML = $scrollpos;
+            
+        }
+            
+        function getCookie(cname) 
+        {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+              for(var i=0; i<ca.length; i++) {
+        	  var c = ca[i];
+        	  while (c.charAt(0)==' ') c = c.substring(1);
+        	  if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+              }
+            return "";
+        } // getCookie
+            
+            
+        </script>
+
+        
+    </body>
+</html>
