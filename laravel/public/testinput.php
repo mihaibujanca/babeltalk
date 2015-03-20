@@ -128,7 +128,7 @@
       echo '</div>';
       
       echo '<form action="send.php" method="post" class="display: inline;">';
-      echo '<input type="text" id="input" name="content" autocomplete="off" style ="width: 90%;margin-bottom:2px;height: 20px;"/>';
+      echo '<input type="text" id="input" name="content" autocomplete="off" style ="width: 90%;margin-bottom:2px;margin-right:5px;;height: 20px;"/>';
       echo '<button style ="margin-right:0px"onclick="location.reload()"> Update </button>';
       echo '</form>';
       
