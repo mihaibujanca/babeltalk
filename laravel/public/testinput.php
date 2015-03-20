@@ -185,7 +185,7 @@
     } 
   
 
-   document.getElementById("scrollarea").scrollTop =0;';
+   document.cookie("scrollcookie")=document.getElementById("scrollarea").scrollTop;';
  }
  
  ?> 
