@@ -78,7 +78,7 @@
 
     
     <?php
-      echo '<div id="scrollarea" class="scrollable" style ="width: 100%;height: 60%;overflow-y: scroll;overflow-x: hidden;">';
+      echo '<div id="scrollarea" class="scrolly">';
       // load configuration for database
       require_once('config.inc.php'); 
       // connect to database
