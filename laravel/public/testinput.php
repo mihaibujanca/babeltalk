@@ -137,6 +137,7 @@
       
       
       
+      
     ?> 
  <!-- display messages -->
 
@@ -173,13 +174,21 @@
     location.reload();
   } // refresh
   
-  
-  //function restoreInput() {
+ <?php 
+ 
+ if (!isset($_COOKIE['noclear'])
+ {
+ echo '    //function restoreInput() {
     var retrievedcookie=getCookie("inputcookie");
     if (retrievedcookie!="") {       
 	document.getElementById("input").value=retrievedcookie;
     } // if not empty cookie
-  //} // restoreInput
+  //} // restoreInput' 
+      
+ }
+ 
+ ?> 
+  
     
     //function restoreScroll() {
     var retrievedcookie=getCookie("scrollcookie");
