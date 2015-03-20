@@ -191,17 +191,12 @@
 	// code to add a friend
 	if(isset($_POST['add']))
 	{
-      $idtoadd = $_POST['add'];
-      $query = "SELECT * FROM friends WHERE user1ID = '$id' AND user2ID = '$idtoadd'";
-      $result = $mysqli->query($query);
-      $num_row = mysqli_num_rows($result);
-      if($num_row == 0)
-      {
-		  $query = "INSERT INTO friends (user1ID, user2ID) VALUES ('$id' ,'$idtoadd')";
-		  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-		  $query = "INSERT INTO friends (user1ID, user2ID) VALUES ('$idtoadd' ,'$id')";
-		  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
-      }
+	  $idtoadd = $_POST['add'];
+	  $query = "INSERT INTO friends (user1ID, user2ID) VALUES ('$id' ,'$idtoadd')";
+	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+	  $query = "INSERT INTO friends (user1ID, user2ID) VALUES ('$idtoadd' ,'$id')";
+	  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+	
 	} // is set add
 
   	// Code to delete a friend.  
@@ -253,8 +248,8 @@
 	      {	
 		echo "<span style='display: inline-block;'>"; 
  
-		echo "<form name='chat' method='post' action='chat.php' style='display: inline-block; margin-right: 10px;'>"; 
-		echo "<button type='submit' name='partnerid' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>";  
+		echo "<form name='chat' method='post' action='tochat.php' style='display: inline-block; margin-right: 10px;'>"; 
+		echo "<button type='submit' name='partnerID' value='".$row2['id']."' style='margin-right:10px;'> <image style='width:14px;height:14px;' src='http://www.famfamfam.com/lab/icons/mini/icons/comment.gif'/> </button>";  
 		echo "</form>";
       
       echo "<form name='delete' method='post' action='contacts.php' style='display: inline-block; margin-right: 10px;'>"; 
