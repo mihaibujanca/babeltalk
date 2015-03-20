@@ -168,10 +168,6 @@
       return "";
     } // getCookie
     
-  function refresh(){
-    storeScroll();
-    location.reload();
-  } // refresh
   
  <?php 
  
