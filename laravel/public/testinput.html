@@ -5,22 +5,60 @@
 <p>This example uses the HTML DOM to assign an "onkeyup" event to an input element.</p>
 
 <div id="scrollarea" class="scrollable" style ="width: 150px;height: 150px;overflow-y: scroll;overflow-x: hidden;">
-    if i see one more page of lorum ipsum
-    then im going to learn lating just so that
-    i can reasonably destroy every single
-    piece of lorum ipsum whilst shouuting it out in a fashion
-    that will make me happy
-</div>
+    
+    <?php
+      // set up database    
+      require_once('config.inc.php'); // load configuration for database
+      $mysqli = new mysqli($database_host, $database_user, $database_password, $database_name); // connect to database 
+      if($mysqli -> connect_error) {
+	die('Connection Error ('.$mysqli -> connect_errno.') '.$mysqli -> connect_error);
+      } // check for errors
+      
+      
+      // pickup cookies
+      $id= $_COOKIE["id"];
+      $firstname= $_COOKIE["firstname"];
+      $lastname= $_COOKIE["lastname"];
+      $language = $_COOKIE["language"];
+      
+      $partnerID= $_COOKIE["partnerID"];
+      $partnerfirstname= $_COOKIE["partnerfirstname"];
+      $partnerlastname = $_COOKIE["partnerlastname"];
+      $partnerlanguage = $_COOKIE["partnerlanguage"];
+      
+      $query = "SELECT * FROM exchanges WHERE (senderID = '$id' AND receiverID = '$partnerID') OR (senderID = '$partnerID' AND receiverID = '$id') ORDER BY id DESC";
+      $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+      $num_row = mysqli_num_rows($result);
+      
+      if($num_row == 0)
+      { 
+        echo "<p> No messages </p>"; 
+      } // if there are no messages
+      else
+      {
+	while ($row = mysqli_fetch_row($result))
+	{
+	  // message originated from this user so display sender_content
+	  if ($row[1] == $id)
+	  {
+	    echo "<p style='text-align: left;'>" . $row[4] . "</p>"; 
+	  }
+	  // message came from other user so display receiver_content
+	  elseif ($row[2] == $id)
+	  {
+	    $receiver_content = $row[5];
+	    // sanitize receiver_content because we are not a n00b
+	    $receiver_content = filter_var($receiver_content, FILTER_SANITIZE_STRING);
+	    echo "<p style='text-align: right;'>" . $receiver_content . "</p>";	   
+	  }	
+	} // while row
+      } // there are messages
+      
+      $result->close();
+    ?> 
+</div> <!-- display messages -->
 
 <input type="text" id="input" style ="width: 150px;height: 20px;">
-
-<p id="editme2"> </p>
-
-
-
-
-
-
 
 
 
