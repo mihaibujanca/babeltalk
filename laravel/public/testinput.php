@@ -89,9 +89,6 @@
       $id= $_COOKIE["id"];
       $firstname= $_COOKIE["firstname"];
       $lastname= $_COOKIE["lastname"];
-      if (isset($_COOKIE["language"])){
-	setcookie("language","en");
-      } // if language cookie
       $language = $_COOKIE["language"];
       
       $partnerID= $_COOKIE["partnerID"];
