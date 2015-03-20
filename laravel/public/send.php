@@ -28,10 +28,6 @@
   //Translate the message
   $translatedcontent = translate($language, $partnerlanguage, $content);
   
-  echo "<br>";
-  echo $id;
-  echo "<br>";
-  echo $partnerID;
   
   
   $insert_row = $mysqli->query("INSERT INTO exchanges (senderID, receiverID, time, sender_content, receiver_content) 
@@ -68,6 +64,6 @@
      
    }
       
-   //header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/testinput.php");
+   header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/testinput.php");
   
 ?>
