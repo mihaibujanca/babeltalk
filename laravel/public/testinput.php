@@ -126,7 +126,7 @@
       $result->close();
       
       echo '</div>';
-    
+      
       echo '<form action="send.php" method="post">';
       echo '<input type="text" id="input" name="content" autocomplete="off" style ="width: 80%;height: 20px;"/>';
       echo '</form>';
@@ -173,6 +173,9 @@
     var retrievedcookie=getCookie("inputcookie");
     if (retrievedcookie!="") {       
 	document.getElementById("input").value=retrievedcookie;
+	
+	var objDiv = document.getElementById("scrollarea");
+         objDiv.scrollTop = objDiv.scrollHeight;
     } 
   ';
   }
