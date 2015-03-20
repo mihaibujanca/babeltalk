@@ -19,7 +19,7 @@
   $partnerfirstname= $_COOKIE["partnerfirstname"];
   $partnerlastname = $_COOKIE["partnerlastname"];
   $partnerlanguage = $_COOKIE["partnerlanguage"];
-  alert($partnerlanguage);
+  echo($partnerlanguage);
   $time = time();
   setcookie("noclear", "whocares", time()+1);
   $insert_row = $mysqli->query("INSERT INTO exchanges (senderID, receiverID, time, sender_content, receiver_content) 
