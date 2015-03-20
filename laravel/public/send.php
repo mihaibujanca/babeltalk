@@ -53,13 +53,11 @@
      $newstring = implode("+", preg_split("/[\s]+/", $message));
      
      // Call the API
-     $url = "http://itranslate4.eu/api/Translate?auth=785f2f42-eab1-461d-8a72-a1867112458a&src=" . $senderlang . "&trg=" . $recieverlang . "&dat=" . $message . ".";
+     $url = "http://itranslate4.eu/api/Translate?auth=785f2f42-eab1-461d-8a72-a1867112458a&src=" . $senderlang . "&trg=" . $recieverlang . "&dat=" . $message;
      echo $url;
      // Get the contents of the URL
      $contents = url_get_contents($url);
 
-    echo $senderlang;
-    echo $recieverlang;
      // Decode the returned JSON object and get the text
      $json = json_decode($contents, true);
      echo $contents;
