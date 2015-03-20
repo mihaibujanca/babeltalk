@@ -74,7 +74,7 @@
 	  <div class="page-header">
 	    <h1>Chat</h1>   
 	  </div>
-
+	
 
 
 
