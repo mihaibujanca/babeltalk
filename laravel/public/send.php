@@ -50,7 +50,9 @@
    {
      // Add the plus signs inside the message so it can be send via api request
      $newstring = implode("+", preg_split("/[\s]+/", $message));
-     
+     echo "<br>";
+     echo $senderlang;
+     echo $recieverlang;
      // Call the API
      $url = "http://itranslate4.eu/api/Translate?auth=785f2f42-eab1-461d-8a72-a1867112458a&src=" . $senderlang . "&trg=" . $recieverlang . "&dat=" . $newstring;
      // Get the contents of the URL
