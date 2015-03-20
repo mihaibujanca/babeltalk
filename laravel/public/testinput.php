@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>This example uses the HTML DOM to assign an "onkeyup" event to an input element.</p>
+
+<div id="scrollarea" class="scrollable" style ="width: 150px;height: 150px;overflow-y: scroll;overflow-x: hidden;">
+    
+    <?php
+      // load configuration for database
+      require_once('config.inc.php'); 
+      // connect to database
+      $mysqli = new mysqli($database_host, $database_user, $database_password, $database_name);   
+      
+      // pickup cookies
+      $id= $_COOKIE["id"];
+      $firstname= $_COOKIE["firstname"];
+      $lastname= $_COOKIE["lastname"];
+      $language = $_COOKIE["language"];
+      
+      $partnerID= $_COOKIE["partnerID"];
+      $partnerfirstname= $_COOKIE["partnerfirstname"];
+      $partnerlastname = $_COOKIE["partnerlastname"];
+      $partnerlanguage = $_COOKIE["partnerlanguage"];
+      
+      $query = "SELECT * FROM exchanges WHERE (senderID = '$id' AND receiverID = '$partnerID') OR (senderID = '$partnerID' AND receiverID = '$id') ORDER BY id DESC";
+      $result = mysqli_query($mysqli, $query) or die($mysqli_error());
+      $num_row = mysqli_num_rows($result);
+      
+      if($num_row == 0)
+      { 
+        echo " <p> No messages </p> "; 
+      } // if there are no messages
+      else
+      {
+	while ($row = mysqli_fetch_row($result))
+	{
+	  // message originated from this user so display sender_content
+	  if ($row[1] == $id)
+	  {
+	    echo "<p style='text-align: left;'>" . $row[4] . "</p>"; 
+	  }
+	  // message came from other user so display receiver_content
+	  elseif ($row[2] == $id)
+	  {
+	    $receiver_content = $row[5];
+	    // sanitize receiver_content because we are not a n00b
+	    $receiver_content = filter_var($receiver_content, FILTER_SANITIZE_STRING);
+	    echo "<p style='text-align: right;'>" . $receiver_content . "</p>";	   
+	  }	
+	} // while row
+      } // there are messages
+      
+      $result->close();
+    ?> 
+</div> <!-- display messages -->
+
+<input type="text" id="input" style ="width: 150px;height: 20px;">
+
+
+
+
+
+
+
+
+
+<script>
+    // refresh the page every 3 seconds
+    setInterval(function () {refresh()}, 3000);
+    
+    // give focus to the input
+    document.getElementById("input").focus();
+    
+    function getCookie(cname) {
+      var name = cname + "=";
+      var ca = document.cookie.split(';');
+	for(var i=0; i<ca.length; i++) {
+	    var c = ca[i];
+	    while (c.charAt(0)==' ') c = c.substring(1);
+	    if (c.indexOf(name) == 0) return c.substring(name.length,c.length);
+	}
+      return "";
+    } // getCookie
+    
+  function refresh(){
+    storeScroll();
+    location.reload();
+  } // refresh
+  
+  
+  //function restoreInput() {
+    var retrievedcookie=getCookie("inputcookie");
+    if (retrievedcookie!="") {       
+	document.getElementById("input").value=retrievedcookie;
+    } // if not empty cookie
+  //} // restoreInput
+    
+    //function restoreScroll() {
+    var retrievedcookie=getCookie("scrollcookie");
+    if (retrievedcookie!="") {       
+	document.getElementById("scrollarea").scrollTop =retrievedcookie;
+    } // if not empty cookie
+  //} // restoreInput
+    
+    
+    document.getElementById("input").onkeyup = function() {storeInput()};
+    document.getElementById("input").onkeydown = function() {storeInput()};
+    
+    
+  function storeScroll() {
+      // get scroll position as var
+      var $input = document.getElementById("scrollarea").scrollTop;   
+      // start a cookie named inputcookie
+      var $scrollcookie = "scrollcookie=";      
+      // add actual input value to inputcookie
+      $scrollcookie += $input;          
+      // plant the cookie 
+      document.cookie=$scrollcookie;      
+  } // storeInput
+  
+  function storeInput() {
+      // get input element as var
+      var $input = document.getElementById("input").value;    
+      // start a cookie named inputcookie
+      var $inputcookie = "inputcookie=";      
+      // add actual input value to inputcookie
+      $inputcookie += $input;          
+      // plant the cookie 
+      document.cookie=$inputcookie;      
+  } // storeInput    
+    
+</script>
+
+</body>
+</html>
