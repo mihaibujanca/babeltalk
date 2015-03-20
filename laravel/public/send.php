@@ -1,4 +1,9 @@
 <?php
+  // load configuration for database
+  require_once('config.inc.php'); 
+  // connect to database
+  $mysqli = new mysqli($database_host, $database_user, $database_password, $database_name); 
+
   $content = $_POST["content"];
 
   // pickup cookies
