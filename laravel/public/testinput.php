@@ -165,24 +165,7 @@
     } // getCookie
     
   
- <?php 
  
- if (!isset($_COOKIE['noclear']))
- {
- echo '    
-    var retrievedcookie=getCookie("inputcookie");
-    if (retrievedcookie!="") {       
-	document.getElementById("input").value=retrievedcookie;
-	
-	
-    } 
-  ';
-  }
-
-  
- 
- ?> 
-  
     
     //function restoreScroll() {
     var retrievedcookie=getCookie("scrollcookie");
