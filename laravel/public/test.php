@@ -22,7 +22,7 @@
 
   $newstring = implode("+", preg_split("/[\s]+/", $message));
   $url = "http://itranslate4.eu/api/Translate?auth=785f242-eab1-461d-8a72-a1867112458a&src=" . $senderlang . "&trg=" . $recieverlang . "&dat=" . $newstring . ".";
-  $contents = file_get_contents($url);
+  $contents = url_get_contents($url);
 
   $json = json_decode($contents, true);
   
@@ -31,6 +31,19 @@
   $translation = $json['dat'][0]['text'][0];
   
   echo "The translated text is: " . $translation;
+  
+            
+  function url_get_contents ($Url) {
+      if (!function_exists('curl_init')){ 
+          die('CURL is not installed!');
+      }
+      $ch = curl_init();
+      curl_setopt($ch, CURLOPT_URL, $Url);
+      curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+      $output = curl_exec($ch);
+      curl_close($ch);
+      return $output;
+  }       
 ?>
 
 </body>
