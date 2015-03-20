@@ -27,7 +27,8 @@
         
         <p> Current scroll position is: <span id="demo">0</span> pixels.</p>
         
-        <script>
+        <script type="text/javascript">
+
         function myFunction() 
         {
           var $scrollpos = $("div").scrollTop();
@@ -35,7 +36,7 @@
           $inputcookie += $scrollpos;
           document.cookie = $inputcookie;
           $retrievedcookie = getCookie("inputcookie");
-          document.getElementById("demo").innerHTML = $inputcookie;
+          document.getElementById("demo").innerHTML = $scrollpos;
             
         }
             
