@@ -128,7 +128,7 @@
       echo '</div>';
     
       echo '<form action="send.php" method="post">';
-      echo '<input type="text" id="input" name="content" autocomplete="off" style ="width: 100%;height: 20px;"/>';
+      echo '<input type="text" id="input" name="content" autocomplete="off" style ="width: 80%;height: 20px;"/>';
       echo '</form>';
       
       
