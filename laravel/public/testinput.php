@@ -184,11 +184,8 @@
 	document.getElementById("input").value=retrievedcookie;
     } // if not empty cookie
   //} // restoreInput' ;
-      
- }
- else
- {
- echo 'document.getElementById("scrollarea").scrollTop =document.getElementById("scrollarea").scrollHeight';
+
+   echo 'document.getElementById("scrollarea").scrollTop =document.getElementById("scrollarea").scrollHeight';
  }
  
  ?> 
