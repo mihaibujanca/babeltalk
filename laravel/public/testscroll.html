@@ -16,7 +16,7 @@
     
     <body>
 
-        <p> Current scroll position is: <span id="demo">0</span> pixels.</p>
+        <p> Current scroll posittttion is: <span id="demo">0</span> pixels.</p>
         
         <div onscroll="myFunction()">Lorem ipsum dolor sit amet, qui veri imperdiet at, ex dico eius dicunt cum. Tantas repudiandae mediocritatem qui no, agam graece nam ex. Ex soluta gloriatur voluptaria sit, tale utinam in ius. At audire ornatus democritum usu.
         
@@ -34,6 +34,7 @@
         function myFunction() 
         {
             
+          document.getElementById("demo").innerHTML = "test";
           $scrollpos = document.getElementById("div").scrollTop();
           window.alert($scrollpos);
           var $inputcookie = "inputcookie=";
