@@ -135,7 +135,7 @@
       echo '<input type="text" id="input" name="content" autocomplete="off" style ="width: 150px;height: 20px;"/>';
       echo '</form>';
       
-      if isset($_POST["input"]){
+      if (isset($_POST["input"])){
       echo $_POST["input"]; }
       
     ?> 
