@@ -23,7 +23,7 @@
       $partnerlastname = $_COOKIE["partnerlastname"];
       $partnerlanguage = $_COOKIE["partnerlanguage"];
       
-      $query = "SELECT * FROM exchanges WHERE (senderID = '$id' AND receiverID = '$partnerID') OR (senderID = '$partnerID' AND receiverID = '$id') ORDER BY id DESC";
+      $query = "SELECT * FROM exchanges WHERE (senderID = '$id' AND receiverID = '$partnerID') OR (senderID = '$partnerID' AND receiverID = '$id') ORDER BY id";
       $result = mysqli_query($mysqli, $query) or die($mysqli_error());
       $num_row = mysqli_num_rows($result);
       
