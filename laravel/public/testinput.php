@@ -166,29 +166,13 @@
     
   
  
-    
-    //function restoreScroll() {
-    var retrievedcookie=getCookie("scrollcookie");
-    if (retrievedcookie!="") {       
-	document.getElementById("scrollarea").scrollTop =document.getElementById("scrollarea").scrollHeight;
-    } // if not empty cookie
-  //} // restoreInput
+   
     
     
     document.getElementById("input").onkeyup = function() {storeInput()};
     document.getElementById("input").onkeydown = function() {storeInput()};
     
-    
-  function storeScroll() {
-      // get scroll position as var
-      var $input = document.getElementById("scrollarea").scrollTop;   
-      // start a cookie named inputcookie
-      var $scrollcookie = "scrollcookie=";      
-      // add actual input value to inputcookie
-      $scrollcookie += $input;          
-      // plant the cookie 
-      document.cookie=$scrollcookie;      
-  } // storeInput
+
   
   function storeInput() {
       // get input element as var
