@@ -185,10 +185,7 @@
     } 
   ';
   }
-  else
-  {
-   echo 'document.cookie("scrollcookie")=document.getElementById("scrollarea").scrollHeight;';
-  }  
+
   
  
  ?> 
