@@ -30,7 +30,6 @@
   
   echo $translatedcontent;
   
-  
   $insert_row = $mysqli->query("INSERT INTO exchanges (senderID, receiverID, time, sender_content, receiver_content) 
 				    VALUES  ('$id', '$partnerID', '$time', '$content', '$translatedcontent')");
 				    
@@ -43,7 +42,6 @@
       curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
       $output = curl_exec($ch);
       curl_close($ch);
-      echo "output is " . $output;
       return $output;
    }       
   
@@ -55,15 +53,11 @@
      
      // Call the API
      $url = "http://itranslate4.eu/api/Translate?auth=785f2f42-eab1-461d-8a72-a1867112458a&src=" . $senderlang . "&trg=" . $recieverlang . "&dat=" . $newstring;
-     echo $url;
      // Get the contents of the URL
      $contents = url_get_contents($url);
-     echo $contents;
      // Decode the returned JSON object and get the text
      $json = json_decode($contents, true);
      $translation = $json['dat'][0]['text'][0];
-     echo "<br>";
-     echo $translation;
      return $translation;
      
      
