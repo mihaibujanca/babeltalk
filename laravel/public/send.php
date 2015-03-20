@@ -19,7 +19,6 @@
   $partnerfirstname= $_COOKIE["partnerfirstname"];
   $partnerlastname = $_COOKIE["partnerlastname"];
   $partnerlanguage = $_COOKIE["partnerlanguage"];
-  echo($partnerlanguage);
   $time = time();
   setcookie("noclear", "whocares", time()+1);
   
@@ -28,8 +27,7 @@
   //Translate the message
   $translatedcontent = translate($language, $partnerlanguage, $content);
   
-  echo $translatedcontent;
-  
+
   $insert_row = $mysqli->query("INSERT INTO exchanges (senderID, receiverID, time, sender_content, receiver_content) 
 				    VALUES  ('$id', '$partnerID', '$time', '$content', '$translatedcontent')");
 				    
@@ -63,6 +61,4 @@
      
    }
       
-  //header("Location: https://web.cs.manchester.ac.uk/mbax4ab4/babeltalk/laravel/public/testinput.php");
-  
 ?>
