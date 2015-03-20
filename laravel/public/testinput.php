@@ -174,8 +174,7 @@
     if (retrievedcookie!="") {       
 	document.getElementById("input").value=retrievedcookie;
 	
-	var objDiv = document.getElementById("scrollarea");
-         objDiv.scrollTop = objDiv.scrollHeight;
+	
     } 
   ';
   }
@@ -188,7 +187,7 @@
     //function restoreScroll() {
     var retrievedcookie=getCookie("scrollcookie");
     if (retrievedcookie!="") {       
-	document.getElementById("scrollarea").scrollTop =retrievedcookie;
+	document.getElementById("scrollarea").scrollTop =document.getElementById("scrollarea").scrollHeight;
     } // if not empty cookie
   //} // restoreInput
     
