@@ -21,7 +21,7 @@
     <!-- navbar css-->
 
     <link href="css/navbar.css" rel="stylesheet">
-
+    <link rel="stylesheet" type="text/css" href="chatstyle.css">
     <link rel="stylesheet" href="css/images"/>
 
     <!--Pulling Awesome Font -->

@@ -70,16 +70,15 @@
 
 	<!-- Begin page content -->
 	<div class="container">
-	  <div class="page-header">
-	    <h1>Chat</h1>   
-	  </div>
+	<h2>Chat</h2>   
+	 
 	  
 
 
 
     
     <?php
-      echo '<div id="scrollarea" class="scrollable" style ="width: 400px;height: 400px;overflow-y: scroll;overflow-x: hidden;">';
+      echo '<div id="scrollarea" class="scrollable" style ="width: 100%;height: 60%;overflow-y: scroll;overflow-x: hidden;">';
       // load configuration for database
       require_once('config.inc.php'); 
       // connect to database
@@ -89,9 +88,6 @@
       $id= $_COOKIE["id"];
       $firstname= $_COOKIE["firstname"];
       $lastname= $_COOKIE["lastname"];
-      if (isset($_COOKIE["language"])){
-	setcookie("language","en");
-      } // if language cookie
       $language = $_COOKIE["language"];
       
       $partnerID= $_COOKIE["partnerID"];
@@ -114,7 +110,7 @@
 	  // message originated from this user so display sender_content
 	  if ($row[1] == $id)
 	  {
-	    echo "<p style='text-align: left;'>" . $row[4] . "</p>"; 
+	    echo "<p style='text-align: left; margin-left:5%; margin-right:40%'>" . $row[4] . "</p>"; 
 	  }
 	  // message came from other user so display receiver_content
 	  elseif ($row[2] == $id)
@@ -130,15 +126,13 @@
       $result->close();
       
       echo '</div>';
-    
-      echo '<form action="testinput.php" method="post">';
-      echo '<input type="text" id="input" name="content" autocomplete="off" style ="width: 150px;height: 20px;"/>';
+      
+      echo '<form action="send.php" method="post">';
+      echo '<input type="text" id="input" name="content" autocomplete="off" style ="width: 80%;height: 20px;"/>';
       echo '</form>';
       
-      if (isset($_POST["input"]))
-      {
-      echo $_POST["content"]; 
-      }
+      
+      
       
     ?> 
  <!-- display messages -->
@@ -148,14 +142,13 @@
 
 
 
-
+<script> document.getElementById("scrollarea").scrollTop = 100; </script>
 
 
 
 
 <script>
-    // refresh the page every 3 seconds
-    setInterval(function () {refresh()}, 3000);
+    
     
     // give focus to the input
     document.getElementById("input").focus();
@@ -171,41 +164,15 @@
       return "";
     } // getCookie
     
-  function refresh(){
-    storeScroll();
-    location.reload();
-  } // refresh
   
-  
-  //function restoreInput() {
-    var retrievedcookie=getCookie("inputcookie");
-    if (retrievedcookie!="") {       
-	document.getElementById("input").value=retrievedcookie;
-    } // if not empty cookie
-  //} // restoreInput
-    
-    //function restoreScroll() {
-    var retrievedcookie=getCookie("scrollcookie");
-    if (retrievedcookie!="") {       
-	document.getElementById("scrollarea").scrollTop =retrievedcookie;
-    } // if not empty cookie
-  //} // restoreInput
+ 
+   
     
     
     document.getElementById("input").onkeyup = function() {storeInput()};
     document.getElementById("input").onkeydown = function() {storeInput()};
     
-    
-  function storeScroll() {
-      // get scroll position as var
-      var $input = document.getElementById("scrollarea").scrollTop;   
-      // start a cookie named inputcookie
-      var $scrollcookie = "scrollcookie=";      
-      // add actual input value to inputcookie
-      $scrollcookie += $input;          
-      // plant the cookie 
-      document.cookie=$scrollcookie;      
-  } // storeInput
+
   
   function storeInput() {
       // get input element as var
