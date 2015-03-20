@@ -131,14 +131,12 @@
       
       echo '</div>';
     
-      echo '<form action="testinput.php" method="post">';
+      echo '<form action="send.php" method="post">';
       echo '<input type="text" id="input" name="content" autocomplete="off" style ="width: 150px;height: 20px;"/>';
       echo '</form>';
       
-      if (isset($_POST["input"]))
-      {
-      echo '<hr>'; 
-      }
+      
+      
       
     ?> 
  <!-- display messages -->
@@ -176,13 +174,22 @@
     location.reload();
   } // refresh
   
-  
-  //function restoreInput() {
+ <?php 
+ 
+ if (!isset($_COOKIE['noclear']))
+ {
+ echo '    
     var retrievedcookie=getCookie("inputcookie");
     if (retrievedcookie!="") {       
 	document.getElementById("input").value=retrievedcookie;
-    } // if not empty cookie
-  //} // restoreInput
+    } 
+  ';
+  }
+
+  
+ 
+ ?> 
+  
     
     //function restoreScroll() {
     var retrievedcookie=getCookie("scrollcookie");
