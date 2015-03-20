@@ -186,6 +186,10 @@
   //} // restoreInput' ;
       
  }
+ else
+ {
+ echo 'document.getElementById("scrollarea").scrollTop =document.getElementById("scrollarea").scrollHeight';
+ }
  
  ?> 
   
