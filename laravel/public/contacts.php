@@ -191,12 +191,12 @@
 	// code to add a friend
 	if(isset($_POST['add']))
 	{
+      $idtoadd = $_POST['add'];
       $query = "SELECT * FROM friends WHERE user1ID = '$id' AND user2ID = '$idtoadd'";
       $result = $mysqli->query($query);
       $num_row = mysqli_num_rows($result);
       if($num_row == 0)
       {
-		  $idtoadd = $_POST['add'];
 		  $query = "INSERT INTO friends (user1ID, user2ID) VALUES ('$id' ,'$idtoadd')";
 		  $result = mysqli_query($mysqli, $query) or die($mysqli_error());
 		  $query = "INSERT INTO friends (user1ID, user2ID) VALUES ('$idtoadd' ,'$id')";
