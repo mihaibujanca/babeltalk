@@ -29,17 +29,18 @@
         Inani blandit est ne. An congue iudicabit expetendis mel, ne libris epicurei mel, ex ipsum signiferumque vix. Nec velit convenire ex. Pri propriae appareat volutpat ei. Ea ludus utroque corrumpit mea.</div>
         
 
-        <script>
+        <script type="text/javascript">
 
         function myFunction() 
         {
-          var $scrollpos = $("div").scrollTop();
+            
+          var $scrollpos = $(document.getElementById("div").scrollTop());
           window.alert($scrollpos);
           var $inputcookie = "inputcookie=";
           $inputcookie += $scrollpos;
           document.cookie = $inputcookie;
           var $retrievedcookie = getCookie("inputcookie");
-          document.getElementById("demo").innerHTML = 2;
+          document.getElementById("demo").innerHTML = $scrollpos;
             
         }
             
