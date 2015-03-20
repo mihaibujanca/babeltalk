@@ -58,7 +58,8 @@
      // Get the contents of the URL
      $contents = url_get_contents($url);
 
-    
+    echo $senderlang;
+    echo $recieverlang;
      // Decode the returned JSON object and get the text
      $json = json_decode($contents, true);
      echo $contents;
