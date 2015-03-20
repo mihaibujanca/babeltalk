@@ -79,7 +79,7 @@
 
     
     <?php
-      echo '<div id="scrollarea" class="scrollable" style ="width: 400px;height: 400px;overflow-y: scroll;overflow-x: hidden;">';
+      echo '<div id="scrollarea" class="scrollable" style ="width: 100%;height: 400px;overflow-y: scroll;overflow-x: hidden;">';
       // load configuration for database
       require_once('config.inc.php'); 
       // connect to database
@@ -132,7 +132,7 @@
       echo '</div>';
     
       echo '<form action="send.php" method="post">';
-      echo '<input type="text" id="input" name="content" autocomplete="off" style ="width: 150px;height: 20px;"/>';
+      echo '<input type="text" id="input" name="content" autocomplete="off" style ="width: 100%;height: 20px;"/>';
       echo '</form>';
       
       
@@ -152,8 +152,7 @@
 
 
 <script>
-    // refresh the page every 3 seconds
-    setInterval(function () {refresh()}, 3000);
+    
     
     // give focus to the input
     document.getElementById("input").focus();
