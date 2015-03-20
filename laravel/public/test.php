@@ -21,7 +21,7 @@
   $recieverlang = $_POST["recieverlang"];
 
   $newstring = implode("+", preg_split("/[\s]+/", $message));
-  $url = "http://itranslate4.eu/api/Translate?auth=df287e5e-6b1f-4319-90c7-9bc3ba3e45c4&src=" . $senderlang . "&trg=" . $recieverlang . "&dat=" . $newstring . ".";
+  $url = "http://itranslate4.eu/api/Translate?auth=785f242-eab1-461d-8a72-a1867112458a&src=" . $senderlang . "&trg=" . $recieverlang . "&dat=" . $newstring . ".";
   $contents = file_get_contents($url);
 
   $json = json_decode($contents, true);
